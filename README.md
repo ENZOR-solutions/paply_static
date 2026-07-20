@@ -1,0 +1,1 @@
+# paply_static
