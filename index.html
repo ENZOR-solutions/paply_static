@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Paply — E-invoicing that just works</title>
+<meta name="description" content="Send, receive, archive and fiscalize e-invoices across Slovenia, Croatia and Serbia. Paply automates compliance so you don't have to." />
+<link rel="icon" href="assets/paply-icon.ico" sizes="any" />
+<link rel="icon" href="assets/icon-logo.png" type="image/png" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    darkMode: 'class',
+    theme: {
+      extend: {
+        colors: {
+          'bg-primary': 'var(--bg-primary)',
+          'bg-secondary': 'var(--bg-secondary)',
+          'bg-tertiary': 'var(--bg-tertiary)',
+          'text-primary': 'var(--text-primary)',
+          'text-secondary': 'var(--text-secondary)',
+          'text-tertiary': 'var(--text-tertiary)',
+          'border-default': 'var(--border-default)',
+          'border-emphasis': 'var(--border-emphasis)',
+          accent: '#EF9F27',
+          'accent-surface': 'rgba(239,159,39,0.12)',
+        },
+        fontWeight: { normal: '400', medium: '500' },
+        borderRadius: { input: '6px', button: '8px', card: '12px', modal: '16px' },
+      },
+    },
+  }
+</script>
+<style>
+  :root {
+    --bg-primary: #F8F7F5;
+    --bg-secondary: #FFFFFF;
+    --bg-tertiary: #F1F0EC;
+    --text-primary: #18181A;
+    --text-secondary: #6B6869;
+    --text-tertiary: #9A9896;
+    --border-default: #E3E2DE;
+    --border-emphasis: #CCCAC5;
+  }
+  body { background: var(--bg-primary); color: var(--text-primary); }
+  .btn-primary {
+    font-weight: 500; color: #1A0E04; background: #EF9F27; border-radius: 8px; cursor: pointer;
+    transition: all .15s ease-out;
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(239,159,39,0.4); }
+  .btn-ghost {
+    font-weight: 500; color: var(--text-primary); background: transparent;
+    border: 1px solid var(--border-default); border-radius: 8px; cursor: pointer;
+    transition: all .15s ease-out;
+  }
+  .btn-ghost:hover { transform: translateY(-2px); border-color: var(--border-emphasis); box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+  .card-hover:hover { transform: translateY(-2px); box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+</style>
+</head>
+<body class="antialiased">
+
+  <!-- Nav -->
+  <header class="sticky top-0 z-10 border-b border-border-default bg-bg-secondary/90 backdrop-blur">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <img src="assets/logo.png" alt="Paply" style="height:32px;width:auto" />
+      <nav class="hidden md:flex items-center gap-8 text-[13px] font-medium text-text-secondary">
+        <a href="#features" class="hover:text-text-primary transition-colors">Features</a>
+        <a href="#pricing" class="hover:text-text-primary transition-colors">Pricing</a>
+        <a href="#faq" class="hover:text-text-primary transition-colors">FAQ</a>
+      </nav>
+      <a href="#pricing" class="btn-primary text-[13px] px-4 py-2">Get started free</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="max-w-6xl mx-auto px-6 pt-20 pb-16 text-center">
+    <span class="inline-block px-3 py-1 rounded-full text-[11px] font-medium bg-accent-surface text-accent tracking-wide uppercase">
+      Now live in Slovenia, Croatia &amp; Serbia
+    </span>
+    <h1 class="mt-6 text-[40px] md:text-[52px] font-medium leading-tight tracking-tight">
+      E-invoicing that just <span class="text-accent">works.</span>
+    </h1>
+    <p class="mt-5 max-w-2xl mx-auto text-[16px] md:text-[18px] text-text-secondary leading-relaxed">
+      Send, receive, archive and fiscalize invoices from one place. Paply keeps you compliant
+      across the e-invoice exchange network — no paperwork, no guesswork.
+    </p>
+    <div class="mt-8 flex items-center justify-center gap-3">
+      <a href="#pricing" class="btn-primary text-[14px] px-6 py-3">Start for free</a>
+      <a href="#features" class="btn-ghost text-[14px] px-6 py-3">See how it works</a>
+    </div>
+    <p class="mt-4 text-[12px] text-text-tertiary">No credit card required · Free plan available forever</p>
+  </section>
+
+  <!-- Logos / trust strip -->
+  <section class="max-w-6xl mx-auto px-6 pb-16">
+    <div class="rounded-card border border-border-default bg-bg-secondary px-8 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-[13px] text-text-tertiary">Trusted by finance teams issuing thousands of invoices a month</p>
+      <div class="flex items-center gap-8 text-[13px] font-medium text-text-secondary">
+        <span>🇸🇮 Slovenia</span>
+        <span>🇭🇷 Croatia</span>
+        <span>🇷🇸 Serbia</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="max-w-6xl mx-auto px-6 py-16">
+    <div class="text-center max-w-2xl mx-auto mb-12">
+      <h2 class="text-[30px] font-medium">Everything invoicing, minus the busywork</h2>
+      <p class="mt-3 text-[15px] text-text-secondary">One workspace for every invoice you send, receive and archive.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+
+      <div class="rounded-card border border-border-default bg-bg-secondary p-6 transition-all duration-150 card-hover">
+        <div class="w-10 h-10 rounded-button bg-accent-surface flex items-center justify-center text-accent mb-4">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 4h16v16H4z" stroke="currentColor" stroke-width="1.5"/><path d="M8 9h8M8 13h8M8 17h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <h3 class="text-[16px] font-medium">Send &amp; receive in seconds</h3>
+        <p class="mt-2 text-[13px] text-text-secondary leading-relaxed">Structured e-invoices go out over the exchange network, or as a PDF by email — your choice, every time.</p>
+      </div>
+
+      <div class="rounded-card border border-border-default bg-bg-secondary p-6 transition-all duration-150 card-hover">
+        <div class="w-10 h-10 rounded-button bg-accent-surface flex items-center justify-center text-accent mb-4">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6l8-4z" stroke="currentColor" stroke-width="1.5"/></svg>
+        </div>
+        <h3 class="text-[16px] font-medium">Built-in fiscalization</h3>
+        <p class="mt-2 text-[13px] text-text-secondary leading-relaxed">QR, PDF417 and Code 128 barcodes are generated automatically on every invoice — audit-ready by default.</p>
+      </div>
+
+      <div class="rounded-card border border-border-default bg-bg-secondary p-6 transition-all duration-150 card-hover">
+        <div class="w-10 h-10 rounded-button bg-accent-surface flex items-center justify-center text-accent mb-4">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 20V10M12 20V4M20 20v-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <h3 class="text-[16px] font-medium">AI invoice scanning</h3>
+        <p class="mt-2 text-[13px] text-text-secondary leading-relaxed">Drop in a received invoice and let Paply pull out the line items, totals and VAT automatically.</p>
+      </div>
+
+      <div class="rounded-card border border-border-default bg-bg-secondary p-6 transition-all duration-150 card-hover">
+        <div class="w-10 h-10 rounded-button bg-accent-surface flex items-center justify-center text-accent mb-4">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M3 9h18" stroke="currentColor" stroke-width="1.5"/></svg>
+        </div>
+        <h3 class="text-[16px] font-medium">11-year archive</h3>
+        <p class="mt-2 text-[13px] text-text-secondary leading-relaxed">Every document is retained and searchable for the full statutory period — no separate archive to manage.</p>
+      </div>
+
+      <div class="rounded-card border border-border-default bg-bg-secondary p-6 transition-all duration-150 card-hover">
+        <div class="w-10 h-10 rounded-button bg-accent-surface flex items-center justify-center text-accent mb-4">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.2" stroke="currentColor" stroke-width="1.5"/><path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <h3 class="text-[16px] font-medium">Built for teams</h3>
+        <p class="mt-2 text-[13px] text-text-secondary leading-relaxed">Invite teammates and observers, assign roles, and keep everyone working from the same partner list.</p>
+      </div>
+
+      <div class="rounded-card border border-border-default bg-bg-secondary p-6 transition-all duration-150 card-hover">
+        <div class="w-10 h-10 rounded-button bg-accent-surface flex items-center justify-center text-accent mb-4">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <h3 class="text-[16px] font-medium">REST API access</h3>
+        <p class="mt-2 text-[13px] text-text-secondary leading-relaxed">Wire Paply directly into your own ERP or billing flow with a full REST API on CORE and above.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="max-w-6xl mx-auto px-6 py-16">
+    <div class="text-center max-w-2xl mx-auto mb-12">
+      <h2 class="text-[30px] font-medium">Simple, usage-based pricing</h2>
+      <p class="mt-3 text-[15px] text-text-secondary">Invoice creation is always unlimited. Pay only for what you send over the network.</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+
+      <div class="relative flex flex-col rounded-card p-6 border border-border-default bg-bg-primary opacity-90 transition-all duration-150 card-hover">
+        <h3 class="text-[16px] font-medium">Free</h3>
+        <div class="mt-2 flex items-baseline gap-1">
+          <span class="text-[30px] font-medium leading-none">€0</span>
+        </div>
+        <p class="mt-1.5 text-[12px] text-text-tertiary">Draft only, no network sends</p>
+        <div class="border-t border-border-default my-4"></div>
+        <ul class="flex flex-col gap-2 flex-1 mb-4 text-[13px] text-text-secondary">
+          <li>1 team member</li>
+          <li>Unlimited drafts</li>
+          <li>PDF export &amp; email delivery</li>
+        </ul>
+        <div class="py-1.5 rounded-button text-center text-[13px] font-medium bg-bg-tertiary text-text-secondary">Get started free</div>
+      </div>
+
+      <div class="relative flex flex-col rounded-card p-6 border border-border-default bg-bg-secondary transition-all duration-150 card-hover">
+        <h3 class="text-[16px] font-medium">Start</h3>
+        <div class="mt-2 flex items-baseline gap-1">
+          <span class="text-[30px] font-medium leading-none">€12</span>
+          <span class="text-[13px] text-text-secondary">/mo</span>
+        </div>
+        <p class="mt-0.5 text-[11px] text-text-tertiary">VAT excl.</p>
+        <p class="mt-1.5 text-[12px] text-text-tertiary">50 network sends/mo · €0.12 extra</p>
+        <div class="border-t border-border-default my-4"></div>
+        <ul class="flex flex-col gap-2 flex-1 mb-4 text-[13px] text-text-secondary">
+          <li>2 team members, 5 observers</li>
+          <li>Direct send from app</li>
+        </ul>
+        <div class="py-1.5 rounded-button text-center text-[13px] font-medium bg-bg-tertiary text-text-secondary">Select plan</div>
+      </div>
+
+      <div class="relative flex flex-col rounded-card p-6 border-2 border-accent shadow-[0_4px_24px_rgba(239,159,39,0.18)] -translate-y-0.5 bg-bg-secondary">
+        <div class="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap">
+          <span class="px-3 py-1 rounded-full text-[11px] font-medium bg-accent text-[#1A0E04] tracking-wide uppercase">Most popular</span>
+        </div>
+        <h3 class="text-[16px] font-medium mt-1">Core</h3>
+        <div class="mt-2 flex items-baseline gap-1">
+          <span class="text-[30px] font-medium leading-none">€27</span>
+          <span class="text-[13px] text-text-secondary">/mo</span>
+        </div>
+        <p class="mt-0.5 text-[11px] text-text-tertiary">VAT excl.</p>
+        <p class="mt-1.5 text-[12px] text-text-tertiary">200 network sends/mo · €0.10 extra</p>
+        <div class="border-t border-border-default my-4"></div>
+        <ul class="flex flex-col gap-2 flex-1 mb-4 text-[13px] text-text-secondary">
+          <li>5 team members, 20 observers</li>
+          <li>REST API access</li>
+          <li>Unlimited AI invoice scanning</li>
+        </ul>
+        <div class="py-1.5 rounded-button text-center text-[13px] font-medium bg-accent text-[#1A0E04]">Select plan</div>
+      </div>
+
+      <div class="relative flex flex-col rounded-card p-6 border border-border-default bg-bg-secondary transition-all duration-150 card-hover">
+        <h3 class="text-[16px] font-medium">Pro</h3>
+        <div class="mt-2 flex items-baseline gap-1">
+          <span class="text-[30px] font-medium leading-none">€59</span>
+          <span class="text-[13px] text-text-secondary">/mo</span>
+        </div>
+        <p class="mt-0.5 text-[11px] text-text-tertiary">VAT excl.</p>
+        <p class="mt-1.5 text-[12px] text-text-tertiary">500 network sends/mo · €0.08 extra</p>
+        <div class="border-t border-border-default my-4"></div>
+        <ul class="flex flex-col gap-2 flex-1 mb-4 text-[13px] text-text-secondary">
+          <li>15 team members, 50 observers</li>
+          <li>Unlimited AI invoice scanning</li>
+        </ul>
+        <div class="py-1.5 rounded-button text-center text-[13px] font-medium bg-bg-tertiary text-text-secondary">Select plan</div>
+      </div>
+
+    </div>
+
+    <div class="mt-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 border border-border-default rounded-card px-5 py-4 bg-bg-secondary">
+      <div>
+        <span class="text-[14px] font-medium">Enterprise</span>
+        <span class="ml-2 text-[13px] text-text-secondary">1000+ sends, SLA and custom onboarding</span>
+      </div>
+      <a href="mailto:sales@paply.si" class="text-[13px] font-medium text-accent hover:underline whitespace-nowrap">Contact sales →</a>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="max-w-6xl mx-auto px-6 py-16">
+    <div class="text-center max-w-2xl mx-auto mb-12">
+      <h2 class="text-[30px] font-medium">Frequently asked questions</h2>
+    </div>
+    <div class="max-w-2xl mx-auto flex flex-col gap-3">
+      <details class="rounded-card border border-border-default bg-bg-secondary p-5">
+        <summary class="text-[14px] font-medium cursor-pointer">Which countries does Paply support?</summary>
+        <p class="mt-2 text-[13px] text-text-secondary leading-relaxed">Slovenia, Croatia and Serbia today, with rollout timed to each country's e-invoicing mandate.</p>
+      </details>
+      <details class="rounded-card border border-border-default bg-bg-secondary p-5">
+        <summary class="text-[14px] font-medium cursor-pointer">Is there a free plan?</summary>
+        <p class="mt-2 text-[13px] text-text-secondary leading-relaxed">Yes — the Free plan lets you create unlimited invoice drafts and export PDFs, with no network sending. No card required.</p>
+      </details>
+      <details class="rounded-card border border-border-default bg-bg-secondary p-5">
+        <summary class="text-[14px] font-medium cursor-pointer">Can I cancel anytime?</summary>
+        <p class="mt-2 text-[13px] text-text-secondary leading-relaxed">Yes, all paid plans are month-to-month with no lock-in.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="max-w-6xl mx-auto px-6 py-16">
+    <div class="rounded-modal bg-bg-tertiary px-8 py-14 text-center">
+      <h2 class="text-[28px] font-medium">Ready to simplify your invoicing?</h2>
+      <p class="mt-3 text-[15px] text-text-secondary">Set up your first invoice in minutes — no card required.</p>
+      <a href="#pricing" class="inline-block mt-6 btn-primary text-[14px] px-6 py-3">Start for free</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-border-default">
+    <div class="max-w-6xl mx-auto px-6 py-10 flex flex-col md:flex-row items-center justify-between gap-4">
+      <img src="assets/logo.png" alt="Paply" style="height:24px;width:auto" />
+      <p class="text-[12px] text-text-tertiary">© 2026 ENZOR d.o.o. · sales@paply.si</p>
+    </div>
+  </footer>
+
+</body>
+</html>
