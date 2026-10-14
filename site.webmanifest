@@ -1,0 +1,13 @@
+{
+  "name": "Paply",
+  "short_name": "Paply",
+  "description": "E-invoicing and fiscalization for Slovenia and Croatia",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#F8F7F5",
+  "theme_color": "#F8F7F5",
+  "icons": [
+    { "src": "/assets/img/paply-icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/assets/img/paply-icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

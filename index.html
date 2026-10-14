@@ -1,869 +1,630 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title data-i18n="meta_title">Paply: E-invoicing, without the complexity</title>
-<meta name="description" content="Send, receive, archive and fiscalize e-invoices across Slovenia, Croatia and Serbia. Paply automates compliance so you don't have to." data-i18n-attr="content:meta_description" />
-<link rel="icon" href="assets/paply-icon.ico" sizes="any" />
-<link rel="icon" href="assets/icon-logo.png" type="image/png" />
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-  tailwind.config = {
-    darkMode: 'class',
-    theme: {
-      extend: {
-        colors: {
-          'bg-primary': 'var(--bg-primary)',
-          'bg-secondary': 'var(--bg-secondary)',
-          'bg-tertiary': 'var(--bg-tertiary)',
-          'text-primary': 'var(--text-primary)',
-          'text-secondary': 'var(--text-secondary)',
-          'text-tertiary': 'var(--text-tertiary)',
-          'border-default': 'var(--border-default)',
-          'border-emphasis': 'var(--border-emphasis)',
-          accent: '#EF9F27',
-          'accent-surface': 'rgba(239,159,39,0.12)',
-        },
-        fontWeight: { normal: '400', medium: '500' },
-        borderRadius: { input: '6px', button: '8px', card: '12px', modal: '16px' },
-      },
-    },
-  }
-</script>
-<style>
-  :root {
-    --bg-primary: #F8F7F5;
-    --bg-secondary: #FFFFFF;
-    --bg-tertiary: #F1F0EC;
-    --text-primary: #18181A;
-    --text-secondary: #6B6869;
-    --text-tertiary: #9A9896;
-    --border-default: #E3E2DE;
-    --border-emphasis: #CCCAC5;
-  }
-  .mobile-menu { max-height: 0; opacity: 0; overflow: hidden; transition: max-height .25s ease, opacity .2s ease; }
-  .mobile-menu.open { opacity: 1; }
-  .pricing-feat { position: relative; padding-left: 20px; }
-  .pricing-feat::before { content: "✓"; position: absolute; left: 0; top: 0; color: #EF9F27; font-weight: 500; }
-  html { scroll-behavior: smooth; }
-  #features, #pricing, #faq { scroll-margin-top: 84px; }
-  body { background: var(--bg-primary); color: var(--text-primary); }
-  .btn-primary {
-    font-weight: 500; color: #1A0E04; background: #EF9F27; border-radius: 8px; cursor: pointer;
-    transition: all .15s ease-out;
-  }
-  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(239,159,39,0.4); }
-  .btn-ghost {
-    font-weight: 500; color: var(--text-primary); background: transparent;
-    border: 1px solid var(--border-default); border-radius: 8px; cursor: pointer;
-    transition: all .15s ease-out;
-  }
-  .btn-ghost:hover { transform: translateY(-2px); border-color: var(--border-emphasis); box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
-  .card-hover:hover { transform: translateY(-2px); box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
-</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Paply | E-invoicing and fiscalization for Slovenia &amp; Croatia</title>
+<meta name="description" content="Create, send, receive, fiscalize and archive invoices in one place. E-invoicing software for businesses in Slovenia and Croatia. Free plan, no card needed.">
+<link rel="canonical" href="https://www.paply.si/">
+<link rel="alternate" hreflang="en" href="https://www.paply.si/">
+<link rel="alternate" hreflang="sl" href="https://www.paply.si/sl/">
+<link rel="alternate" hreflang="hr" href="https://www.paply.si/hr/">
+<link rel="alternate" hreflang="x-default" href="https://www.paply.si/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#F8F7F5">
+<meta name="format-detection" content="telephone=no">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/assets/img/paply-mark.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/site.css?v=0ca2598fc6">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Paply">
+<meta property="og:title" content="Paply | E-invoicing and fiscalization for Slovenia &amp; Croatia">
+<meta property="og:description" content="Create, send, receive, fiscalize and archive invoices in one place. E-invoicing software for businesses in Slovenia and Croatia. Free plan, no card needed.">
+<meta property="og:url" content="https://www.paply.si/">
+<meta property="og:image" content="https://www.paply.si/assets/img/og-en.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="sl_SI">
+<meta property="og:locale:alternate" content="hr_HR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Paply | E-invoicing and fiscalization for Slovenia &amp; Croatia">
+<meta name="twitter:description" content="Create, send, receive, fiscalize and archive invoices in one place. E-invoicing software for businesses in Slovenia and Croatia. Free plan, no card needed.">
+<meta name="twitter:image" content="https://www.paply.si/assets/img/og-en.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.paply.si/#org","name":"Paply","url":"https://www.paply.si/","logo":"https://www.paply.si/assets/img/paply-icon-512.png","email":"info@enzor.si","parentOrganization":{"@type":"Organization","name":"ENZOR d.o.o.","url":"https://enzor.si/"},"areaServed":["SI","HR","RS"]},{"@type":"WebSite","@id":"https://www.paply.si/#website","url":"https://www.paply.si/","name":"Paply","inLanguage":"en","publisher":{"@id":"https://www.paply.si/#org"}},{"@type":"SoftwareApplication","name":"Paply","url":"https://paply.app","applicationCategory":"BusinessApplication","applicationSubCategory":"E-invoicing","operatingSystem":"Web","inLanguage":["en","sl","hr","sr"],"description":"Create, send, receive, fiscalize and archive invoices in one place. E-invoicing software for businesses in Slovenia and Croatia. Free plan, no card needed.","publisher":{"@id":"https://www.paply.si/#org"},"offers":[{"@type":"Offer","name":"Free","price":"0","priceCurrency":"EUR","url":"https://www.paply.si/pricing/"},{"@type":"Offer","name":"Start","price":"12","priceCurrency":"EUR","url":"https://www.paply.si/pricing/"},{"@type":"Offer","name":"Core","price":"27","priceCurrency":"EUR","url":"https://www.paply.si/pricing/"},{"@type":"Offer","name":"Pro","price":"59","priceCurrency":"EUR","url":"https://www.paply.si/pricing/"}]},{"@type":"FAQPage","@id":"https://www.paply.si/#faq","mainEntity":[{"@type":"Question","name":"Can I use Paply already?","acceptedAnswer":{"@type":"Answer","text":"Yes. Paply is in its testing phase and opening up step by step, and some businesses already use it every day. You can create an account and start on the Free plan today. Sending and receiving over the e-invoice exchange network is coming soon; until then invoices go out by email with a PDF."}},{"@type":"Question","name":"Which countries does Paply support?","acceptedAnswer":{"@type":"Answer","text":"Slovenia and Croatia, including fiscalization with each country's tax authority. Serbia is on our roadmap, and the apps are already available in Serbian."}},{"@type":"Question","name":"Do I need a credit card for the Free plan?","acceptedAnswer":{"@type":"Answer","text":"No. The Free plan is free forever and lets you draft unlimited invoices, design templates and download PDFs. You only add payment details when you choose a paid plan."}},{"@type":"Question","name":"What is the difference between e-invoicing and fiscalization?","acceptedAnswer":{"@type":"Answer","text":"Fiscalization reports an invoice to the tax authority, which confirms it with a unique code printed on the invoice. E-invoicing sends the invoice itself to your customer as structured data instead of a PDF. They are separate obligations, and Paply is built to handle both."}},{"@type":"Question","name":"Is there a mobile app?","acceptedAnswer":{"@type":"Answer","text":"Paply for Android and iOS is coming soon. It works with the same account as the web app, so anything you set up today carries over."}}]},{"@type":"WebPage","@id":"https://www.paply.si/","url":"https://www.paply.si/","name":"Paply | E-invoicing and fiscalization for Slovenia & Croatia","description":"Create, send, receive, fiscalize and archive invoices in one place. E-invoicing software for businesses in Slovenia and Croatia. Free plan, no card needed.","inLanguage":"en","isPartOf":{"@id":"https://www.paply.si/#website"},"dateModified":"2026-10-14","publisher":{"@id":"https://www.paply.si/#org"}}]}</script>
+<script src="/assets/js/site.js?v=072a345688" defer></script>
 </head>
-<body class="antialiased">
+<body data-page="home" data-lang="en">
+<a class="skip-link" href="#main">Skip to content</a>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 3h8l5 5v12a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M14 3v5h5M8.5 12.5h7M8.5 16h5"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24"><path d="M21 3 10 14"/><path d="m21 3-6.5 18-4-8.5L2 8.5 21 3z"/></symbol>
+  <symbol id="i-inbox" viewBox="0 0 24 24"><path d="M3 13h5l1.5 3h5L16 13h5"/><path d="M5.5 5h13L21 13v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-6l2.5-8z"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 2.5 19.5 6v5.5c0 4.6-3.2 8.2-7.5 10-4.3-1.8-7.5-5.4-7.5-10V6L12 2.5z"/><path d="m8.8 12 2.2 2.2 4.3-4.4"/></symbol>
+  <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 3c.6 3.9 2.1 5.4 6 6-3.9.6-5.4 2.1-6 6-.6-3.9-2.1-5.4-6-6 3.9-.6 5.4-2.1 6-6z"/><path d="M18.5 14.5c.3 1.9 1 2.6 3 3-2 .3-2.7 1-3 3-.3-2-1-2.7-3-3 2-.4 2.7-1.1 3-3z"/></symbol>
+  <symbol id="i-archive" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="5" rx="1"/><path d="M5 9v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9M10 13h4"/></symbol>
+  <symbol id="i-team" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3 19.5c0-3.3 2.7-5.5 6-5.5s6 2.2 6 5.5"/><path d="M16 5.2a3 3 0 0 1 0 5.6M18 14.3c1.8.7 3 2.5 3 5.2"/></symbol>
+  <symbol id="i-code" viewBox="0 0 24 24"><path d="m8 7-5 5 5 5M16 7l5 5-5 5M13.5 4l-3 16"/></symbol>
+  <symbol id="i-repeat" viewBox="0 0 24 24"><path d="M4 11V9a3 3 0 0 1 3-3h12"/><path d="m16 3 3 3-3 3M20 13v2a3 3 0 0 1-3 3H5"/><path d="m8 21-3-3 3-3"/></symbol>
+  <symbol id="i-bank" viewBox="0 0 24 24"><path d="M3 9.5 12 4l9 5.5H3z"/><path d="M5 10v8M9.5 10v8M14.5 10v8M19 10v8M3 20.5h18"/></symbol>
+  <symbol id="i-card" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M2.5 9.5h19M6 15h4"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-check-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8.5 12.2 2.4 2.4 4.6-4.8"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 3.7 6 3.7 9s-1.1 6.4-3.7 9c-2.6-2.6-3.7-6-3.7-9S9.4 5.6 12 3z"/></symbol>
+  <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 16V11a6 6 0 1 1 12 0v5l1.5 2h-15L6 16z"/><path d="M10 20.5a2.2 2.2 0 0 0 4 0"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4.5" y="10.5" width="15" height="10" rx="2"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3M12 14.5v2.5"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M21 20H3"/></symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5 9-5z"/><path d="m3 12.5 9 5 9-5M3 17l9 5 9-5"/></symbol>
+  <symbol id="i-tag" viewBox="0 0 24 24"><path d="M3 12V4a1 1 0 0 1 1-1h8l9 9-9 9-9-9z"/><circle cx="7.5" cy="7.5" r="1.4"/></symbol>
+  <symbol id="i-qr" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="6.5" height="6.5" rx="1"/><rect x="14" y="3.5" width="6.5" height="6.5" rx="1"/><rect x="3.5" y="14" width="6.5" height="6.5" rx="1"/><path d="M14 14h2.5v2.5H14zM18 18h2.5v2.5H18zM18 14h2.5M14 18v2.5"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2.5 4.5 13.5H12l-1 8 8.5-11H12l1-8z"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></symbol>
+  <symbol id="i-building" viewBox="0 0 24 24"><path d="M4 21V5a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v16M15 9h4a1 1 0 0 1 1 1v11M2.5 21h19"/><path d="M8 8h3M8 12h3M8 16h3"/></symbol>
+  <symbol id="i-flow" viewBox="0 0 24 24"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/><path d="M8.5 6h7M7.2 8.2l3.6 7.4M16.8 8.2l-3.6 7.4"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1h-9l-5 4v-4H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z"/><path d="M8 10h8M8 13h5"/></symbol>
+  <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 16V4M7 9l5-5 5 5M4 15v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 4v12M7 11l5 5 5-5M4 15v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4"/></symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol>
+  <symbol id="i-store" viewBox="0 0 24 24"><path d="M4 10v10h16V10M3 5.5 4.5 3h15L21 5.5V8a2.5 2.5 0 0 1-4.5 1.5 2.5 2.5 0 0 1-4.5 0 2.5 2.5 0 0 1-4.5 0A2.5 2.5 0 0 1 3 8V5.5z"/><path d="M10 20v-5h4v5"/></symbol>
+  <symbol id="i-plug" viewBox="0 0 24 24"><path d="M9 3v5M15 3v5M6.5 8h11v3a5.5 5.5 0 0 1-11 0V8zM12 16.5V21"/></symbol>
+  <symbol id="i-scan" viewBox="0 0 24 24"><path d="M4 8V5a1 1 0 0 1 1-1h3M16 4h3a1 1 0 0 1 1 1v3M20 16v3a1 1 0 0 1-1 1h-3M8 20H5a1 1 0 0 1-1-1v-3M7 12h10"/></symbol>
+  <symbol id="i-euro" viewBox="0 0 24 24"><path d="M17.5 6.5A7 7 0 1 0 17.5 17.5M4 10h9M4 14h9"/></symbol>
+  <symbol id="i-palette" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18c1.2 0 1.8-.8 1.8-1.7 0-1.2-1-1.5-1-2.6 0-1 .8-1.7 1.8-1.7H17a4 4 0 0 0 4-4C21 6.6 17 3 12 3z"/><circle cx="7.5" cy="11" r="1"/><circle cx="10" cy="7" r="1"/><circle cx="15" cy="7.2" r="1"/></symbol>
+  <symbol id="i-hash" viewBox="0 0 24 24"><path d="M9 4 7 20M17 4l-2 16M4.5 9h16M3.5 15h16"/></symbol>
+  <symbol id="i-key" viewBox="0 0 24 24"><circle cx="8" cy="15" r="4.5"/><path d="m11.2 11.8 8.3-8.3M16.5 6.5l2.5 2.5M14 9l2 2"/></symbol>
+  <symbol id="i-receipt" viewBox="0 0 24 24"><path d="M5 3h14v18l-2.5-1.5L14 21l-2-1.5L10 21l-2.5-1.5L5 21V3z"/><path d="M8.5 8h7M8.5 12h7M8.5 16h4"/></symbol>
+  <symbol id="i-pen" viewBox="0 0 24 24"><path d="M4 20h4L19.5 8.5a2.1 2.1 0 0 0-3-3L5 17v3z"/><path d="m14.5 7.5 3 3"/></symbol>
+  <symbol id="i-signal" viewBox="0 0 24 24"><path d="M6 12a6 6 0 0 1 12 0M9 12a3 3 0 0 1 6 0M2.5 12a9.5 9.5 0 0 1 19 0"/><circle cx="12" cy="15.5" r="1.4"/><path d="M12 17v4"/></symbol>
+  <symbol id="i-fingerprint" viewBox="0 0 24 24"><path d="M7.5 5.5A7.5 7.5 0 0 1 19.5 11v1.5M4.5 9.5a7.6 7.6 0 0 0-.5 2.5v2M12 8a4 4 0 0 1 4 4v2.5c0 2-.4 3.8-1.2 5.5M8 12a4 4 0 0 1 .4-1.8M8 14.5v.5c0 2.2-.6 4-1.6 5.5M12 12v3c0 2.6-.8 4.6-2 6"/></symbol>
+</svg>
 
-  <!-- Nav -->
-  <header class="sticky top-0 z-20 border-b border-border-default bg-bg-secondary/90 backdrop-blur">
-    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-      <img src="assets/logo.png" alt="Paply" style="height:32px;width:auto" />
-      <nav class="hidden md:flex items-center gap-8 text-[13px] font-medium text-text-secondary">
-        <a href="#features" class="hover:text-text-primary transition-colors" data-i18n="nav_features">Features</a>
-        <a href="#pricing" class="hover:text-text-primary transition-colors" data-i18n="nav_pricing">Pricing</a>
-        <a href="#faq" class="hover:text-text-primary transition-colors" data-i18n="nav_faq">FAQ</a>
-      </nav>
-      <a href="https://paply.app/login" class="hidden md:inline-flex btn-primary text-[13px] px-4 py-2" data-i18n="get_started_free">Get started free</a>
-      <button id="mobile-menu-btn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu" class="md:hidden relative w-9 h-9 flex items-center justify-center rounded-button border border-border-default text-text-secondary">
-        <svg id="menu-icon-open" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-        <svg id="menu-icon-close" class="hidden" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+<header class="site-header" id="site-header">
+  <div class="wrap header-inner">
+    <a href="/" class="brand" aria-label="Paply">
+      <img src="/assets/img/paply-logo.webp" width="59" height="32" alt="Paply logo">
+    </a>
+    <nav class="nav-desktop" aria-label="Main">
+      <a href="/features/" data-nav="features">Features</a>
+      <a href="/pricing/" data-nav="pricing">Pricing</a>
+      <a href="/mobile/" data-nav="mobile">Mobile app</a>
+      <a href="/e-invoicing/" data-nav="guide">E-invoicing guide</a>
+      <a href="/faq/" data-nav="faq">FAQ</a>
+    </nav>
+    <div class="header-actions">
+      <details class="lang-menu">
+        <summary aria-label="Change language">
+          <svg class="i" width="16" height="16"><use href="#i-globe"/></svg><span>EN</span>
+        </summary>
+        <div class="lang-list">
+          <a href="/" hreflang="en" lang="en" data-lang-choice="en">English</a>
+          <a href="/sl/" hreflang="sl" lang="sl" data-lang-choice="sl">Slovenščina</a>
+          <a href="/hr/" hreflang="hr" lang="hr" data-lang-choice="hr">Hrvatski</a>
+        </div>
+      </details>
+      <a href="https://paply.app/login" class="link-signin">Sign in</a>
+      <a href="https://paply.app/register" class="btn btn-primary btn-sm header-cta">Get started free</a>
+      <button id="mobile-menu-btn" class="menu-btn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
+        <svg id="menu-icon-open" class="i" width="20" height="20"><use href="#i-menu"/></svg>
+        <svg id="menu-icon-close" class="i hidden" width="20" height="20"><use href="#i-x"/></svg>
       </button>
     </div>
-    <nav id="mobile-menu" class="mobile-menu md:hidden flex flex-col text-[15px] font-medium text-text-secondary bg-bg-secondary border-t border-border-default rounded-b-card shadow-[0_12px_24px_rgba(0,0,0,0.08)]">
-      <a href="#features" class="px-6 py-3.5 hover:bg-bg-tertiary hover:text-text-primary transition-colors" data-i18n="nav_features">Features</a>
-      <a href="#pricing" class="px-6 py-3.5 hover:bg-bg-tertiary hover:text-text-primary transition-colors" data-i18n="nav_pricing">Pricing</a>
-      <a href="#faq" class="px-6 py-3.5 hover:bg-bg-tertiary hover:text-text-primary transition-colors" data-i18n="nav_faq">FAQ</a>
-      <div class="px-6 py-4 border-t border-border-default">
-        <a href="https://paply.app/login" class="btn-primary block text-center text-[13px] px-4 py-2.5" data-i18n="get_started_free">Get started free</a>
+  </div>
+  <nav id="mobile-menu" class="mobile-menu" aria-label="Mobile">
+    <div class="wrap mobile-menu-inner">
+      <a href="/features/" data-nav="features">Features</a>
+      <a href="/pricing/" data-nav="pricing">Pricing</a>
+      <a href="/mobile/" data-nav="mobile">Mobile app</a>
+      <a href="/e-invoicing/" data-nav="guide">E-invoicing guide</a>
+      <a href="/faq/" data-nav="faq">FAQ</a>
+      <div class="mobile-langs" aria-label="Language">
+        <a href="/" hreflang="en" lang="en" data-lang-choice="en">EN</a>
+        <a href="/sl/" hreflang="sl" lang="sl" data-lang-choice="sl">SL</a>
+        <a href="/hr/" hreflang="hr" lang="hr" data-lang-choice="hr">HR</a>
       </div>
-    </nav>
-  </header>
-
-  <!-- Hero -->
-  <section class="max-w-6xl mx-auto px-6 pt-20 pb-16 text-center">
-    <span class="inline-block px-3 py-1 rounded-full text-[11px] font-medium bg-accent-surface text-accent tracking-wide uppercase" data-i18n="hero_badge">
-      Coming soon to Slovenia, Croatia &amp; Serbia
-    </span>
-    <h1 class="mt-6 text-[40px] md:text-[52px] font-medium leading-tight tracking-tight">
-      <span data-i18n="hero_title_pre">E-invoicing,</span> <span class="text-accent" data-i18n="hero_title_accent">without the complexity.</span>
-    </h1>
-    <p class="mt-5 max-w-2xl mx-auto text-[16px] md:text-[18px] text-text-secondary leading-relaxed" data-i18n="hero_desc">
-      Create, send, receive, fiscalize, and securely archive invoices in one place. Paply handles
-      the networks, formats, and compliance behind the scenes.
-    </p>
-    <div class="mt-8 flex items-center justify-center gap-3">
-      <a href="https://paply.app/login" class="btn-primary text-[14px] px-6 py-3" data-i18n="start_free">Start for free</a>
-      <a href="#features" class="btn-ghost text-[14px] px-6 py-3" data-i18n="see_how">See how it works</a>
+      <div class="mobile-menu-ctas">
+        <a href="https://paply.app/login" class="btn btn-ghost btn-block">Sign in</a>
+        <a href="https://paply.app/register" class="btn btn-primary btn-block">Get started free</a>
+      </div>
     </div>
-    <p class="mt-4 text-[12px] text-text-tertiary" data-i18n="hero_sub">No credit card required · Free plan available forever</p>
-  </section>
+  </nav>
+</header>
 
+<main id="main">
 
-  <!-- Features -->
-  <section id="features" class="max-w-6xl mx-auto px-6 py-16">
-    <div class="text-center max-w-2xl mx-auto mb-12">
-      <h2 class="text-[30px] font-medium" data-i18n="features_h2">Everything invoicing, minus the busywork</h2>
-      <p class="mt-3 text-[15px] text-text-secondary" data-i18n="features_sub">One workspace for every invoice you send, receive and archive.</p>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-
-      <div class="rounded-card border border-border-default bg-bg-secondary p-6 transition-all duration-150 card-hover">
-        <div class="w-10 h-10 rounded-button bg-accent-surface flex items-center justify-center text-accent mb-4">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 4h16v16H4z" stroke="currentColor" stroke-width="1.5"/><path d="M8 9h8M8 13h8M8 17h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-        </div>
-        <h3 class="text-[16px] font-medium" data-i18n="feat1_title">Send &amp; receive in seconds</h3>
-        <p class="mt-2 text-[13px] text-text-secondary leading-relaxed" data-i18n="feat1_desc">Structured e-invoices go out over the exchange network, or as a PDF by email (your choice, every time).</p>
+<section class="hero">
+  <div class="hero-bg" aria-hidden="true"><div class="hero-grid"></div><div class="orb orb-1"></div><div class="orb orb-2"></div></div>
+  <div class="wrap hero-inner">
+    <div class="hero-copy">
+      <p class="eyebrow reveal"><span class="pulse-dot" aria-hidden="true"></span><span>Coming soon to Slovenia, Croatia &amp; Serbia</span></p>
+      <h1 class="display reveal" style="--d:1"><span>E-invoicing,</span> <span class="accent-text">without the complexity.</span></h1>
+      <p class="lead reveal" style="--d:2">Create, send, receive, fiscalize and archive invoices in one place. Paply takes care of the formats, the tax authorities and the paperwork, so you can get back to running your business.</p>
+      <div class="hero-ctas reveal" style="--d:3">
+        <a href="https://paply.app/register" class="btn btn-primary btn-lg"><span>Start for free</span><svg class="i" width="18" height="18"><use href="#i-arrow"/></svg></a>
+        <a href="#how" class="btn btn-ghost btn-lg">See how it works</a>
       </div>
-
-      <div class="rounded-card border border-border-default bg-bg-secondary p-6 transition-all duration-150 card-hover">
-        <div class="w-10 h-10 rounded-button bg-accent-surface flex items-center justify-center text-accent mb-4">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6l8-4z" stroke="currentColor" stroke-width="1.5"/></svg>
-        </div>
-        <h3 class="text-[16px] font-medium" data-i18n="feat2_title">Built-in fiscalization</h3>
-        <p class="mt-2 text-[13px] text-text-secondary leading-relaxed" data-i18n="feat2_desc">QR, PDF417 and Code 128 barcodes are generated automatically on every invoice. Audit-ready by default.</p>
-      </div>
-
-      <div class="rounded-card border border-border-default bg-bg-secondary p-6 transition-all duration-150 card-hover">
-        <div class="w-10 h-10 rounded-button bg-accent-surface flex items-center justify-center text-accent mb-4">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 20V10M12 20V4M20 20v-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-        </div>
-        <h3 class="text-[16px] font-medium" data-i18n="feat3_title">AI invoice scanning</h3>
-        <p class="mt-2 text-[13px] text-text-secondary leading-relaxed" data-i18n="feat3_desc">Drop in a received invoice and let Paply pull out the line items, totals and VAT automatically.</p>
-      </div>
-
-      <div class="rounded-card border border-border-default bg-bg-secondary p-6 transition-all duration-150 card-hover">
-        <div class="w-10 h-10 rounded-button bg-accent-surface flex items-center justify-center text-accent mb-4">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M3 9h18" stroke="currentColor" stroke-width="1.5"/></svg>
-        </div>
-        <h3 class="text-[16px] font-medium" data-i18n="feat4_title">11-year archive</h3>
-        <p class="mt-2 text-[13px] text-text-secondary leading-relaxed" data-i18n="feat4_desc">Every document is retained and searchable for the full statutory period. No separate archive to manage.</p>
-      </div>
-
-      <div class="rounded-card border border-border-default bg-bg-secondary p-6 transition-all duration-150 card-hover">
-        <div class="w-10 h-10 rounded-button bg-accent-surface flex items-center justify-center text-accent mb-4">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.2" stroke="currentColor" stroke-width="1.5"/><path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-        </div>
-        <h3 class="text-[16px] font-medium" data-i18n="feat5_title">Built for teams</h3>
-        <p class="mt-2 text-[13px] text-text-secondary leading-relaxed" data-i18n="feat5_desc">Invite teammates and observers, assign roles, and keep everyone working from the same partner list.</p>
-      </div>
-
-      <div class="rounded-card border border-border-default bg-bg-secondary p-6 transition-all duration-150 card-hover">
-        <div class="w-10 h-10 rounded-button bg-accent-surface flex items-center justify-center text-accent mb-4">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-        </div>
-        <h3 class="text-[16px] font-medium" data-i18n="feat6_title">REST API access</h3>
-        <p class="mt-2 text-[13px] text-text-secondary leading-relaxed" data-i18n="feat6_desc">Wire Paply directly into your own ERP or billing flow with a full REST API on CORE and above.</p>
-      </div>
-
-      <div class="rounded-card border border-border-default bg-bg-secondary p-6 transition-all duration-150 card-hover">
-        <div class="w-10 h-10 rounded-button bg-accent-surface flex items-center justify-center text-accent mb-4">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12a8 8 0 0 1 14-5.3M20 12a8 8 0 0 1-14 5.3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M18 4v4h-4M6 20v-4h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <h3 class="text-[16px] font-medium" data-i18n="feat7_title">Recurring invoices</h3>
-        <p class="mt-2 text-[13px] text-text-secondary leading-relaxed" data-i18n="feat7_desc">Set up a schedule once and Paply generates and sends invoices automatically, on time, every time.</p>
-      </div>
-
-      <div class="rounded-card border border-border-default bg-bg-secondary p-6 transition-all duration-150 card-hover">
-        <div class="w-10 h-10 rounded-button bg-accent-surface flex items-center justify-center text-accent mb-4">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 3l9 5H3l9-5z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M5 10v9M9 10v9M15 10v9M19 10v9M3 21h18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-        </div>
-        <h3 class="text-[16px] font-medium" data-i18n="feat8_title">Bank reconciliation</h3>
-        <p class="mt-2 text-[13px] text-text-secondary leading-relaxed" data-i18n="feat8_desc">Import a CAMT.053 or MT940 statement and match payments to invoices automatically.</p>
-      </div>
-
-      <div class="rounded-card border border-border-default bg-bg-secondary p-6 transition-all duration-150 card-hover">
-        <div class="w-10 h-10 rounded-button bg-accent-surface flex items-center justify-center text-accent mb-4">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 5v14M8 5v14M11 5v14M13 5v14M17 5v14M20 5v14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-        </div>
-        <h3 class="text-[16px] font-medium" data-i18n="feat9_title">Vendor payments</h3>
-        <p class="mt-2 text-[13px] text-text-secondary leading-relaxed" data-i18n="feat9_desc">Pay received invoices with a SEPA payment file export or a scan-to-pay barcode, no manual entry.</p>
-      </div>
-
-      <div class="rounded-card border border-border-default bg-bg-secondary p-6 transition-all duration-150 card-hover">
-        <div class="w-10 h-10 rounded-button bg-accent-surface flex items-center justify-center text-accent mb-4">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <h3 class="text-[16px] font-medium" data-i18n="feat10_title">Approval workflows</h3>
-        <p class="mt-2 text-[13px] text-text-secondary leading-relaxed" data-i18n="feat10_desc">Route invoices through the right people before they go out, with single, sequential, or unanimous approval.</p>
-      </div>
-
-      <div class="rounded-card border border-border-default bg-bg-secondary p-6 transition-all duration-150 card-hover">
-        <div class="w-10 h-10 rounded-button bg-accent-surface flex items-center justify-center text-accent mb-4">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M3 7l9 6 9-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <h3 class="text-[16px] font-medium" data-i18n="feat11_title">Send from your own inbox</h3>
-        <p class="mt-2 text-[13px] text-text-secondary leading-relaxed" data-i18n="feat11_desc">Connect Gmail or Microsoft 365 so invoice emails go out from your own address, not a generic sender.</p>
-      </div>
-
-      <div class="rounded-card border border-border-default bg-bg-secondary p-6 transition-all duration-150 card-hover">
-        <div class="w-10 h-10 rounded-button bg-accent-surface flex items-center justify-center text-accent mb-4">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="6" width="18" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M3 10h18" stroke="currentColor" stroke-width="1.5"/></svg>
-        </div>
-        <h3 class="text-[16px] font-medium" data-i18n="feat12_title">Stripe invoice sync</h3>
-        <p class="mt-2 text-[13px] text-text-secondary leading-relaxed" data-i18n="feat12_desc">Paid Stripe invoices flow straight into your register and fiscalize automatically, no double entry.</p>
-      </div>
-
-      <div class="rounded-card border border-border-default bg-bg-secondary p-6 transition-all duration-150 card-hover">
-        <div class="w-10 h-10 rounded-button bg-accent-surface flex items-center justify-center text-accent mb-4">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 3h9l5 5v13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 14h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-        </div>
-        <h3 class="text-[16px] font-medium" data-i18n="feat13_title">Credit notes</h3>
-        <p class="mt-2 text-[13px] text-text-secondary leading-relaxed" data-i18n="feat13_desc">Issue a credit note in one click, linked to the original invoice for a clean audit trail.</p>
-      </div>
-
-      <div class="rounded-card border border-border-default bg-bg-secondary p-6 transition-all duration-150 card-hover">
-        <div class="w-10 h-10 rounded-button bg-accent-surface flex items-center justify-center text-accent mb-4">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M3 12h18M12 3c2.5 2.5 3.5 6 3.5 9s-1 6.5-3.5 9c-2.5-2.5-3.5-6-3.5-9s1-6.5 3.5-9z" stroke="currentColor" stroke-width="1.5"/></svg>
-        </div>
-        <h3 class="text-[16px] font-medium" data-i18n="feat14_title">Multi-currency reporting</h3>
-        <p class="mt-2 text-[13px] text-text-secondary leading-relaxed" data-i18n="feat14_desc">Every report converts automatically to your base currency using live exchange rates.</p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Pricing -->
-  <section id="pricing" class="max-w-6xl mx-auto px-6 py-16">
-    <div class="text-center max-w-2xl mx-auto mb-4">
-      <h2 class="text-[30px] font-medium" data-i18n="pricing_h2">Simple pricing that grows with your business</h2>
-      <p class="mt-3 text-[15px] text-text-secondary" data-i18n="pricing_sub">Create as many invoices as you need. Paid plans include a monthly allowance for e-invoices exchanged through supported networks.</p>
-      <p class="mt-3 text-[12px] text-text-tertiary leading-relaxed" data-i18n="pricing_counting_note">An invoice sent or received through the network counts as one exchanged e-invoice. PDF previews, downloads, drafts, and ordinary email delivery do not count as network exchanges.</p>
-    </div>
-    <p class="text-center text-[12px] text-text-tertiary mb-8" data-i18n="pricing_vat_note">Prices exclude VAT</p>
-
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-
-      <div class="relative flex flex-col rounded-card p-6 border border-border-default bg-bg-primary opacity-90 transition-all duration-150 card-hover">
-        <h3 class="text-[16px] font-medium" data-i18n="plan_free_name">Free</h3>
-        <div class="mt-2 flex items-baseline gap-1">
-          <span class="text-[30px] font-medium leading-none">€0</span>
-        </div>
-        <p class="mt-1.5 text-[12px] text-text-tertiary" data-i18n="plan_free_tagline">For exploring Paply and preparing invoice drafts</p>
-        <div class="border-t border-border-default my-4"></div>
-        <ul class="flex flex-col gap-2 flex-1 mb-4 text-[13px] text-text-secondary">
-          <li class="pricing-feat" data-i18n="free_feat1">1 team member</li>
-          <li class="pricing-feat" data-i18n="free_feat2">Unlimited invoice drafts</li>
-          <li class="pricing-feat" data-i18n="free_feat3">Invoice designer and templates</li>
-          <li class="pricing-feat" data-i18n="free_feat4">Partner and item catalogue</li>
-          <li class="pricing-feat" data-i18n="free_feat5">PDF preview and download</li>
-          <li class="pricing-feat" data-i18n="free_feat6">Approval workflows</li>
-          <li class="text-text-tertiary" data-i18n="free_limit1">No e-invoice network exchange</li>
-          <li class="text-text-tertiary" data-i18n="free_limit2">No fiscalization</li>
-        </ul>
-        <a href="https://paply.app/login" class="block py-1.5 rounded-button text-center text-[13px] font-medium bg-bg-tertiary text-text-secondary" data-i18n="get_started_free">Get started free</a>
-      </div>
-
-      <div class="relative flex flex-col rounded-card p-6 border border-border-default bg-bg-secondary transition-all duration-150 card-hover">
-        <h3 class="text-[16px] font-medium" data-i18n="plan_start_name">Start</h3>
-        <div class="mt-2 flex items-baseline gap-1">
-          <span class="text-[30px] font-medium leading-none">€12</span>
-          <span class="text-[13px] text-text-secondary" data-i18n="per_month">/mo</span>
-        </div>
-        <p class="mt-1.5 text-[12px] text-text-tertiary" data-i18n="plan_start_tagline">For small businesses that need compliant e-invoicing</p>
-        <p class="mt-3 text-[13px] font-medium" data-i18n="plan_start_allowance">50 e-invoices exchanged/month, sent and received combined</p>
-        <p class="mt-1 text-[12px] text-text-tertiary" data-i18n="plan_start_extra">€0.12 per additional exchanged e-invoice</p>
-        <div class="border-t border-border-default my-4"></div>
-        <ul class="flex flex-col gap-2 flex-1 mb-4 text-[13px] text-text-secondary">
-          <li class="pricing-feat" data-i18n="start_feat1">2 team members</li>
-          <li class="pricing-feat" data-i18n="start_feat2">Up to 5 read-only users</li>
-          <li class="text-text-tertiary italic" data-i18n="start_inherit">Everything in Free, plus:</li>
-          <li class="pricing-feat" data-i18n="start_feat3">Create and finalize unlimited invoices</li>
-          <li class="pricing-feat" data-i18n="start_feat4">Send and receive e-invoices through supported networks</li>
-          <li class="pricing-feat" data-i18n="start_feat5">Fiscalization where supported and legally required</li>
-          <li class="pricing-feat" data-i18n="start_feat6">PDF export and email delivery</li>
-          <li class="pricing-feat" data-i18n="start_feat7">Secure long-term invoice archive managed by Paply</li>
-          <li class="pricing-feat" data-i18n="start_feat8">Document management</li>
-        </ul>
-        <a href="https://paply.app/login" class="block py-1.5 rounded-button text-center text-[13px] font-medium bg-bg-tertiary text-text-secondary" data-i18n="choose_start">Choose Start</a>
-      </div>
-
-      <div class="relative flex flex-col rounded-card p-6 border-2 border-accent shadow-[0_4px_24px_rgba(239,159,39,0.18)] -translate-y-0.5 bg-bg-secondary">
-        <div class="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap">
-          <span class="px-3 py-1 rounded-full text-[11px] font-medium bg-accent text-[#1A0E04] tracking-wide uppercase" data-i18n="most_popular">Most popular</span>
-        </div>
-        <h3 class="text-[16px] font-medium mt-1" data-i18n="plan_core_name">Core</h3>
-        <div class="mt-2 flex items-baseline gap-1">
-          <span class="text-[30px] font-medium leading-none">€27</span>
-          <span class="text-[13px] text-text-secondary" data-i18n="per_month">/mo</span>
-        </div>
-        <p class="mt-1.5 text-[12px] text-text-tertiary" data-i18n="plan_core_tagline">For growing businesses that want automation and integrations</p>
-        <p class="mt-3 text-[13px] font-medium" data-i18n="plan_core_allowance">200 e-invoices exchanged/month, sent and received combined</p>
-        <p class="mt-1 text-[12px] text-text-tertiary" data-i18n="plan_core_extra">€0.12 per additional exchanged e-invoice</p>
-        <div class="border-t border-border-default my-4"></div>
-        <ul class="flex flex-col gap-2 flex-1 mb-4 text-[13px] text-text-secondary">
-          <li class="pricing-feat" data-i18n="core_feat_seats">5 team members</li>
-          <li class="pricing-feat" data-i18n="core_feat_viewers">Up to 20 read-only users</li>
-          <li class="text-text-tertiary italic" data-i18n="core_inherit">Everything in Start, plus:</li>
-          <li class="pricing-feat" data-i18n="feat_ai_unlimited">Unlimited AI-assisted invoice processing</li>
-          <li class="pricing-feat" data-i18n="core_feat_email">Email inbox connector</li>
-          <li class="pricing-feat" data-i18n="core_feat_stripe">Stripe invoice connector</li>
-          <li class="pricing-feat" data-i18n="plan_core_li2">REST API access</li>
-          <li class="pricing-feat" data-i18n="core_feat_priority">Priority support</li>
-        </ul>
-        <a href="https://paply.app/login" class="block py-1.5 rounded-button text-center text-[13px] font-medium bg-accent text-[#1A0E04]" data-i18n="choose_core">Choose Core</a>
-      </div>
-
-      <div class="relative flex flex-col rounded-card p-6 border border-border-default bg-bg-secondary transition-all duration-150 card-hover">
-        <h3 class="text-[16px] font-medium" data-i18n="plan_pro_name">Pro</h3>
-        <div class="mt-2 flex items-baseline gap-1">
-          <span class="text-[30px] font-medium leading-none">€59</span>
-          <span class="text-[13px] text-text-secondary" data-i18n="per_month">/mo</span>
-        </div>
-        <p class="mt-1.5 text-[12px] text-text-tertiary" data-i18n="plan_pro_tagline">For larger teams with higher invoice volumes</p>
-        <p class="mt-3 text-[13px] font-medium" data-i18n="plan_pro_allowance">500 e-invoices exchanged/month, sent and received combined</p>
-        <p class="mt-1 text-[12px] text-text-tertiary" data-i18n="plan_pro_extra">€0.12 per additional exchanged e-invoice</p>
-        <div class="border-t border-border-default my-4"></div>
-        <ul class="flex flex-col gap-2 flex-1 mb-4 text-[13px] text-text-secondary">
-          <li class="pricing-feat" data-i18n="pro_feat_seats">15 team members</li>
-          <li class="pricing-feat" data-i18n="pro_feat_viewers">Up to 50 read-only users</li>
-          <li class="text-text-tertiary italic" data-i18n="pro_inherit">Everything in Core, plus:</li>
-          <li class="pricing-feat" data-i18n="pro_feat_higher_limits">Higher limits for larger finance teams</li>
-          <li class="pricing-feat" data-i18n="pro_feat_best_price">Best effective price per included network invoice</li>
-          <li class="pricing-feat" data-i18n="pro_feat_volume">Designed for higher monthly invoice volumes</li>
-        </ul>
-        <a href="https://paply.app/login" class="block py-1.5 rounded-button text-center text-[13px] font-medium bg-bg-tertiary text-text-secondary" data-i18n="choose_pro">Choose Pro</a>
-      </div>
-
+      <ul class="hero-points reveal" style="--d:4">
+        <li><svg class="i" width="16" height="16"><use href="#i-check"/></svg><span>Free plan, forever</span></li>
+        <li><svg class="i" width="16" height="16"><use href="#i-check"/></svg><span>No credit card</span></li>
+        <li><svg class="i" width="16" height="16"><use href="#i-check"/></svg><span>FURS &amp; Porezna fiscalization</span></li>
+      </ul>
     </div>
 
-    <div class="mt-4 flex items-start gap-3 rounded-card border border-border-default bg-bg-tertiary px-5 py-4">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="shrink-0 mt-0.5 text-text-tertiary"><path d="M4 21V7a2 2 0 0 1 2-2h5l2 2h5a2 2 0 0 1 2 2v12H4z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
-      <p class="text-[12px] text-text-secondary leading-relaxed" data-i18n="represented_companies_note">Managing more than one company? After signing up you can add represented companies to your workspace: each one is fully separate (own invoices, partners, and fiscalization), but shares your subscription and billing, with no separate login. €4.90/month per company. Not included in the Free plan.</p>
-    </div>
-
-    <div class="mt-4 rounded-card border border-border-default bg-bg-secondary p-8">
-      <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
-        <div>
-          <div class="flex items-baseline gap-2">
-            <span class="text-[18px] font-medium" data-i18n="enterprise_name">Enterprise</span>
-            <span class="text-[13px] text-text-tertiary" data-i18n="enterprise_price">Custom pricing</span>
+    <div class="hero-visual reveal" style="--d:2" aria-hidden="true">
+      <div class="mock-window" id="hero-mock">
+        <div class="mw-bar"><i></i><i></i><i></i><span class="mw-url">paply.app/invoices/outbox</span></div>
+        <div class="mw-body">
+          <div class="mw-side">
+            <img src="/assets/img/paply-mark.svg" width="16" height="24" alt="">
+            <span class="mw-nav"><svg class="i" width="14" height="14"><use href="#i-chart"/></svg><span>Dashboard</span></span>
+            <span class="mw-nav is-active"><svg class="i" width="14" height="14"><use href="#i-send"/></svg><span>Outbox</span></span>
+            <span class="mw-nav"><svg class="i" width="14" height="14"><use href="#i-inbox"/></svg><span>Inbox</span></span>
+            <span class="mw-nav"><svg class="i" width="14" height="14"><use href="#i-team"/></svg><span>Partners</span></span>
+            <span class="mw-nav"><svg class="i" width="14" height="14"><use href="#i-archive"/></svg><span>Archive</span></span>
           </div>
-          <p class="mt-1 text-[13px] text-text-secondary" data-i18n="enterprise_tagline">For organizations with high volumes or custom requirements</p>
-          <ul class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2 text-[13px] text-text-secondary max-w-2xl">
-            <li class="pricing-feat" data-i18n="enterprise_feat1">1,000 or more exchanged e-invoices per month</li>
-            <li class="pricing-feat" data-i18n="enterprise_feat2">Unlimited team members and read-only users</li>
-            <li class="text-text-tertiary italic sm:col-span-2" data-i18n="enterprise_inherit">Everything in Pro</li>
-            <li class="pricing-feat" data-i18n="enterprise_feat3">Service-level agreement</li>
-            <li class="pricing-feat" data-i18n="enterprise_feat4">Custom onboarding</li>
-            <li class="pricing-feat" data-i18n="enterprise_feat5">Pricing and limits tailored to the organization</li>
-          </ul>
+          <div class="mw-main">
+            <div class="mw-head"><span class="mw-title">Outbox</span><span class="mw-new"><svg class="i" width="12" height="12"><use href="#i-plus"/></svg><span>New invoice</span></span></div>
+            <div class="mw-kpis">
+              <div class="kpi"><span class="kpi-l">Issued this month</span><span class="kpi-v" data-kpi="issued">€12,480.00</span></div>
+              <div class="kpi"><span class="kpi-l">Awaiting payment</span><span class="kpi-v" data-kpi="awaiting">€3,215.40</span></div>
+              <div class="kpi kpi-3"><span class="kpi-l">Paid this month</span><span class="kpi-v" data-kpi="paid">€9,264.60</span></div>
+            </div>
+            <div class="mw-list" id="hero-rows">
+              <div class="mw-row"><span class="av av-amber">PZ</span><span class="r-name">Pekarna Zrno d.o.o.<small>2026-020</small></span><span class="r-amt">€59.78</span><span class="pill st-sent">Sent</span></div>
+              <div class="mw-row"><span class="av av-green">AT</span><span class="r-name">Alpin Tech d.o.o.<small>2026-019</small></span><span class="r-amt">€1,220.00</span><span class="pill st-paid">Paid</span></div>
+              <div class="mw-row"><span class="av av-teal">MH</span><span class="r-name">Mizarstvo Hrast s.p.<small>2026-018</small></span><span class="r-amt">€29.28</span><span class="pill st-paid">Paid</span></div>
+              <div class="mw-row"><span class="av av-red">VK</span><span class="r-name">Vita Klima d.o.o.<small>2026-017</small></span><span class="r-amt">€122.00</span><span class="pill st-paid">Paid</span></div>
+            </div>
+          </div>
         </div>
-        <a href="mailto:info@enzor.si" class="btn-primary text-[14px] px-6 py-3 whitespace-nowrap self-start" data-i18n="contact_sales">Contact sales →</a>
+      </div>
+      <div class="mock-phone"><img src="/assets/img/app-home-300.webp" width="300" height="595" alt="" fetchpriority="high"></div>
+      <div class="mock-toast" id="hero-toast"><span class="toast-ic"><svg class="i" width="14" height="14"><use href="#i-check"/></svg></span><span class="toast-txt"><b data-toast-title>Fiscalized with FURS</b><small data-toast-sub>EOR 7c1e9a42-…</small></span></div>
+      <div hidden id="hero-strings">
+        <span data-k="draft">Draft</span>
+        <span data-k="fiscal">Fiscalized</span>
+        <span data-k="sent">Sent</span>
+        <span data-k="paid">Paid</span>
+        <span data-k="t_fiscal">Fiscalized with FURS</span>
+        <span data-k="t_sent">Sent to customer by email</span>
+        <span data-k="t_fiscal_code">EOR</span>
+        <span data-k="t_paid">Payment received</span>
+        <span data-k="t_paid_sub">Matched from bank statement</span>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- FAQ -->
-  <section id="faq" class="max-w-6xl mx-auto px-6 py-16">
-    <div class="text-center max-w-2xl mx-auto mb-12">
-      <h2 class="text-[30px] font-medium" data-i18n="faq_h2">Frequently asked questions</h2>
+<section class="logos" aria-labelledby="logos-title">
+  <div class="wrap">
+    <p class="logos-title" id="logos-title">Works with your tools and speaks every standard</p>
+  </div>
+  <div class="marquee">
+    <div class="marquee-track">
+      <span class="logo-chip"><svg class="i" width="16" height="16"><use href="#i-card"/></svg>Stripe</span>
+      <span class="logo-chip"><svg class="i" width="16" height="16"><use href="#i-store"/></svg>Shopify</span>
+      <span class="logo-chip"><svg class="i" width="16" height="16"><use href="#i-layers"/></svg>Odoo</span>
+      <span class="logo-chip"><svg class="i" width="16" height="16"><use href="#i-mail"/></svg>Gmail</span>
+      <span class="logo-chip"><svg class="i" width="16" height="16"><use href="#i-mail"/></svg>Microsoft 365</span>
+      <span class="logo-chip"><svg class="i" width="16" height="16"><use href="#i-code"/></svg>REST API</span>
+      <span class="logo-chip"><svg class="i" width="16" height="16"><use href="#i-doc"/></svg>EN 16931</span>
+      <span class="logo-chip"><svg class="i" width="16" height="16"><use href="#i-doc"/></svg>eSLOG 2.0</span>
+      <span class="logo-chip"><svg class="i" width="16" height="16"><use href="#i-doc"/></svg>UBL 2.1</span>
+      <span class="logo-chip"><svg class="i" width="16" height="16"><use href="#i-bank"/></svg>CAMT.053</span>
+      <span class="logo-chip"><svg class="i" width="16" height="16"><use href="#i-bank"/></svg>MT940</span>
+      <span class="logo-chip"><svg class="i" width="16" height="16"><use href="#i-euro"/></svg>SEPA pain.001</span>
+      <span class="logo-chip"><svg class="i" width="16" height="16"><use href="#i-qr"/></svg>UPN QR</span>
+      <span class="logo-chip" aria-hidden="true"><svg class="i" width="16" height="16"><use href="#i-card"/></svg>Stripe</span>
+      <span class="logo-chip" aria-hidden="true"><svg class="i" width="16" height="16"><use href="#i-store"/></svg>Shopify</span>
+      <span class="logo-chip" aria-hidden="true"><svg class="i" width="16" height="16"><use href="#i-layers"/></svg>Odoo</span>
+      <span class="logo-chip" aria-hidden="true"><svg class="i" width="16" height="16"><use href="#i-mail"/></svg>Gmail</span>
+      <span class="logo-chip" aria-hidden="true"><svg class="i" width="16" height="16"><use href="#i-mail"/></svg>Microsoft 365</span>
+      <span class="logo-chip" aria-hidden="true"><svg class="i" width="16" height="16"><use href="#i-code"/></svg>REST API</span>
+      <span class="logo-chip" aria-hidden="true"><svg class="i" width="16" height="16"><use href="#i-doc"/></svg>EN 16931</span>
+      <span class="logo-chip" aria-hidden="true"><svg class="i" width="16" height="16"><use href="#i-doc"/></svg>eSLOG 2.0</span>
+      <span class="logo-chip" aria-hidden="true"><svg class="i" width="16" height="16"><use href="#i-doc"/></svg>UBL 2.1</span>
+      <span class="logo-chip" aria-hidden="true"><svg class="i" width="16" height="16"><use href="#i-bank"/></svg>CAMT.053</span>
+      <span class="logo-chip" aria-hidden="true"><svg class="i" width="16" height="16"><use href="#i-bank"/></svg>MT940</span>
+      <span class="logo-chip" aria-hidden="true"><svg class="i" width="16" height="16"><use href="#i-euro"/></svg>SEPA pain.001</span>
+      <span class="logo-chip" aria-hidden="true"><svg class="i" width="16" height="16"><use href="#i-qr"/></svg>UPN QR</span>
     </div>
-    <div class="max-w-2xl mx-auto flex flex-col gap-3">
-      <details class="rounded-card border border-border-default bg-bg-secondary p-5">
-        <summary class="text-[14px] font-medium cursor-pointer" data-i18n="faq_q1">Which countries does Paply support?</summary>
-        <p class="mt-2 text-[13px] text-text-secondary leading-relaxed" data-i18n="faq_a1">Slovenia, Croatia and Serbia today, with rollout timed to each country's e-invoicing mandate.</p>
-      </details>
-      <details class="rounded-card border border-border-default bg-bg-secondary p-5">
-        <summary class="text-[14px] font-medium cursor-pointer" data-i18n="faq_q2">Is there a free plan?</summary>
-        <p class="mt-2 text-[13px] text-text-secondary leading-relaxed" data-i18n="faq_a2">Yes, the Free plan lets you create unlimited invoice drafts and export PDFs, with no network sending. No card required.</p>
-      </details>
-      <details class="rounded-card border border-border-default bg-bg-secondary p-5">
-        <summary class="text-[14px] font-medium cursor-pointer" data-i18n="faq_q3">Can I cancel anytime?</summary>
-        <p class="mt-2 text-[13px] text-text-secondary leading-relaxed" data-i18n="faq_a3">Yes, all paid plans are month-to-month with no lock-in.</p>
-      </details>
-    </div>
-  </section>
+  </div>
+</section>
 
-  <!-- CTA -->
-  <section class="max-w-6xl mx-auto px-6 py-16">
-    <div class="rounded-modal bg-bg-tertiary px-8 py-14 text-center">
-      <h2 class="text-[28px] font-medium" data-i18n="cta_h2">Ready to simplify your invoicing?</h2>
-      <p class="mt-3 text-[15px] text-text-secondary" data-i18n="cta_desc">Set up your first invoice in minutes. No card required.</p>
-      <a href="https://paply.app/login" class="inline-block mt-6 btn-primary text-[14px] px-6 py-3" data-i18n="start_free">Start for free</a>
+<section class="section" id="features">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="kicker">The whole invoice journey</p>
+      <h2 class="h2">One place for every invoice, in and out</h2>
+      <p class="lead">From the first draft to the archived, paid and fiscalized invoice. No spreadsheets, no separate tools.</p>
     </div>
-  </section>
 
-  <!-- Footer -->
-  <footer class="border-t border-border-default">
-    <div class="max-w-6xl mx-auto px-6 py-10 flex flex-col md:flex-row items-center justify-between gap-4">
-      <img src="assets/logo.png" alt="Paply" style="height:24px;width:auto" />
-      <div class="text-center md:text-right">
-        <p class="text-[12px] text-text-tertiary">© 2026 ENZOR d.o.o.</p>
-        <p class="mt-1 text-[12px] text-text-tertiary"><span data-i18n="footer_credit_pre">Developed and maintained by</span> <a href="https://enzor.si/" target="_blank" rel="noopener" class="text-accent hover:underline">ENZOR d.o.o.</a></p>
-        <p class="mt-1 text-[12px] text-text-tertiary"><span data-i18n="footer_contact_pre">For further info, you can reach us at</span> <a href="mailto:info@enzor.si" class="text-accent hover:underline">info@enzor.si</a></p>
+    <div class="showcase reveal" data-showcase>
+      <div class="tabs" role="tablist" aria-label="Invoice journey">
+        <button class="tab" role="tab" id="tab-create" aria-controls="panel-create" aria-selected="true"><svg class="i" width="18" height="18"><use href="#i-pen"/></svg><span>Create</span><i class="tab-progress"></i></button>
+        <button class="tab" role="tab" id="tab-send" aria-controls="panel-send" aria-selected="false" tabindex="-1"><svg class="i" width="18" height="18"><use href="#i-send"/></svg><span>Send</span><i class="tab-progress"></i></button>
+        <button class="tab" role="tab" id="tab-receive" aria-controls="panel-receive" aria-selected="false" tabindex="-1"><svg class="i" width="18" height="18"><use href="#i-inbox"/></svg><span>Receive</span><i class="tab-progress"></i></button>
+        <button class="tab" role="tab" id="tab-paid" aria-controls="panel-paid" aria-selected="false" tabindex="-1"><svg class="i" width="18" height="18"><use href="#i-euro"/></svg><span>Get paid</span><i class="tab-progress"></i></button>
+        <button class="tab" role="tab" id="tab-comply" aria-controls="panel-comply" aria-selected="false" tabindex="-1"><svg class="i" width="18" height="18"><use href="#i-shield"/></svg><span>Stay compliant</span><i class="tab-progress"></i></button>
+      </div>
+
+      <div class="panels">
+        <div class="panel is-active" role="tabpanel" id="panel-create" aria-labelledby="tab-create">
+          <div class="panel-copy">
+            <h3 class="h3">Draft a correct invoice in a minute</h3>
+            <p>Pick a customer, add items from your catalogue, and Paply works out the VAT, the invoice number and the due date from the customer's payment terms.</p>
+            <ul class="ticks">
+              <li>Drag-and-drop designer for your own invoice template</li>
+              <li>Numbering series, credit notes and advance invoices</li>
+              <li>Price lists, item tags and multiple currencies</li>
+            </ul>
+          </div>
+          <div class="panel-visual">
+            <img class="phone-shot" src="/assets/img/app-new-invoice-300.webp" srcset="/assets/img/app-new-invoice-300.webp 300w, /assets/img/app-new-invoice.webp 600w" sizes="260px" width="300" height="595" loading="lazy" alt="New invoice screen in the Paply app with customer, dates, items and VAT totals">
+            <div class="float-chip fc-1"><svg class="i" width="14" height="14"><use href="#i-check"/></svg><span>VAT 22% calculated</span></div>
+          </div>
+        </div>
+
+        <div class="panel" role="tabpanel" id="panel-send" aria-labelledby="tab-send" hidden>
+          <div class="panel-copy">
+            <h3 class="h3">Deliver it the way each customer wants</h3>
+            <p>Email the invoice with a PDF attached, from Paply or from your own Gmail, Microsoft 365 or SMTP mailbox. Structured e-invoices over the exchange network are coming soon.</p>
+            <ul class="ticks">
+              <li>A preferred delivery method for every customer</li>
+              <li>Bulk sending and branded email templates</li>
+              <li>Automatic payment reminders when invoices go overdue</li>
+            </ul>
+          </div>
+          <div class="panel-visual">
+            <div class="mock-card send-card">
+              <p class="mc-title">Send invoice 2026-021</p>
+              <div class="send-opt is-selected"><span class="radio" aria-hidden="true"></span><span><b>Email with PDF</b><small>racuni@studio-lipa.si</small></span><svg class="i" width="18" height="18"><use href="#i-mail"/></svg></div>
+              <div class="send-opt is-disabled"><span class="radio" aria-hidden="true"></span><span><b>E-invoice network</b><small>eSLOG 2.0 · UBL 2.1</small></span><span class="badge badge-soon">Coming soon</span></div>
+              <div class="send-to"><span>To</span><b>Bistra Logistika d.o.o.</b></div>
+              <span class="btn btn-primary btn-block btn-fake"><svg class="i" width="16" height="16"><use href="#i-send"/></svg><span>Send invoice</span></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel" role="tabpanel" id="panel-receive" aria-labelledby="tab-receive" hidden>
+          <div class="panel-copy">
+            <h3 class="h3">Supplier bills in, manual typing out</h3>
+            <p>Upload a PDF or photo, or forward bills to your own Paply inbox address. AI reads the supplier, dates, totals and line items, then the bill goes through approval before anyone pays it.</p>
+            <ul class="ticks">
+              <li>AI invoice scanning on Core and above</li>
+              <li>Approval by anyone, everyone or in a set order, with backups</li>
+              <li>Comments and @mentions on every invoice</li>
+            </ul>
+          </div>
+          <div class="panel-visual">
+            <img class="phone-shot" src="/assets/img/app-inbox-300.webp" srcset="/assets/img/app-inbox-300.webp 300w, /assets/img/app-inbox.webp 600w" sizes="260px" width="300" height="595" loading="lazy" alt="Inbox of received invoices in the Paply app, filtered by review, approved, overdue and paid">
+            <div class="float-chip fc-2"><svg class="i" width="14" height="14"><use href="#i-sparkle"/></svg><span>AI read 6 line items</span></div>
+          </div>
+        </div>
+
+        <div class="panel" role="tabpanel" id="panel-paid" aria-labelledby="tab-paid" hidden>
+          <div class="panel-copy">
+            <h3 class="h3">Get paid sooner, match payments automatically</h3>
+            <p>Slovenian invoices carry a UPN QR code your customers scan in their banking app. Import a CAMT.053 or MT940 bank statement and Paply matches the payments to your invoices.</p>
+            <ul class="ticks">
+              <li>Partial payments and overdue tracking</li>
+              <li>SEPA payment files and scan-to-pay codes for your own bills</li>
+              <li>Card payment links and Tap to Pay in the mobile app (coming soon)</li>
+            </ul>
+          </div>
+          <div class="panel-visual">
+            <img class="doc-shot" src="/assets/img/invoice-upn-qr-435.webp" srcset="/assets/img/invoice-upn-qr-435.webp 435w, /assets/img/invoice-upn-qr.webp 870w" sizes="(max-width: 600px) 90vw, 400px" width="435" height="550" loading="lazy" alt="Slovenian invoice made in Paply with a UPN QR payment code and payment details">
+          </div>
+        </div>
+
+        <div class="panel" role="tabpanel" id="panel-comply" aria-labelledby="tab-comply" hidden>
+          <div class="panel-copy">
+            <h3 class="h3">Fiscalization built in, not bolted on</h3>
+            <p>Paply fiscalizes invoices with FURS in Slovenia and the Tax Administration in Croatia, prints the verification QR code on the invoice and retries on its own if the tax service is unreachable.</p>
+            <ul class="ticks">
+              <li>ZOI and EOR in Slovenia, ZKI and JIR in Croatia</li>
+              <li>A complete history of every invoice</li>
+              <li>Archived for the statutory period: 10 years in Slovenia, 11 in Croatia</li>
+            </ul>
+          </div>
+          <div class="panel-visual">
+            <div class="mock-card fiscal-card">
+              <p class="mc-title">Fiscal verification</p>
+              <div class="fiscal-row"><span class="flag flag-si" aria-hidden="true"></span><span><b>FURS</b><small>ZOI 4f1c…a09e · EOR 7c1e…d2b4</small></span><span class="pill st-paid"><svg class="i" width="12" height="12"><use href="#i-check"/></svg><span>Confirmed</span></span></div>
+              <div class="fiscal-row"><span class="flag flag-hr" aria-hidden="true"></span><span><b>Porezna uprava</b><small>ZKI 9b2d…e710 · JIR 3a8f…c561</small></span><span class="pill st-paid"><svg class="i" width="12" height="12"><use href="#i-check"/></svg><span>Confirmed</span></span></div>
+              <div class="fiscal-qr"><svg class="i" width="40" height="40"><use href="#i-qr"/></svg><span>Verification QR code printed on the invoice</span></div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <script>
-    // Client-side i18n: text is swapped after page load based on the
-    // visitor's browser language. Search engines primarily index the raw
-    // English HTML served above — see CLAUDE.md's Internationalisation
-    // section for the SEO trade-off this implies.
-    var translations = {
-      en: {
-        meta_title: "Paply: E-invoicing, without the complexity",
-        meta_description: "Send, receive, archive and fiscalize e-invoices across Slovenia, Croatia and Serbia. Paply automates compliance so you don't have to.",
-        nav_features: "Features",
-        nav_pricing: "Pricing",
-        nav_faq: "FAQ",
-        get_started_free: "Get started free",
-        hero_badge: "Coming soon to Slovenia, Croatia & Serbia",
-        hero_title_pre: "E-invoicing,",
-        hero_title_accent: "without the complexity.",
-        hero_desc: "Create, send, receive, fiscalize, and securely archive invoices in one place. Paply handles the networks, formats, and compliance behind the scenes.",
-        start_free: "Start for free",
-        see_how: "See how it works",
-        hero_sub: "No credit card required · Free plan available forever",
-        features_h2: "Everything invoicing, minus the busywork",
-        features_sub: "One workspace for every invoice you send, receive and archive.",
-        feat1_title: "Send & receive in seconds",
-        feat1_desc: "Structured e-invoices go out over the exchange network, or as a PDF by email (your choice, every time).",
-        feat2_title: "Built-in fiscalization",
-        feat2_desc: "QR, PDF417 and Code 128 barcodes are generated automatically on every invoice. Audit-ready by default.",
-        feat3_title: "AI invoice scanning",
-        feat3_desc: "Drop in a received invoice and let Paply pull out the line items, totals and VAT automatically.",
-        feat4_title: "11-year archive",
-        feat4_desc: "Every document is retained and searchable for the full statutory period. No separate archive to manage.",
-        feat5_title: "Built for teams",
-        feat5_desc: "Invite teammates and observers, assign roles, and keep everyone working from the same partner list.",
-        feat6_title: "REST API access",
-        feat6_desc: "Wire Paply directly into your own ERP or billing flow with a full REST API on CORE and above.",
-        feat7_title: "Recurring invoices",
-        feat7_desc: "Set up a schedule once and Paply generates and sends invoices automatically, on time, every time.",
-        feat8_title: "Bank reconciliation",
-        feat8_desc: "Import a CAMT.053 or MT940 statement and match payments to invoices automatically.",
-        feat9_title: "Vendor payments",
-        feat9_desc: "Pay received invoices with a SEPA payment file export or a scan-to-pay barcode, no manual entry.",
-        feat10_title: "Approval workflows",
-        feat10_desc: "Route invoices through the right people before they go out, with single, sequential, or unanimous approval.",
-        feat11_title: "Send from your own inbox",
-        feat11_desc: "Connect Gmail or Microsoft 365 so invoice emails go out from your own address, not a generic sender.",
-        feat12_title: "Stripe invoice sync",
-        feat12_desc: "Paid Stripe invoices flow straight into your register and fiscalize automatically, no double entry.",
-        feat13_title: "Credit notes",
-        feat13_desc: "Issue a credit note in one click, linked to the original invoice for a clean audit trail.",
-        feat14_title: "Multi-currency reporting",
-        feat14_desc: "Every report converts automatically to your base currency using live exchange rates.",
-        pricing_h2: "Simple pricing that grows with your business",
-        pricing_sub: "Create as many invoices as you need. Paid plans include a monthly allowance for e-invoices exchanged through supported networks.",
-        pricing_counting_note: "An invoice sent or received through the network counts as one exchanged e-invoice. PDF previews, downloads, drafts, and ordinary email delivery do not count as network exchanges.",
-        pricing_vat_note: "Prices exclude VAT",
-        plan_free_name: "Free",
-        plan_free_tagline: "For exploring Paply and preparing invoice drafts",
-        free_feat1: "1 team member",
-        free_feat2: "Unlimited invoice drafts",
-        free_feat3: "Invoice designer and templates",
-        free_feat4: "Partner and item catalogue",
-        free_feat5: "PDF preview and download",
-        free_feat6: "Approval workflows",
-        free_limit1: "No e-invoice network exchange",
-        free_limit2: "No fiscalization",
-        plan_start_name: "Start",
-        per_month: "/mo",
-        plan_start_tagline: "For small businesses that need compliant e-invoicing",
-        plan_start_allowance: "50 e-invoices exchanged/month, sent and received combined",
-        plan_start_extra: "€0.12 per additional exchanged e-invoice",
-        start_feat1: "2 team members",
-        start_feat2: "Up to 5 read-only users",
-        start_inherit: "Everything in Free, plus:",
-        start_feat3: "Create and finalize unlimited invoices",
-        start_feat4: "Send and receive e-invoices through supported networks",
-        start_feat5: "Fiscalization where supported and legally required",
-        start_feat6: "PDF export and email delivery",
-        start_feat7: "Secure long-term invoice archive managed by Paply",
-        start_feat8: "Document management",
-        choose_start: "Choose Start",
-        most_popular: "Most popular",
-        plan_core_name: "Core",
-        plan_core_tagline: "For growing businesses that want automation and integrations",
-        plan_core_allowance: "200 e-invoices exchanged/month, sent and received combined",
-        plan_core_extra: "€0.12 per additional exchanged e-invoice",
-        core_feat_seats: "5 team members",
-        core_feat_viewers: "Up to 20 read-only users",
-        core_inherit: "Everything in Start, plus:",
-        core_feat_email: "Email inbox connector",
-        core_feat_stripe: "Stripe invoice connector",
-        plan_core_li2: "REST API access",
-        core_feat_priority: "Priority support",
-        feat_ai_unlimited: "Unlimited AI-assisted invoice processing",
-        choose_core: "Choose Core",
-        plan_pro_name: "Pro",
-        plan_pro_tagline: "For larger teams with higher invoice volumes",
-        plan_pro_allowance: "500 e-invoices exchanged/month, sent and received combined",
-        plan_pro_extra: "€0.12 per additional exchanged e-invoice",
-        pro_feat_seats: "15 team members",
-        pro_feat_viewers: "Up to 50 read-only users",
-        pro_inherit: "Everything in Core, plus:",
-        pro_feat_higher_limits: "Higher limits for larger finance teams",
-        pro_feat_best_price: "Best effective price per included network invoice",
-        pro_feat_volume: "Designed for higher monthly invoice volumes",
-        choose_pro: "Choose Pro",
-        enterprise_name: "Enterprise",
-        enterprise_price: "Custom pricing",
-        enterprise_tagline: "For organizations with high volumes or custom requirements",
-        enterprise_feat1: "1,000 or more exchanged e-invoices per month",
-        enterprise_feat2: "Unlimited team members and read-only users",
-        enterprise_inherit: "Everything in Pro",
-        enterprise_feat3: "Service-level agreement",
-        enterprise_feat4: "Custom onboarding",
-        enterprise_feat5: "Pricing and limits tailored to the organization",
-        represented_companies_note: "Managing more than one company? After signing up you can add represented companies to your workspace: each one is fully separate (own invoices, partners, and fiscalization), but shares your subscription and billing, with no separate login. €4.90/month per company. Not included in the Free plan.",
-        contact_sales: "Contact sales →",
-        faq_h2: "Frequently asked questions",
-        faq_q1: "Which countries does Paply support?",
-        faq_a1: "Slovenia, Croatia and Serbia today, with rollout timed to each country's e-invoicing mandate.",
-        faq_q2: "Is there a free plan?",
-        faq_a2: "Yes, the Free plan lets you create unlimited invoice drafts and export PDFs, with no e-invoice network exchange. No card required.",
-        faq_q3: "Can I cancel anytime?",
-        faq_a3: "Yes, all paid plans are month-to-month with no lock-in.",
-        cta_h2: "Ready to simplify your invoicing?",
-        cta_desc: "Set up your first invoice in minutes. No card required.",
-        footer_credit_pre: "Developed and maintained by",
-        footer_contact_pre: "For further info, you can reach us at"
-      },
-      sl: {
-        meta_title: "Paply: e-računi brez zapletenosti",
-        meta_description: "Pošiljajte, prejemajte, arhivirajte in fiskalizirajte e-račune v Sloveniji, na Hrvaškem in v Srbiji. Paply samodejno poskrbi za skladnost namesto vas.",
-        nav_features: "Funkcije",
-        nav_pricing: "Cenik",
-        nav_faq: "Vprašanja",
-        get_started_free: "Začni brezplačno",
-        hero_badge: "Kmalu na voljo v Sloveniji, na Hrvaškem in v Srbiji",
-        hero_title_pre: "E-računi,",
-        hero_title_accent: "brez zapletenosti.",
-        hero_desc: "Ustvarjajte, pošiljajte, prejemajte, fiskalizirajte in varno arhivirajte račune na enem mestu. Paply v ozadju poskrbi za omrežja, formate in skladnost.",
-        start_free: "Začni brezplačno",
-        see_how: "Poglej, kako deluje",
-        hero_sub: "Brez kreditne kartice · Brezplačni paket za vedno",
-        features_h2: "Vse za izdajanje računov, brez odvečnega dela",
-        features_sub: "En delovni prostor za vsak račun, ki ga pošljete, prejmete ali arhivirate.",
-        feat1_title: "Pošiljanje in prejemanje v nekaj sekundah",
-        feat1_desc: "Strukturirani e-računi gredo prek omrežja za izmenjavo ali kot PDF po e-pošti (izbira je vaša, vsakič znova).",
-        feat2_title: "Vgrajena fiskalizacija",
-        feat2_desc: "QR, PDF417 in Code 128 črtne kode se samodejno ustvarijo na vsakem računu. Vedno pripravljeno na revizijo.",
-        feat3_title: "AI skeniranje računov",
-        feat3_desc: "Naložite prejeti račun, Paply pa samodejno izlušči postavke, zneske in DDV.",
-        feat4_title: "11-letna arhiva",
-        feat4_desc: "Vsak dokument je shranjen in iskan skozi celotno zakonsko obdobje hrambe. Brez ločenega arhiva za upravljanje.",
-        feat5_title: "Zasnovano za ekipe",
-        feat5_desc: "Povabite sodelavce in opazovalce, dodelite vloge in vsi delajte na istem seznamu partnerjev.",
-        feat6_title: "Dostop do REST API",
-        feat6_desc: "Povežite Paply neposredno s svojim ERP ali obračunskim sistemom prek celovitega REST API-ja od paketa CORE naprej.",
-        feat7_title: "Ponavljajoči se računi",
-        feat7_desc: "Nastavite urnik enkrat, Paply pa račune ustvari in pošlje samodejno, vedno pravočasno.",
-        feat8_title: "Bančna uskladitev",
-        feat8_desc: "Uvozite izpis CAMT.053 ali MT940 in samodejno uskladite plačila z računi.",
-        feat9_title: "Plačila dobaviteljem",
-        feat9_desc: "Plačajte prejete račune z izvozom plačilne datoteke SEPA ali črtno kodo za plačilo, brez ročnega vnosa.",
-        feat10_title: "Delovni tokovi potrjevanja",
-        feat10_desc: "Usmerite račune do pravih ljudi, preden gredo ven, s posamezno, zaporedno ali soglasno potrditvijo.",
-        feat11_title: "Pošiljanje iz lastnega predala",
-        feat11_desc: "Povežite Gmail ali Microsoft 365, da e-pošta z računi odhaja z vašega naslova, ne generičnega pošiljatelja.",
-        feat12_title: "Sinhronizacija računov Stripe",
-        feat12_desc: "Plačani računi Stripe se samodejno prenesejo v vaš register in fiskalizirajo, brez dvojnega vnosa.",
-        feat13_title: "Dobropisi",
-        feat13_desc: "Izdajte dobropis z enim klikom, povezan z izvirnim računom za pregleden revizijski sled.",
-        feat14_title: "Poročanje v več valutah",
-        feat14_desc: "Vsako poročilo se samodejno pretvori v vašo osnovno valuto po tekočem menjalnem tečaju.",
-        pricing_h2: "Preprosti ceniki, ki rastejo z vašim podjetjem",
-        pricing_sub: "Ustvarite toliko računov, kot jih potrebujete. Plačljivi paketi vključujejo mesečno kvoto za e-račune, izmenjane prek podprtih omrežij.",
-        pricing_counting_note: "Račun, poslan ali prejet prek omrežja, šteje kot en izmenjan e-račun. Predogledi PDF, prenosi, osnutki in navadna dostava po e-pošti se ne štejejo kot izmenjava prek omrežja.",
-        pricing_vat_note: "Cene ne vključujejo DDV",
-        plan_free_name: "Free",
-        plan_free_tagline: "Za raziskovanje Paply in pripravo osnutkov računov",
-        free_feat1: "1 član ekipe",
-        free_feat2: "Neomejeni osnutki računov",
-        free_feat3: "Oblikovalnik računov in predloge",
-        free_feat4: "Katalog partnerjev in artiklov",
-        free_feat5: "Predogled in prenos PDF",
-        free_feat6: "Delovni tokovi potrjevanja",
-        free_limit1: "Brez izmenjave e-računov prek omrežja",
-        free_limit2: "Brez fiskalizacije",
-        plan_start_name: "Start",
-        per_month: "/mes",
-        plan_start_tagline: "Za mala podjetja, ki potrebujejo skladno izdajanje e-računov",
-        plan_start_allowance: "50 izmenjanih e-računov/mesec, poslani in prejeti skupaj",
-        plan_start_extra: "0,12 € za vsak dodaten izmenjan e-račun",
-        start_feat1: "2 člana ekipe",
-        start_feat2: "Do 5 uporabnikov samo za ogled",
-        start_inherit: "Vse v paketu Free, plus:",
-        start_feat3: "Ustvarjanje in dokončanje neomejenega števila računov",
-        start_feat4: "Pošiljanje in prejemanje e-računov prek podprtih omrežij",
-        start_feat5: "Fiskalizacija, kjer je podprta in zakonsko zahtevana",
-        start_feat6: "Izvoz PDF in dostava po e-pošti",
-        start_feat7: "Varen dolgoročni arhiv računov, ki ga upravlja Paply",
-        start_feat8: "Upravljanje dokumentov",
-        choose_start: "Izberi Start",
-        most_popular: "Najbolj priljubljeno",
-        plan_core_name: "Core",
-        plan_core_tagline: "Za rastoča podjetja, ki želijo avtomatizacijo in integracije",
-        plan_core_allowance: "200 izmenjanih e-računov/mesec, poslani in prejeti skupaj",
-        plan_core_extra: "0,12 € za vsak dodaten izmenjan e-račun",
-        core_feat_seats: "5 članov ekipe",
-        core_feat_viewers: "Do 20 uporabnikov samo za ogled",
-        core_inherit: "Vse v paketu Start, plus:",
-        core_feat_email: "Povezovalnik e-poštnega predala",
-        core_feat_stripe: "Stripe povezovalnik računov",
-        plan_core_li2: "Dostop do REST API",
-        core_feat_priority: "Prednostna podpora",
-        feat_ai_unlimited: "Neomejena obdelava računov s pomočjo AI",
-        choose_core: "Izberi Core",
-        plan_pro_name: "Pro",
-        plan_pro_tagline: "Za večje ekipe z večjim obsegom računov",
-        plan_pro_allowance: "500 izmenjanih e-računov/mesec, poslani in prejeti skupaj",
-        plan_pro_extra: "0,12 € za vsak dodaten izmenjan e-račun",
-        pro_feat_seats: "15 članov ekipe",
-        pro_feat_viewers: "Do 50 uporabnikov samo za ogled",
-        pro_inherit: "Vse v paketu Core, plus:",
-        pro_feat_higher_limits: "Višje omejitve za večje finančne ekipe",
-        pro_feat_best_price: "Najboljša efektivna cena na vključen izmenjan račun",
-        pro_feat_volume: "Zasnovano za večji mesečni obseg računov",
-        choose_pro: "Izberi Pro",
-        enterprise_name: "Enterprise",
-        enterprise_price: "Cena po dogovoru",
-        enterprise_tagline: "Za organizacije z velikim obsegom ali posebnimi zahtevami",
-        enterprise_feat1: "1.000 ali več izmenjanih e-računov na mesec",
-        enterprise_feat2: "Neomejeno članov ekipe in uporabnikov samo za ogled",
-        enterprise_inherit: "Vse v paketu Pro",
-        enterprise_feat3: "Dogovor o ravni storitev (SLA)",
-        enterprise_feat4: "Prilagojeno uvajanje",
-        enterprise_feat5: "Cena in omejitve, prilagojene organizaciji",
-        represented_companies_note: "Upravljate več kot eno podjetje? Po registraciji lahko svojemu delovnemu prostoru dodate zastopana podjetja: vsako je popolnoma ločeno (lastni računi, partnerji in fiskalizacija), vendar si deli vašo naročnino in obračunavanje, brez ločene prijave. 4,90 € na mesec na podjetje. Ni vključeno v brezplačnem paketu.",
-        contact_sales: "Kontaktirajte prodajo →",
-        faq_h2: "Pogosta vprašanja",
-        faq_q1: "Katere države Paply podpira?",
-        faq_a1: "Danes Slovenijo, Hrvaško in Srbijo, uvedba pa je usklajena z zakonskimi roki za e-račune v posamezni državi.",
-        faq_q2: "Ali obstaja brezplačen paket?",
-        faq_a2: "Da, brezplačni paket omogoča neomejeno ustvarjanje osnutkov računov in izvoz v PDF, brez izmenjave e-računov prek omrežja. Brez kreditne kartice.",
-        faq_q3: "Ali lahko kadarkoli prekličem?",
-        faq_a3: "Da, vsi plačljivi paketi so mesečni, brez vezave.",
-        cta_h2: "Pripravljeni poenostaviti izdajanje računov?",
-        cta_desc: "Nastavite svoj prvi račun v nekaj minutah. Brez kreditne kartice.",
-        footer_credit_pre: "Razvija in vzdržuje",
-        footer_contact_pre: "Za dodatne informacije nas lahko kontaktirate na"
-      },
-      hr: {
-        meta_title: "Paply: e-računi bez složenosti",
-        meta_description: "Šaljite, primajte, arhivirajte i fiskalizirajte e-račune u Sloveniji, Hrvatskoj i Srbiji. Paply automatski brine o usklađenosti umjesto vas.",
-        nav_features: "Značajke",
-        nav_pricing: "Cjenik",
-        nav_faq: "Pitanja",
-        get_started_free: "Započni besplatno",
-        hero_badge: "Uskoro dostupno u Sloveniji, Hrvatskoj i Srbiji",
-        hero_title_pre: "E-računi,",
-        hero_title_accent: "bez složenosti.",
-        hero_desc: "Kreirajte, šaljite, primajte, fiskalizirajte i sigurno arhivirajte račune na jednom mjestu. Paply se u pozadini brine o mrežama, formatima i usklađenosti.",
-        start_free: "Započni besplatno",
-        see_how: "Pogledajte kako radi",
-        hero_sub: "Bez kreditne kartice · Besplatni paket zauvijek dostupan",
-        features_h2: "Sve za izdavanje računa, bez nepotrebnog posla",
-        features_sub: "Jedan radni prostor za svaki račun koji pošaljete, primite ili arhivirate.",
-        feat1_title: "Slanje i primanje u sekundama",
-        feat1_desc: "Strukturirani e-računi šalju se putem mreže za razmjenu ili kao PDF e-poštom (izbor je vaš, svaki put).",
-        feat2_title: "Ugrađena fiskalizacija",
-        feat2_desc: "QR, PDF417 i Code 128 crtični kodovi automatski se generiraju na svakom računu. Uvijek spremno za reviziju.",
-        feat3_title: "AI skeniranje računa",
-        feat3_desc: "Ubacite primljeni račun i Paply automatski izvlači stavke, iznose i PDV.",
-        feat4_title: "11-godišnja arhiva",
-        feat4_desc: "Svaki dokument čuva se i pretraživ je tijekom cijelog zakonskog razdoblja. Bez zasebne arhive za upravljanje.",
-        feat5_title: "Izrađeno za timove",
-        feat5_desc: "Pozovite kolege i promatrače, dodijelite uloge i neka svi rade na istom popisu partnera.",
-        feat6_title: "Pristup REST API-ju",
-        feat6_desc: "Povežite Paply izravno sa svojim ERP-om ili sustavom naplate putem potpunog REST API-ja od paketa CORE naviše.",
-        feat7_title: "Ponavljajući računi",
-        feat7_desc: "Postavite raspored jednom, a Paply automatski generira i šalje račune, uvijek na vrijeme.",
-        feat8_title: "Bankovno usklađivanje",
-        feat8_desc: "Uvezite izvod CAMT.053 ili MT940 i automatski uskladite plaćanja s računima.",
-        feat9_title: "Plaćanja dobavljačima",
-        feat9_desc: "Platite primljene račune izvozom SEPA plaćanja ili crtičnim kodom za plaćanje, bez ručnog unosa.",
-        feat10_title: "Tijek odobravanja",
-        feat10_desc: "Usmjerite račune do pravih ljudi prije slanja, uz pojedinačno, sekvencijalno ili jednoglasno odobrenje.",
-        feat11_title: "Slanje iz vlastitog sandučića",
-        feat11_desc: "Povežite Gmail ili Microsoft 365 kako bi e-pošta s računima išla s vaše adrese, a ne generičkog pošiljatelja.",
-        feat12_title: "Sinkronizacija Stripe računa",
-        feat12_desc: "Plaćeni Stripe računi automatski se prenose u vaš registar i fiskaliziraju, bez dvostrukog unosa.",
-        feat13_title: "Knjižno odobrenje",
-        feat13_desc: "Izdajte knjižno odobrenje jednim klikom, povezano s izvornim računom radi jasnog revizijskog traga.",
-        feat14_title: "Izvještavanje u više valuta",
-        feat14_desc: "Svako izvješće automatski se pretvara u vašu osnovnu valutu po tekućem tečaju.",
-        pricing_h2: "Jednostavan cjenik koji raste s vašim poslovanjem",
-        pricing_sub: "Kreirajte onoliko računa koliko trebate. Plaćeni paketi uključuju mjesečnu kvotu za e-račune razmijenjene putem podržanih mreža.",
-        pricing_counting_note: "Račun poslan ili primljen putem mreže broji se kao jedan razmijenjeni e-račun. Pregledi PDF-a, preuzimanja, skice i uobičajena dostava e-poštom ne broje se kao razmjena putem mreže.",
-        pricing_vat_note: "Cijene ne uključuju PDV",
-        plan_free_name: "Free",
-        plan_free_tagline: "Za istraživanje Paplyja i pripremu skica računa",
-        free_feat1: "1 član tima",
-        free_feat2: "Neograničene skice računa",
-        free_feat3: "Dizajner računa i predlošci",
-        free_feat4: "Katalog partnera i artikala",
-        free_feat5: "Pregled i preuzimanje PDF-a",
-        free_feat6: "Tijek odobravanja",
-        free_limit1: "Bez razmjene e-računa putem mreže",
-        free_limit2: "Bez fiskalizacije",
-        plan_start_name: "Start",
-        per_month: "/mj",
-        plan_start_tagline: "Za mala poduzeća kojima je potrebno usklađeno izdavanje e-računa",
-        plan_start_allowance: "50 razmijenjenih e-računa/mjesec, poslanih i primljenih zajedno",
-        plan_start_extra: "0,12 € za svaki dodatni razmijenjeni e-račun",
-        start_feat1: "2 člana tima",
-        start_feat2: "Do 5 korisnika samo za pregled",
-        start_inherit: "Sve iz paketa Free, plus:",
-        start_feat3: "Kreiranje i finaliziranje neograničenog broja računa",
-        start_feat4: "Slanje i primanje e-računa putem podržanih mreža",
-        start_feat5: "Fiskalizacija gdje je podržana i zakonski obvezna",
-        start_feat6: "Izvoz PDF-a i dostava e-poštom",
-        start_feat7: "Siguran dugoročni arhiv računa kojim upravlja Paply",
-        start_feat8: "Upravljanje dokumentima",
-        choose_start: "Odaberi Start",
-        most_popular: "Najpopularnije",
-        plan_core_name: "Core",
-        plan_core_tagline: "Za poduzeća u rastu koja žele automatizaciju i integracije",
-        plan_core_allowance: "200 razmijenjenih e-računa/mjesec, poslanih i primljenih zajedno",
-        plan_core_extra: "0,12 € za svaki dodatni razmijenjeni e-račun",
-        core_feat_seats: "5 članova tima",
-        core_feat_viewers: "Do 20 korisnika samo za pregled",
-        core_inherit: "Sve iz paketa Start, plus:",
-        core_feat_email: "Povezivač e-poštanskog sandučića",
-        core_feat_stripe: "Stripe povezivač računa",
-        plan_core_li2: "Pristup REST API-ju",
-        core_feat_priority: "Prioritetna podrška",
-        feat_ai_unlimited: "Neograničena AI obrada računa",
-        choose_core: "Odaberi Core",
-        plan_pro_name: "Pro",
-        plan_pro_tagline: "Za veće timove s većim obujmom računa",
-        plan_pro_allowance: "500 razmijenjenih e-računa/mjesec, poslanih i primljenih zajedno",
-        plan_pro_extra: "0,12 € za svaki dodatni razmijenjeni e-račun",
-        pro_feat_seats: "15 članova tima",
-        pro_feat_viewers: "Do 50 korisnika samo za pregled",
-        pro_inherit: "Sve iz paketa Core, plus:",
-        pro_feat_higher_limits: "Viši limiti za veće financijske timove",
-        pro_feat_best_price: "Najbolja efektivna cijena po uključenom razmijenjenom računu",
-        pro_feat_volume: "Dizajniran za veći mjesečni obujam računa",
-        choose_pro: "Odaberi Pro",
-        enterprise_name: "Enterprise",
-        enterprise_price: "Cijena po dogovoru",
-        enterprise_tagline: "Za organizacije s velikim obujmom ili posebnim zahtjevima",
-        enterprise_feat1: "1000 ili više razmijenjenih e-računa mjesečno",
-        enterprise_feat2: "Neograničen broj članova tima i korisnika samo za pregled",
-        enterprise_inherit: "Sve iz paketa Pro",
-        enterprise_feat3: "Ugovor o razini usluge (SLA)",
-        enterprise_feat4: "Prilagođeno uvođenje",
-        enterprise_feat5: "Cijena i limiti prilagođeni organizaciji",
-        represented_companies_note: "Upravljate više od jednog poduzeća? Nakon registracije svom radnom prostoru možete dodati zastupana poduzeća: svako je potpuno odvojeno (vlastiti računi, partneri i fiskalizacija), ali dijeli vašu pretplatu i obračun, bez zasebne prijave. 4,90 € mjesečno po poduzeću. Nije uključeno u besplatnom paketu.",
-        contact_sales: "Kontaktirajte prodaju →",
-        faq_h2: "Često postavljana pitanja",
-        faq_q1: "Koje države Paply podržava?",
-        faq_a1: "Danas Sloveniju, Hrvatsku i Srbiju, uz uvođenje usklađeno s rokovima za e-račune u svakoj državi.",
-        faq_q2: "Postoji li besplatni paket?",
-        faq_a2: "Da, besplatni paket omogućuje neograničeno kreiranje skica računa i izvoz u PDF, bez razmjene e-računa putem mreže. Bez kartice.",
-        faq_q3: "Mogu li otkazati u bilo kojem trenutku?",
-        faq_a3: "Da, svi plaćeni paketi su mjesečni, bez obveze.",
-        cta_h2: "Spremni pojednostaviti izdavanje računa?",
-        cta_desc: "Postavite svoj prvi račun za nekoliko minuta. Bez kartice.",
-        footer_credit_pre: "Razvija i održava",
-        footer_contact_pre: "Za dodatne informacije nas možete kontaktirati na"
-      }
-    };
+<section class="section section-alt" id="how">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="kicker">How it works</p>
+      <h2 class="h2">Up and running in three steps</h2>
+    </div>
+    <ol class="steps">
+      <li class="step reveal" style="--d:0">
+        <span class="step-n">1</span>
+        <h3 class="h4">Set up your company</h3>
+        <p>Sign up, add your VAT number, bank account and logo, and invite your team or your accountant.</p>
+      </li>
+      <li class="step reveal" style="--d:1">
+        <span class="step-n">2</span>
+        <h3 class="h4">Issue and fiscalize</h3>
+        <p>Create an invoice and confirm it. Paply numbers it, fiscalizes it where required and adds the payment QR code.</p>
+      </li>
+      <li class="step reveal" style="--d:2">
+        <span class="step-n">3</span>
+        <h3 class="h4">Deliver, get paid, archive</h3>
+        <p>Send it by email today, or over the e-invoice network soon. Payments are matched from your bank statement and everything is archived.</p>
+      </li>
+    </ol>
+  </div>
+</section>
 
-    (function () {
-      var SUPPORTED = ['en', 'sl', 'hr'];
-      var browserLangs = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || navigator.userLanguage || 'en'];
-      var lang = 'en';
-      for (var i = 0; i < browserLangs.length; i++) {
-        var code = String(browserLangs[i]).toLowerCase().slice(0, 2);
-        if (SUPPORTED.indexOf(code) !== -1) { lang = code; break; }
-      }
+<section class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="kicker">Less busywork</p>
+      <h2 class="h2">The details that save you hours every month</h2>
+    </div>
+    <div class="bento">
+      <article class="tile tile-wide tile-ai reveal">
+        <div class="tile-top"><span class="icon-box"><svg class="i" width="20" height="20"><use href="#i-sparkle"/></svg></span><span class="badge">Core and up</span></div>
+        <h3 class="h4">AI reads your supplier bills</h3>
+        <p>Drop in a PDF or a photo, or forward the email. Paply extracts the supplier, dates, totals, VAT and every line item, ready for you to check and approve.</p>
+        <div class="scan-demo" aria-hidden="true">
+          <div class="scan-doc"><i></i><i></i><i></i><i></i><i></i><span class="scan-line"></span></div>
+          <div class="scan-fields">
+            <span><small>Supplier</small><b>Mreža Plus d.o.o.</b></span>
+            <span><small>Total</small><b>€1,000.00</b></span>
+            <span><small>VAT</small><b>€180.33</b></span>
+          </div>
+        </div>
+      </article>
+      <article class="tile reveal" style="--d:1">
+        <span class="icon-box"><svg class="i" width="20" height="20"><use href="#i-flow"/></svg></span>
+        <h3 class="h4">Approvals that fit your team</h3>
+        <p>Any one person, everyone, or a set order, with a backup approver for when someone is away.</p>
+      </article>
+      <article class="tile reveal" style="--d:2">
+        <span class="icon-box"><svg class="i" width="20" height="20"><use href="#i-repeat"/></svg></span>
+        <h3 class="h4">Recurring invoices</h3>
+        <p>Set the schedule once. Paply creates and sends the invoices on time, every time.</p>
+      </article>
+      <article class="tile reveal">
+        <span class="icon-box"><svg class="i" width="20" height="20"><use href="#i-bank"/></svg></span>
+        <h3 class="h4">Bank reconciliation</h3>
+        <p>Import a CAMT.053 or MT940 statement and payments are matched to invoices automatically.</p>
+      </article>
+      <article class="tile reveal" style="--d:1">
+        <div class="tile-top"><span class="icon-box"><svg class="i" width="20" height="20"><use href="#i-bell"/></svg></span><span class="badge">Start and up</span></div>
+        <h3 class="h4">Payment reminders</h3>
+        <p>Polite reminders 3, 14 and 30 days after the due date, in your customer's language and only after you approve them.</p>
+      </article>
+      <article class="tile reveal" style="--d:2">
+        <span class="icon-box"><svg class="i" width="20" height="20"><use href="#i-lock"/></svg></span>
+        <h3 class="h4">Secure by default</h3>
+        <p>Two-factor login, sign-in with Google or Apple, roles and permissions, and data hosted in the EU.</p>
+      </article>
+      <article class="tile tile-wide reveal">
+        <div class="tile-top"><span class="icon-box"><svg class="i" width="20" height="20"><use href="#i-plug"/></svg></span><span class="badge">Core and up</span></div>
+        <h3 class="h4">Connect the tools you already use</h3>
+        <p>Invoices from Stripe, Shopify and Odoo flow into Paply on their own, and card-paid ones are fiscalized automatically. For everything else there is the REST API.</p>
+        <div class="int-row" aria-hidden="true"><span>Stripe</span><span>Shopify</span><span>Odoo</span><span>Gmail</span><span>Microsoft 365</span><span>API</span></div>
+      </article>
+      <article class="tile reveal">
+        <span class="icon-box"><svg class="i" width="20" height="20"><use href="#i-chat"/></svg></span>
+        <h3 class="h4">Comments and @mentions</h3>
+        <p>Discuss an invoice right where it lives. Mention a colleague and they get a notification.</p>
+      </article>
+      <article class="tile reveal" style="--d:1">
+        <div class="tile-top"><span class="icon-box"><svg class="i" width="20" height="20"><use href="#i-archive"/></svg></span><span class="badge">Start and up</span></div>
+        <h3 class="h4">Documents in one place</h3>
+        <p>Keep contracts and certificates next to your invoices, with a reminder before anything expires.</p>
+      </article>
+      <article class="tile reveal" style="--d:2">
+        <span class="icon-box"><svg class="i" width="20" height="20"><use href="#i-building"/></svg></span>
+        <h3 class="h4">Several companies, one login</h3>
+        <p>Add represented companies, each fully separate, on your subscription for €4.90 a month.</p>
+      </article>
+    </div>
+    <p class="center reveal"><a class="link-arrow" href="/features/"><span>See all features</span><svg class="i" width="16" height="16"><use href="#i-arrow"/></svg></a></p>
+  </div>
+</section>
 
-      var dict = translations[lang] || translations.en;
-      document.documentElement.lang = lang;
+<section class="section section-alt">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="kicker">Ready for the mandates</p>
+      <h2 class="h2">Built for e-invoicing in Croatia and Slovenia</h2>
+      <p class="lead">Croatia moved business invoicing to e-invoices in 2026 and Slovenia follows in 2028. Paply is built for both.</p>
+    </div>
+    <div class="countries">
+      <a class="country reveal" href="/e-invoicing/croatia/">
+        <div class="country-head"><span class="flag flag-hr flag-lg" aria-hidden="true"></span><h3 class="h4">Croatia</h3><span class="badge">Fiscalization 2.0</span></div>
+        <ol class="mini-timeline">
+          <li><b>1 Jan 2026</b><span>Domestic B2B e-invoices for VAT payers, and fiscalization of every payment method</span></li>
+          <li><b>1 Jan 2027</b><span>Businesses outside the VAT system start issuing e-invoices too</span></li>
+        </ol>
+        <p class="country-paply"><span>In Paply: F1 fiscalization with ZKI and JIR, Croatian interface. E-invoice exchange coming soon.</span></p>
+        <span class="link-arrow"><span>Read the guide</span><svg class="i" width="16" height="16"><use href="#i-arrow"/></svg></span>
+      </a>
+      <a class="country reveal" style="--d:1" href="/e-invoicing/slovenia/">
+        <div class="country-head"><span class="flag flag-si flag-lg" aria-hidden="true"></span><h3 class="h4">Slovenia</h3><span class="badge">E-invoices from 2028</span></div>
+        <ol class="mini-timeline">
+          <li><b>Today</b><span>Invoices paid in cash or by card are verified with FURS</span></li>
+          <li><b>1 Jan 2028</b><span>Structured e-invoices become mandatory between businesses</span></li>
+        </ol>
+        <p class="country-paply"><span>In Paply: FURS fiscalization, UPN QR on every invoice. eSLOG 2.0 e-invoice exchange coming soon.</span></p>
+        <span class="link-arrow"><span>Read the guide</span><svg class="i" width="16" height="16"><use href="#i-arrow"/></svg></span>
+      </a>
+      <div class="country country-muted reveal" style="--d:2">
+        <div class="country-head"><span class="flag flag-rs flag-lg" aria-hidden="true"></span><h3 class="h4">Serbia</h3><span class="badge badge-muted">On the roadmap</span></div>
+        <p>The Paply apps already speak Serbian. Support for Serbian e-invoicing is planned for a later phase.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-      document.querySelectorAll('[data-i18n]').forEach(function (el) {
-        var key = el.getAttribute('data-i18n');
-        if (dict[key]) el.textContent = dict[key];
-      });
+<section class="section">
+  <div class="wrap">
+    <div class="band-dark reveal">
+      <div class="band-copy">
+        <span class="badge badge-on-dark">Coming soon to Android &amp; iOS</span>
+        <h2 class="h2">Your invoices, in your pocket</h2>
+        <p>Create and confirm invoices, scan supplier bills with your camera, get paid with a payment link or Tap to Pay, and get a notification the moment an invoice is paid.</p>
+        <div class="store-row">
+          <span class="store-btn" aria-disabled="true"><svg class="i" width="20" height="20"><use href="#i-phone"/></svg><span><small>Coming soon</small>Google Play</span></span>
+          <span class="store-btn" aria-disabled="true"><svg class="i" width="20" height="20"><use href="#i-phone"/></svg><span><small>Coming soon</small>App Store</span></span>
+        </div>
+        <a class="link-arrow link-on-dark" href="/mobile/"><span>Take a look at the app</span><svg class="i" width="16" height="16"><use href="#i-arrow"/></svg></a>
+      </div>
+      <div class="band-phones" aria-hidden="true">
+        <img class="bp bp-1" src="/assets/img/app-outbox-300.webp" width="300" height="595" alt="" loading="lazy">
+        <img class="bp bp-2" src="/assets/img/app-home-300.webp" width="300" height="595" alt="" loading="lazy">
+        <img class="bp bp-3" src="/assets/img/app-inbox-300.webp" width="300" height="595" alt="" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
 
-      document.querySelectorAll('[data-i18n-attr]').forEach(function (el) {
-        el.getAttribute('data-i18n-attr').split(',').forEach(function (pair) {
-          var parts = pair.split(':');
-          var attr = parts[0], key = parts[1];
-          if (dict[key]) el.setAttribute(attr, dict[key]);
-        });
-      });
-    })();
+<section class="section section-alt" id="pricing">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="kicker">Pricing</p>
+      <h2 class="h2">Simple pricing that grows with you</h2>
+      <p class="lead">Create as many invoices as you like on every plan. Paid plans add fiscalization, delivery and a monthly e-invoice allowance.</p>
+    </div>
+    <div class="mini-plans">
+      <a class="mini-plan reveal" href="/pricing/">
+        <span class="mp-name">Free</span><span class="mp-price">€0</span>
+        <span class="mp-desc">Unlimited drafts, templates and PDF downloads</span>
+      </a>
+      <a class="mini-plan reveal" style="--d:1" href="/pricing/">
+        <span class="mp-name">Start</span><span class="mp-price">€12<small>/mo</small></span>
+        <span class="mp-desc">Fiscalization, email delivery, 50 e‑invoices a month</span>
+      </a>
+      <a class="mini-plan is-popular reveal" style="--d:2" href="/pricing/">
+        <span class="mp-flag">Most popular</span>
+        <span class="mp-name">Core</span><span class="mp-price">€27<small>/mo</small></span>
+        <span class="mp-desc">AI scanning, integrations, API, 200 e‑invoices a month</span>
+      </a>
+      <a class="mini-plan reveal" style="--d:3" href="/pricing/">
+        <span class="mp-name">Pro</span><span class="mp-price">€59<small>/mo</small></span>
+        <span class="mp-desc">15 team members, 500 e‑invoices a month</span>
+      </a>
+    </div>
+    <p class="center small muted reveal">Prices exclude VAT.</p>
+    <p class="center reveal"><a class="link-arrow" href="/pricing/"><span>Compare plans and estimate your cost</span><svg class="i" width="16" height="16"><use href="#i-arrow"/></svg></a></p>
+  </div>
+</section>
 
-    // Smooth in-page scrolling for anchor links, offset for the sticky header.
-    (function () {
-      var header = document.querySelector('header');
+<section class="section" id="faq">
+  <div class="wrap narrow">
+    <div class="section-head reveal">
+      <h2 class="h2">Questions, answered</h2>
+    </div>
+    <div class="faq-list reveal">
+      <details class="faq">
+        <summary>Can I use Paply already?</summary>
+        <div class="faq-a"><p>Yes. Paply is in its testing phase and opening up step by step, and some businesses already use it every day. You can create an account and start on the Free plan today. Sending and receiving over the e-invoice exchange network is coming soon; until then invoices go out by email with a PDF.</p></div>
+      </details>
+      <details class="faq">
+        <summary>Which countries does Paply support?</summary>
+        <div class="faq-a"><p>Slovenia and Croatia, including fiscalization with each country's tax authority. Serbia is on our roadmap, and the apps are already available in Serbian.</p></div>
+      </details>
+      <details class="faq">
+        <summary>Do I need a credit card for the Free plan?</summary>
+        <div class="faq-a"><p>No. The Free plan is free forever and lets you draft unlimited invoices, design templates and download PDFs. You only add payment details when you choose a paid plan.</p></div>
+      </details>
+      <details class="faq">
+        <summary>What is the difference between e-invoicing and fiscalization?</summary>
+        <div class="faq-a"><p>Fiscalization reports an invoice to the tax authority, which confirms it with a unique code printed on the invoice. E-invoicing sends the invoice itself to your customer as structured data instead of a PDF. They are separate obligations, and Paply is built to handle both.</p></div>
+      </details>
+      <details class="faq">
+        <summary>Is there a mobile app?</summary>
+        <div class="faq-a"><p>Paply for Android and iOS is coming soon. It works with the same account as the web app, so anything you set up today carries over.</p></div>
+      </details>
+    </div>
+    <p class="center reveal"><a class="link-arrow" href="/faq/"><span>More questions and answers</span><svg class="i" width="16" height="16"><use href="#i-arrow"/></svg></a></p>
+  </div>
+</section>
 
-      function scrollToTarget(target) {
-        var offset = (header ? header.offsetHeight : 0) + 20;
-        var top = target.getBoundingClientRect().top + window.pageYOffset - offset;
-        window.scrollTo({ top: top, behavior: 'smooth' });
-      }
+<section class="section">
+  <div class="wrap">
+    <div class="cta-band reveal">
+      <div class="cta-glow" aria-hidden="true"></div>
+      <h2 class="h2">Ready to make invoicing the easy part?</h2>
+      <p class="lead">Set up your company and draft your first invoice in minutes. The Free plan needs no credit card.</p>
+      <div class="cta-actions">
+        <a href="https://paply.app/register" class="btn btn-primary btn-lg">Start for free</a>
+        <a href="/pricing/" class="btn btn-ghost btn-lg">See pricing</a>
+      </div>
+    </div>
+  </div>
+</section>
 
-      document.querySelectorAll('a[href^="#"]').forEach(function (link) {
-        link.addEventListener('click', function (e) {
-          var hash = link.getAttribute('href');
-          if (!hash || hash === '#') return;
-          var target = document.querySelector(hash);
-          if (!target) return;
-          e.preventDefault();
-          scrollToTarget(target);
-          if (history.pushState) history.pushState(null, '', hash);
-        });
-      });
-    })();
 
-    // Mobile nav menu (hamburger toggle, animated open/close, icon morph).
-    (function () {
-      var btn = document.getElementById('mobile-menu-btn');
-      var menu = document.getElementById('mobile-menu');
-      var iconOpen = document.getElementById('menu-icon-open');
-      var iconClose = document.getElementById('menu-icon-close');
-      if (!btn || !menu) return;
-
-      function openMenu() {
-        menu.classList.add('open');
-        menu.style.maxHeight = menu.scrollHeight + 'px';
-        btn.setAttribute('aria-expanded', 'true');
-        iconOpen.classList.add('hidden');
-        iconClose.classList.remove('hidden');
-      }
-
-      function closeMenu() {
-        menu.classList.remove('open');
-        menu.style.maxHeight = '0px';
-        btn.setAttribute('aria-expanded', 'false');
-        iconOpen.classList.remove('hidden');
-        iconClose.classList.add('hidden');
-      }
-
-      btn.addEventListener('click', function () {
-        if (btn.getAttribute('aria-expanded') === 'true') closeMenu(); else openMenu();
-      });
-
-      menu.querySelectorAll('a').forEach(function (link) {
-        link.addEventListener('click', closeMenu);
-      });
-
-      window.addEventListener('resize', function () {
-        if (window.innerWidth >= 768) closeMenu();
-        else if (btn.getAttribute('aria-expanded') === 'true') menu.style.maxHeight = menu.scrollHeight + 'px';
-      });
-    })();
-  </script>
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <a href="/" class="brand" aria-label="Paply">
+        <img src="/assets/img/paply-logo.webp" width="59" height="32" alt="Paply logo" loading="lazy">
+      </a>
+      <p class="footer-tagline">Less paper. Less friction.</p>
+      <p class="footer-desc">E-invoicing and fiscalization software for businesses in Slovenia and Croatia, with Serbia on the roadmap.</p>
+      <a class="footer-mail" href="mailto:info@enzor.si"><svg class="i" width="16" height="16"><use href="#i-mail"/></svg>info@enzor.si</a>
+    </div>
+    <div class="footer-col">
+      <p class="footer-h">Product</p>
+      <a href="/features/">Features</a>
+      <a href="/pricing/">Pricing</a>
+      <a href="/mobile/">Mobile app</a>
+      <a href="/faq/">FAQ</a>
+      <a href="https://paply.app/login">Sign in</a>
+    </div>
+    <div class="footer-col">
+      <p class="footer-h">E-invoicing</p>
+      <a href="/e-invoicing/">E-invoicing guide</a>
+      <a href="/e-invoicing/slovenia/">E-invoicing in Slovenia</a>
+      <a href="/e-invoicing/croatia/">E-invoicing in Croatia</a>
+      <a href="/e-invoicing/#glossary">Glossary</a>
+    </div>
+    <div class="footer-col">
+      <p class="footer-h">Company</p>
+      <a href="https://enzor.si/" target="_blank" rel="noopener">ENZOR d.o.o.</a>
+      <a href="mailto:info@enzor.si">Contact us</a>
+      <a href="https://paply.app/terms">Terms of use</a>
+      <a href="https://paply.app/privacy">Privacy policy</a>
+      <a href="https://paply.app/dpa">Data processing agreement</a>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <p><span>© 2026 ENZOR d.o.o.</span> <span class="dot" aria-hidden="true">·</span> <span>Developed and maintained in Slovenia by ENZOR d.o.o.</span></p>
+    <nav class="footer-langs" aria-label="Language">
+      <a href="/" hreflang="en" lang="en" data-lang-choice="en">English</a>
+      <a href="/sl/" hreflang="sl" lang="sl" data-lang-choice="sl">Slovenščina</a>
+      <a href="/hr/" hreflang="hr" lang="hr" data-lang-choice="hr">Hrvatski</a>
+    </nav>
+  </div>
+</footer>
 
 </body>
 </html>

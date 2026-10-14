@@ -1,0 +1,32 @@
+# Paply
+
+> Paply is e-invoicing and fiscalization software for businesses in Slovenia and Croatia, made by ENZOR d.o.o. (Slovenia). Businesses create, send, receive, fiscalize and archive invoices in one web app (paply.app), with a mobile app for Android and iOS coming soon. Paply is in its testing phase and opening up step by step; exchange of structured e-invoices over the e-invoice network is coming soon, and until then invoices are sent by email with a PDF.
+
+Key facts:
+
+- Countries: Slovenia and Croatia today; Serbia on the roadmap. Interface in English, Slovenian, Croatian and Serbian.
+- Fiscalization: Slovenia via FURS (ZOI/EOR codes, business premises and devices, verification QR code, automatic resubmission); Croatia F1 fiscalization via the Tax Administration (ZKI/JIR, verification QR code).
+- E-invoice formats (exchange coming soon): eSLOG 2.0 (Slovenia), UBL 2.1 (Croatia), both EN 16931.
+- Plans (monthly, excl. VAT): Free €0 (unlimited drafts, templates, PDF, approvals; no fiscalization, no network exchange) · Start €12 (50 exchanged e-invoices/month, fiscalization, email delivery, payment reminders, archive) · Core €27 (200/month, AI invoice scanning, Stripe/Shopify/Odoo connectors, email inbox connector, REST API) · Pro €59 (500/month, 15 team members) · Enterprise custom (1,000+). €0.12 per extra exchanged e-invoice. Invoice creation is unlimited on every plan.
+- Other features: bank reconciliation (CAMT.053, MT940), SEPA pain.001 payment files, UPN QR and HUB3 payment codes, approval workflows, recurring invoices, credit notes, advance invoices, price lists, multi-currency, represented companies (€4.90/month each), two-factor login, data hosted in the EU (Frankfurt).
+- Retention: invoices are archived for 10 years (Slovenia) and 11 years (Croatia).
+- Sign up: https://paply.app/register · Contact: info@enzor.si
+
+## Pages
+
+- [Home](https://www.paply.si/): overview of Paply
+- [Features](https://www.paply.si/features/): full feature list by category, with plan availability
+- [Pricing](https://www.paply.si/pricing/): plans, comparison table, cost estimator, pricing FAQ
+- [Mobile app](https://www.paply.si/mobile/): the upcoming Android and iOS app
+- [FAQ](https://www.paply.si/faq/): availability, plans, compliance, security, mobile
+
+## Guides
+
+- [E-invoicing guide](https://www.paply.si/e-invoicing/): what an e-invoice is, e-invoicing vs fiscalization, formats, glossary
+- [E-invoicing in Croatia](https://www.paply.si/e-invoicing/croatia/): Fiscalization 2.0 from 1 January 2026, F1 and F2, 2027 changes
+- [E-invoicing in Slovenia](https://www.paply.si/e-invoicing/slovenia/): FURS fiscal verification and mandatory B2B e-invoices from 1 January 2028
+
+## Other languages
+
+- [Slovenščina](https://www.paply.si/sl/)
+- [Hrvatski](https://www.paply.si/hr/)

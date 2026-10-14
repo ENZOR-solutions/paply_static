@@ -1,0 +1,245 @@
+<!--page {
+  "path": "/pricing/",
+  "nav": "pricing",
+  "title": "Pricing: Free, Start €12, Core €27, Pro €59 | Paply",
+  "description": "Paply pricing: a free plan forever, then Start €12, Core €27 and Pro €59 a month. Unlimited invoices on every plan. Compare plans and estimate your cost.",
+  "schema": ["software", "faq"],
+  "crumbs": [{"key": "nav.pricing", "en": "Pricing", "path": "/pricing/"}],
+  "priority": 0.9
+} -->
+<section class="page-hero">
+  <div class="hero-bg" aria-hidden="true"><div class="hero-grid"></div><div class="orb orb-1"></div></div>
+  <div class="wrap page-hero-inner">
+    {{crumbs}}
+    <h1 class="h1 reveal" data-i18n="pricing.h1">Simple pricing that grows with your business</h1>
+    <p class="lead reveal" style="--d:1" data-i18n="pricing.lead">Create as many invoices as you need on every plan. Paid plans add fiscalization, delivery and a monthly allowance of e-invoices exchanged over the network.</p>
+  </div>
+</section>
+
+<section class="section" style="padding-top: 0">
+  <div class="wrap">
+    <div class="notice reveal">
+      <svg class="i" width="18" height="18"><use href="#i-clock"/></svg>
+      <p data-i18n="pricing.network_note">Sending and receiving through the e-invoice network is coming soon. Each plan's network allowance applies from launch; until then, invoices are sent by email with a PDF.</p>
+    </div>
+
+    <div class="plans">
+      <div class="plan is-free reveal">
+        <p class="plan-name">Free</p>
+        <p class="plan-tag" data-i18n="pricing.free_tag">For exploring Paply and preparing invoice drafts</p>
+        <p class="plan-price"><b>€0</b></p>
+        <p class="plan-allow"><span data-i18n="pricing.free_allow">Unlimited drafts</span><small data-i18n="pricing.free_allow_sub">No network exchange</small></p>
+        <a href="{{app}}/register" class="btn btn-ghost btn-block" data-i18n="common.get_started">Get started free</a>
+        <ul class="plan-feats">
+          <li class="yes" data-i18n="pricing.free_f1">1 team member</li>
+          <li class="yes" data-i18n="pricing.free_f2">Unlimited invoice drafts</li>
+          <li class="yes" data-i18n="pricing.free_f3">Invoice designer and templates</li>
+          <li class="yes" data-i18n="pricing.free_f4">Partner and item catalogue</li>
+          <li class="yes" data-i18n="pricing.free_f5">PDF preview and download</li>
+          <li class="yes" data-i18n="pricing.free_f6">Approval workflows</li>
+          <li class="no" data-i18n="pricing.free_x1">No e-invoice network exchange</li>
+          <li class="no" data-i18n="pricing.free_x2">No fiscalization</li>
+        </ul>
+      </div>
+
+      <div class="plan reveal" style="--d:1">
+        <p class="plan-name">Start</p>
+        <p class="plan-tag" data-i18n="pricing.start_tag">For small businesses that need compliant invoicing</p>
+        <p class="plan-price"><b>€12</b><span data-i18n="common.per_month">/mo</span></p>
+        <p class="plan-allow"><span data-i18n="pricing.start_allow">50 e-invoices exchanged a month</span><small data-i18n="pricing.extra">then €0.12 per e-invoice</small></p>
+        <a href="{{app}}/register" class="btn btn-ghost btn-block" data-i18n="pricing.choose_start">Choose Start</a>
+        <ul class="plan-feats">
+          <li class="yes" data-i18n="pricing.start_f1">2 team members</li>
+          <li class="yes" data-i18n="pricing.start_f2">Up to 5 read-only users</li>
+          <li class="inherit" data-i18n="pricing.start_inherit">Everything in Free, plus:</li>
+          <li class="yes" data-i18n="pricing.start_f3">Create and confirm unlimited invoices</li>
+          <li class="yes" data-i18n="pricing.start_f4">Fiscalization (FURS in Slovenia, Tax Administration in Croatia)</li>
+          <li class="yes" data-i18n="pricing.start_f5">Email delivery with PDF</li>
+          <li class="yes" data-i18n="pricing.start_f6">Payment reminders</li>
+          <li class="yes" data-i18n="pricing.start_f7">Statutory invoice archive</li>
+          <li class="yes" data-i18n="pricing.start_f8">Document management</li>
+          <li class="yes" data-i18n="pricing.start_f9">E-invoice network exchange (coming soon)</li>
+        </ul>
+      </div>
+
+      <div class="plan is-popular reveal" style="--d:2">
+        <span class="plan-flag" data-i18n="common.most_popular">Most popular</span>
+        <p class="plan-name">Core</p>
+        <p class="plan-tag" data-i18n="pricing.core_tag">For growing businesses that want automation and integrations</p>
+        <p class="plan-price"><b>€27</b><span data-i18n="common.per_month">/mo</span></p>
+        <p class="plan-allow"><span data-i18n="pricing.core_allow">200 e-invoices exchanged a month</span><small data-i18n="pricing.extra">then €0.12 per e-invoice</small></p>
+        <a href="{{app}}/register" class="btn btn-primary btn-block" data-i18n="pricing.choose_core">Choose Core</a>
+        <ul class="plan-feats">
+          <li class="yes" data-i18n="pricing.core_f1">5 team members</li>
+          <li class="yes" data-i18n="pricing.core_f2">Up to 20 read-only users</li>
+          <li class="inherit" data-i18n="pricing.core_inherit">Everything in Start, plus:</li>
+          <li class="yes" data-i18n="pricing.core_f3">AI invoice scanning</li>
+          <li class="yes" data-i18n="pricing.core_f4">Email inbox connector</li>
+          <li class="yes" data-i18n="pricing.core_f5">Stripe, Shopify and Odoo connectors</li>
+          <li class="yes" data-i18n="pricing.core_f6">Send from your own mailbox</li>
+          <li class="yes" data-i18n="pricing.core_f7">REST API access</li>
+          <li class="yes" data-i18n="pricing.core_f8">Priority support</li>
+        </ul>
+      </div>
+
+      <div class="plan reveal" style="--d:3">
+        <p class="plan-name">Pro</p>
+        <p class="plan-tag" data-i18n="pricing.pro_tag">For larger teams with higher invoice volumes</p>
+        <p class="plan-price"><b>€59</b><span data-i18n="common.per_month">/mo</span></p>
+        <p class="plan-allow"><span data-i18n="pricing.pro_allow">500 e-invoices exchanged a month</span><small data-i18n="pricing.extra">then €0.12 per e-invoice</small></p>
+        <a href="{{app}}/register" class="btn btn-ghost btn-block" data-i18n="pricing.choose_pro">Choose Pro</a>
+        <ul class="plan-feats">
+          <li class="yes" data-i18n="pricing.pro_f1">15 team members</li>
+          <li class="yes" data-i18n="pricing.pro_f2">Up to 50 read-only users</li>
+          <li class="inherit" data-i18n="pricing.pro_inherit">Everything in Core, plus:</li>
+          <li class="yes" data-i18n="pricing.pro_f3">Higher limits for larger finance teams</li>
+          <li class="yes" data-i18n="pricing.pro_f4">Best price per included e-invoice</li>
+        </ul>
+      </div>
+    </div>
+    <p class="center small muted mt-24 reveal" data-i18n="pricing.vat_note">Prices are monthly and exclude VAT. Cancel any time.</p>
+
+    <div class="extras">
+      <div class="extra reveal">
+        <span class="icon-box"><svg class="i" width="20" height="20"><use href="#i-building"/></svg></span>
+        <div><h3 class="h4" data-i18n="pricing.rep_title">More than one company?</h3><p data-i18n="pricing.rep_desc">Add represented companies to your workspace. Each one is fully separate (its own invoices, partners and fiscalization) but shares your subscription and login. €4.90 a month per company, not available on Free.</p></div>
+      </div>
+      <div class="extra reveal" style="--d:1">
+        <span class="icon-box"><svg class="i" width="20" height="20"><use href="#i-doc"/></svg></span>
+        <div><h3 class="h4" data-i18n="pricing.count_title">What counts as an exchanged e-invoice?</h3><p data-i18n="pricing.count_desc">An invoice sent or received through the e-invoice network counts as one. Drafts, PDF previews and downloads, and ordinary email delivery never count.</p></div>
+      </div>
+    </div>
+
+    <div class="enterprise reveal">
+      <div>
+        <p class="kicker" style="color:#F5B95C">Enterprise</p>
+        <h2 class="h3" data-i18n="pricing.ent_title">High volumes or special requirements?</h2>
+        <p class="mt-8" data-i18n="pricing.ent_desc">Custom pricing for organizations exchanging 1,000 or more e-invoices a month.</p>
+        <ul>
+          <li data-i18n="pricing.ent_f1">1,000+ e-invoices a month</li>
+          <li data-i18n="pricing.ent_f2">Unlimited team members and read-only users</li>
+          <li data-i18n="pricing.ent_f3">Service-level agreement</li>
+          <li data-i18n="pricing.ent_f4">Custom onboarding</li>
+          <li data-i18n="pricing.ent_f5">Everything in Pro</li>
+          <li data-i18n="pricing.ent_f6">Pricing and limits tailored to you</li>
+        </ul>
+      </div>
+      <a href="mailto:info@enzor.si?subject=Paply%20Enterprise" class="btn btn-primary btn-lg"><span data-i18n="pricing.contact_sales">Contact sales</span><svg class="i" width="18" height="18"><use href="#i-arrow"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="estimate">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="kicker" data-i18n="pricing.est_kicker">Cost estimator</p>
+      <h2 class="h2" data-i18n="pricing.est_title">Which plan fits you?</h2>
+      <p class="lead" data-i18n="pricing.est_sub">Move the slider to see the cheapest plan for your volume and team.</p>
+    </div>
+    <div class="estimator reveal" id="estimator">
+      <div class="est-inputs">
+        <div class="est-field">
+          <label for="est-invoices"><span data-i18n="pricing.est_q1">E-invoices sent and received per month</span><output id="est-invoices-out" for="est-invoices">120</output></label>
+          <input class="range" type="range" id="est-invoices" min="0" max="1500" step="10" value="120">
+        </div>
+        <div class="est-field">
+          <p class="est-label"><span data-i18n="pricing.est_q2">Team members who create or approve invoices</span></p>
+          <div class="stepper">
+            <button type="button" id="est-seats-minus" aria-label="Fewer team members" data-i18n-attr="aria-label:pricing.est_less"><svg class="i" width="18" height="18"><use href="#i-minus"/></svg></button>
+            <output id="est-seats-out" aria-live="polite">1</output>
+            <button type="button" id="est-seats-plus" aria-label="More team members" data-i18n-attr="aria-label:pricing.est_more"><svg class="i" width="18" height="18"><use href="#i-plus"/></svg></button>
+          </div>
+        </div>
+        <label class="check"><input type="checkbox" id="est-core"><span data-i18n="pricing.est_q3">I want AI scanning, integrations or the API</span></label>
+      </div>
+      <div class="est-result" aria-live="polite">
+        <p class="est-plan"><span data-i18n="pricing.est_rec">Recommended plan</span><b id="est-plan">Core</b></p>
+        <p class="est-cost" id="est-cost">€27.00</p>
+        <p class="est-break" id="est-break"></p>
+        <p class="est-note" id="est-note"></p>
+        <a href="{{app}}/register" class="btn btn-primary" data-i18n="common.start_free">Start for free</a>
+      </div>
+      <div hidden>
+        <span data-k="per_month" data-i18n="pricing.est_s_month">/ month excl. VAT</span>
+        <span data-k="break_incl" data-i18n="pricing.est_s_incl">{plan} includes {allow} e-invoices a month, so there's nothing extra to pay.</span>
+        <span data-k="break_extra" data-i18n="pricing.est_s_extra">{plan} {price} + {n} extra e-invoices × {extra}</span>
+        <span data-k="break_free" data-i18n="pricing.est_s_free">Draft invoices and download PDFs for free. Upgrade when you're ready to send.</span>
+        <span data-k="note" data-i18n="pricing.est_s_note">Network allowances apply once e-invoice exchange launches.</span>
+        <span data-k="custom" data-i18n="pricing.est_s_custom">Custom pricing</span>
+        <span data-k="ent_break" data-i18n="pricing.est_s_ent">At this volume or team size, Enterprise gets you the best price. Contact us for an offer.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="compare">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <h2 class="h2" data-i18n="pricing.cmp_title">Compare plans in detail</h2>
+    </div>
+    <div class="table-wrap reveal" tabindex="0" role="region" aria-label="Plan comparison" data-i18n-attr="aria-label:pricing.cmp_label">
+      <table class="compare">
+        <thead><tr><th scope="col"><span class="sr-only" data-i18n="pricing.cmp_feature">Feature</span></th><th scope="col">Free</th><th scope="col">Start</th><th scope="col" class="is-popular">Core</th><th scope="col">Pro</th></tr></thead>
+        <tbody>
+          <tr><th scope="row" data-i18n="pricing.cmp_price">Price per month</th><td class="t">€0</td><td class="t">€12</td><td class="t">€27</td><td class="t">€59</td></tr>
+          <tr><th scope="row" data-i18n="pricing.cmp_allow">E-invoices exchanged per month</th><td class="n"></td><td class="t">50</td><td class="t">200</td><td class="t">500</td></tr>
+          <tr><th scope="row" data-i18n="pricing.cmp_extra">Each extra e-invoice</th><td class="n"></td><td class="t">€0.12</td><td class="t">€0.12</td><td class="t">€0.12</td></tr>
+          <tr><th scope="row" data-i18n="pricing.cmp_seats">Team members</th><td class="t">1</td><td class="t">2</td><td class="t">5</td><td class="t">15</td></tr>
+          <tr><th scope="row" data-i18n="pricing.cmp_viewers">Read-only users</th><td class="n"></td><td class="t">5</td><td class="t">20</td><td class="t">50</td></tr>
+          <tr class="grp"><td colspan="5" data-i18n="features.c1">Invoicing</td></tr>
+          <tr><th scope="row" data-i18n="pricing.cmp_drafts">Unlimited drafts, templates and PDF</th><td class="y"></td><td class="y"></td><td class="y"></td><td class="y"></td></tr>
+          <tr><th scope="row" data-i18n="pricing.cmp_issue">Confirm and issue invoices</th><td class="n"></td><td class="y"></td><td class="y"></td><td class="y"></td></tr>
+          <tr><th scope="row" data-i18n="pricing.cmp_approvals">Approval workflows</th><td class="y"></td><td class="y"></td><td class="y"></td><td class="y"></td></tr>
+          <tr><th scope="row" data-i18n="pricing.cmp_fiscal">Fiscalization</th><td class="n"></td><td class="y"></td><td class="y"></td><td class="y"></td></tr>
+          <tr><th scope="row" data-i18n="pricing.cmp_email">Email delivery</th><td class="n"></td><td class="y"></td><td class="y"></td><td class="y"></td></tr>
+          <tr><th scope="row" data-i18n="pricing.cmp_reminders">Payment reminders</th><td class="n"></td><td class="y"></td><td class="y"></td><td class="y"></td></tr>
+          <tr><th scope="row" data-i18n="pricing.cmp_archive">Statutory archive and document management</th><td class="n"></td><td class="y"></td><td class="y"></td><td class="y"></td></tr>
+          <tr><th scope="row" data-i18n="pricing.cmp_represented">Represented companies (€4.90 each)</th><td class="n"></td><td class="y"></td><td class="y"></td><td class="y"></td></tr>
+          <tr class="grp"><td colspan="5" data-i18n="pricing.cmp_auto">Automation</td></tr>
+          <tr><th scope="row" data-i18n="pricing.cmp_ai">AI invoice scanning</th><td class="n"></td><td class="n"></td><td class="y"></td><td class="y"></td></tr>
+          <tr><th scope="row" data-i18n="pricing.cmp_inbox">Email inbox connector</th><td class="n"></td><td class="n"></td><td class="y"></td><td class="y"></td></tr>
+          <tr><th scope="row" data-i18n="pricing.cmp_connectors">Stripe, Shopify and Odoo connectors</th><td class="n"></td><td class="n"></td><td class="y"></td><td class="y"></td></tr>
+          <tr><th scope="row" data-i18n="pricing.cmp_mailbox">Send from your own mailbox</th><td class="n"></td><td class="n"></td><td class="y"></td><td class="y"></td></tr>
+          <tr><th scope="row" data-i18n="pricing.cmp_api">REST API</th><td class="n"></td><td class="n"></td><td class="y"></td><td class="y"></td></tr>
+          <tr class="grp"><td colspan="5" data-i18n="pricing.cmp_support">Support</td></tr>
+          <tr><th scope="row" data-i18n="pricing.cmp_tickets">Support tickets in the app</th><td class="n"></td><td class="y"></td><td class="y"></td><td class="y"></td></tr>
+          <tr><th scope="row" data-i18n="pricing.cmp_priority">Priority support</th><td class="n"></td><td class="n"></td><td class="y"></td><td class="y"></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="faq">
+  <div class="wrap narrow">
+    <div class="section-head reveal"><h2 class="h2" data-i18n="pricing.faq_title">Pricing questions</h2></div>
+    <div class="faq-list reveal">
+      <details class="faq">
+        <summary data-i18n="faq.q_over">What happens if I go over my monthly allowance?</summary>
+        <div class="faq-a"><p data-i18n="faq.a_over">Nothing stops working. Each e-invoice above your plan's allowance costs €0.12 and is added to your next bill. If you regularly go over, a bigger plan is usually cheaper.</p></div>
+      </details>
+      <details class="faq">
+        <summary data-i18n="faq.q_email_count">Do invoices sent by email count towards the allowance?</summary>
+        <div class="faq-a"><p data-i18n="faq.a_email_count">No. Only e-invoices sent or received through the exchange network count. Email delivery, drafts and PDF downloads are unlimited on every paid plan.</p></div>
+      </details>
+      <details class="faq">
+        <summary data-i18n="faq.q_cancel">Can I cancel or change plans at any time?</summary>
+        <div class="faq-a"><p data-i18n="faq.a_cancel">Yes. All paid plans are month to month with no lock-in. You can upgrade, downgrade or cancel from Billing in the app.</p></div>
+      </details>
+      <details class="faq">
+        <summary data-i18n="faq.q_card">Do I need a credit card for the Free plan?</summary>
+        <div class="faq-a"><p data-i18n="faq.a_card">No. The Free plan is free forever and lets you draft unlimited invoices, design templates and download PDFs. You only add payment details when you choose a paid plan.</p></div>
+      </details>
+      <details class="faq">
+        <summary data-i18n="faq.q_vat">Are prices shown with or without VAT?</summary>
+        <div class="faq-a"><p data-i18n="faq.a_vat">All prices exclude VAT, which is added on your invoice where it applies.</p></div>
+      </details>
+      <details class="faq">
+        <summary data-i18n="faq.q_pay_methods">How do I pay for Paply?</summary>
+        <div class="faq-a"><p data-i18n="faq.a_pay_methods">By card, through Stripe, in the Paply web app. Plans can't be bought inside the mobile app; your subscription from the web works there automatically.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- @include cta -->

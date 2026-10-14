@@ -1,0 +1,126 @@
+<!--page {
+  "path": "/e-invoicing/",
+  "nav": "guide",
+  "title": "What is e-invoicing? Guide for Slovenia & Croatia | Paply",
+  "description": "A plain-language guide to e-invoicing and fiscalization in Slovenia and Croatia: what an e-invoice is, eSLOG 2.0, UBL, EN 16931, deadlines and a glossary.",
+  "schema": ["faq"],
+  "crumbs": [{"key": "nav.guide", "en": "E-invoicing guide", "path": "/e-invoicing/"}],
+  "priority": 0.8
+} -->
+<section class="page-hero">
+  <div class="hero-bg" aria-hidden="true"><div class="hero-grid"></div><div class="orb orb-1"></div></div>
+  <div class="wrap page-hero-inner">
+    {{crumbs}}
+    <h1 class="h1 reveal" data-i18n="guide.h1">E-invoicing, explained</h1>
+    <p class="lead reveal" style="--d:1" data-i18n="guide.lead">What an e-invoice actually is, how it differs from fiscalization, and what changes for businesses in Slovenia and Croatia. No jargon, we promise (well, there's a glossary).</p>
+  </div>
+</section>
+
+<section class="section" style="padding-top: 8px">
+  <div class="wrap guide">
+    <nav class="toc" data-spy aria-label="On this page" data-i18n-attr="aria-label:guide.toc">
+      <p data-i18n="guide.toc">On this page</p>
+      <a href="#what" data-i18n="guide.t1">What is an e-invoice?</a>
+      <a href="#vs" data-i18n="guide.t2">E-invoicing vs fiscalization</a>
+      <a href="#formats" data-i18n="guide.t3">Formats and standards</a>
+      <a href="#countries" data-i18n="guide.t4">Country guides</a>
+      <a href="#paply" data-i18n="guide.t5">How Paply helps</a>
+      <a href="#glossary" data-i18n="guide.t6">Glossary</a>
+      <a href="#faq" data-i18n="guide.t7">FAQ</a>
+    </nav>
+
+    <article class="prose">
+      <h2 id="what" data-i18n="guide.t1">What is an e-invoice?</h2>
+      <p data-i18n="guide.what_p1">An e-invoice is an invoice issued, sent and received as <strong>structured data</strong>, usually an XML file, that the recipient's software can read on its own. A PDF sent by email is an electronic invoice in the everyday sense, but it is not an e-invoice: a person still has to read it and type it into their accounting system.</p>
+      <p data-i18n="guide.what_p2">Because every field (seller, buyer, VAT number, lines, VAT rates, totals, payment details) sits in a defined place, an e-invoice can be checked, booked, approved and paid automatically. That is why governments across the EU are making them mandatory between businesses.</p>
+      <div class="compare-two">
+        <div><h3><svg class="i" width="20" height="20"><use href="#i-doc"/></svg><span data-i18n="guide.pdf_t">PDF by email</span></h3><p data-i18n="guide.pdf_d">Easy to send, but the recipient retypes it. Fine where it's still allowed, and Paply sends these today.</p></div>
+        <div><h3><svg class="i" width="20" height="20"><use href="#i-code"/></svg><span data-i18n="guide.xml_t">Structured e-invoice</span></h3><p data-i18n="guide.xml_d">Machine-readable XML, delivered through an exchange network straight into the recipient's system.</p></div>
+      </div>
+
+      <h2 id="vs" data-i18n="guide.t2">E-invoicing vs fiscalization</h2>
+      <p data-i18n="guide.vs_p1">The two are often confused, but they are separate obligations with different purposes:</p>
+      <ul>
+        <li data-i18n="guide.vs_l1"><strong>Fiscalization</strong> reports an invoice to the tax authority at the moment it is issued. The authority confirms it with a unique code that must appear on the invoice. In Slovenia this is FURS with the ZOI and EOR codes; in Croatia, the Tax Administration with ZKI and JIR.</li>
+        <li data-i18n="guide.vs_l2"><strong>E-invoicing</strong> is about how the invoice itself travels from seller to buyer: as structured data over an exchange network rather than on paper or as a PDF.</li>
+      </ul>
+      <p data-i18n="guide.vs_p2">One invoice can be subject to both. A good invoicing tool handles them in the same flow, so you never have to think about which rule applies.</p>
+
+      <h2 id="formats" data-i18n="guide.t3">Formats and standards</h2>
+      <p data-i18n="guide.formats_p1">The EU defined a common semantic model for e-invoices, <strong>EN 16931</strong>, so that invoices from different countries carry the same information. Each country then uses one or more technical formats built on it:</p>
+      <ul>
+        <li data-i18n="guide.formats_l1"><strong>eSLOG 2.0</strong>, the Slovenian national XML format, compliant with EN 16931.</li>
+        <li data-i18n="guide.formats_l2"><strong>UBL 2.1</strong>, an international XML format used for Croatian e-invoices.</li>
+      </ul>
+      <p data-i18n="guide.formats_p2">You don't need to know any of this to use Paply: you fill in an ordinary invoice form and Paply produces the right format for the country.</p>
+
+      <h2 id="countries" data-i18n="guide.t4">Country guides</h2>
+      <div class="guide-cards">
+        <a class="guide-card" href="/e-invoicing/croatia/">
+          <h3><span class="flag flag-hr flag-lg" aria-hidden="true"></span><span data-i18n="guide.hr_t">E-invoicing in Croatia</span></h3>
+          <p data-i18n="guide.hr_d">Fiscalization 2.0 from 1 January 2026: e-invoices between businesses, fiscalization of all payment methods and what changes in 2027.</p>
+          <span class="link-arrow"><span data-i18n="home.c_more">Read the guide</span><svg class="i" width="16" height="16"><use href="#i-arrow"/></svg></span>
+        </a>
+        <a class="guide-card" href="/e-invoicing/slovenia/">
+          <h3><span class="flag flag-si flag-lg" aria-hidden="true"></span><span data-i18n="guide.si_t">E-invoicing in Slovenia</span></h3>
+          <p data-i18n="guide.si_d">FURS fiscal verification today and mandatory e-invoices between businesses from 1 January 2028.</p>
+          <span class="link-arrow"><span data-i18n="home.c_more">Read the guide</span><svg class="i" width="16" height="16"><use href="#i-arrow"/></svg></span>
+        </a>
+      </div>
+      <p data-i18n="guide.rs_p">Serbia has its own national e-invoicing system with different rules from both. Support for Serbia is on Paply's roadmap for a later phase.</p>
+
+      <h2 id="paply" data-i18n="guide.t5">How Paply helps</h2>
+      <div class="paply-box">
+        <ul class="status-list">
+          <li><span class="pill st-paid" data-i18n="guide.st_live">Available</span><span data-i18n="guide.p_l1">Fiscalization with FURS (Slovenia) and the Tax Administration (Croatia), with the verification QR code on the invoice</span></li>
+          <li><span class="pill st-paid" data-i18n="guide.st_live">Available</span><span data-i18n="guide.p_l2">Invoices by email with a PDF, from Paply or your own mailbox</span></li>
+          <li><span class="pill st-paid" data-i18n="guide.st_live">Available</span><span data-i18n="guide.p_l3">UPN QR payment codes, bank reconciliation and a statutory archive</span></li>
+          <li><span class="pill st-fiscal" data-i18n="common.coming_soon">Coming soon</span><span data-i18n="guide.p_l4">Sending and receiving structured e-invoices (eSLOG 2.0, UBL 2.1) over the exchange network</span></li>
+          <li><span class="pill st-draft" data-i18n="guide.st_road">Roadmap</span><span data-i18n="guide.p_l5">Serbian e-invoicing</span></li>
+        </ul>
+      </div>
+
+      <h2 id="glossary" data-i18n="guide.t6">Glossary</h2>
+      <dl class="glossary">
+        <div><dt>EN 16931</dt><dd data-i18n="guide.g_en16931">The European standard that defines what information an e-invoice must contain, so invoices can be read across borders.</dd></div>
+        <div><dt>eSLOG 2.0</dt><dd data-i18n="guide.g_eslog">The Slovenian XML e-invoice format, aligned with EN 16931.</dd></div>
+        <div><dt>UBL 2.1</dt><dd data-i18n="guide.g_ubl">Universal Business Language, an international XML format for business documents, used for Croatian e-invoices.</dd></div>
+        <div><dt>FURS</dt><dd data-i18n="guide.g_furs">The Financial Administration of the Republic of Slovenia, which verifies invoices paid in cash or by card.</dd></div>
+        <div><dt>ZOI</dt><dd data-i18n="guide.g_zoi">Protective mark of the issuer (zaščitna oznaka izdajatelja), a code calculated when a Slovenian invoice is issued.</dd></div>
+        <div><dt>EOR</dt><dd data-i18n="guide.g_eor">Unique invoice identifier (enkratna identifikacijska oznaka računa) returned by FURS once it confirms the invoice.</dd></div>
+        <div><dt data-i18n="guide.g_tax_t">Porezna uprava</dt><dd data-i18n="guide.g_tax">The Croatian Tax Administration, which fiscalizes Croatian invoices.</dd></div>
+        <div><dt>ZKI</dt><dd data-i18n="guide.g_zki">Protective code of the issuer (zaštitni kod izdavatelja) calculated for every fiscalized Croatian invoice.</dd></div>
+        <div><dt>JIR</dt><dd data-i18n="guide.g_jir">Unique invoice identifier (jedinstveni identifikator računa) returned by the Croatian Tax Administration.</dd></div>
+        <div><dt>OIB</dt><dd data-i18n="guide.g_oib">The Croatian personal identification number used for both people and companies.</dd></div>
+        <div><dt>KPD</dt><dd data-i18n="guide.g_kpd">The Croatian classification of products and services, used to classify items on e-invoices.</dd></div>
+        <div><dt>UPN QR</dt><dd data-i18n="guide.g_upn">The Slovenian payment QR code. Scanning it in a banking app fills in the amount, IBAN and reference.</dd></div>
+        <div><dt>HUB3</dt><dd data-i18n="guide.g_hub3">The Croatian payment slip standard, printed as a 2D barcode that banking apps can scan.</dd></div>
+        <div><dt>CAMT.053 / MT940</dt><dd data-i18n="guide.g_camt">Bank statement file formats. Import one into Paply and payments are matched to invoices.</dd></div>
+        <div><dt>pain.001</dt><dd data-i18n="guide.g_pain">The SEPA payment order file format. Paply creates one to pay several supplier bills at once in your online bank.</dd></div>
+      </dl>
+
+      <h2 id="faq" data-i18n="guide.t7">FAQ</h2>
+      <div class="faq-list">
+        <details class="faq">
+          <summary data-i18n="faq.q_pdf">Is a PDF sent by email an e-invoice?</summary>
+          <div class="faq-a"><p data-i18n="faq.a_pdf">Not in the legal sense. An e-invoice is structured data, such as eSLOG or UBL XML, that software can process without a person retyping it. A PDF can still be used wherever the law doesn't require a structured e-invoice.</p></div>
+        </details>
+        <details class="faq">
+          <summary data-i18n="faq.q_diff">What is the difference between e-invoicing and fiscalization?</summary>
+          <div class="faq-a"><p data-i18n="faq.a_diff">Fiscalization reports an invoice to the tax authority, which confirms it with a unique code printed on the invoice. E-invoicing sends the invoice itself to your customer as structured data instead of a PDF. They are separate obligations, and Paply is built to handle both.</p></div>
+        </details>
+        <details class="faq">
+          <summary data-i18n="faq.q_need_tech">Do I need technical knowledge to send e-invoices?</summary>
+          <div class="faq-a"><p data-i18n="faq.a_need_tech">No. In Paply you fill in a normal invoice form. Paply produces the right format for the country and keeps the archive for you, and once network exchange launches, it delivers the e-invoice for you too.</p></div>
+        </details>
+      </div>
+
+      <div class="callout callout-muted">
+        <svg class="i" width="20" height="20"><use href="#i-shield"/></svg>
+        <p data-i18n="guide.disclaimer">This guide is general information, not legal or tax advice. Rules and deadlines can change, so check your obligations with your accountant or the tax authority.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- @include cta -->

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="{{lang}}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{title}}</title>
+<meta name="description" content="{{description}}">
+<link rel="canonical" href="{{canonical}}">
+{{alternates}}
+<meta name="robots" content="{{robots}}">
+<meta name="theme-color" content="#F8F7F5">
+<meta name="format-detection" content="telephone=no">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/assets/img/paply-mark.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="{{v:css/site.css}}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Paply">
+<meta property="og:title" content="{{title}}">
+<meta property="og:description" content="{{description}}">
+<meta property="og:url" content="{{canonical}}">
+<meta property="og:image" content="{{og_image}}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="{{og_locale}}">
+{{og_locale_alts}}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{title}}">
+<meta name="twitter:description" content="{{description}}">
+<meta name="twitter:image" content="{{og_image}}">
+<script type="application/ld+json">{{jsonld}}</script>
+<script src="{{v:js/site.js}}" defer></script>
+</head>
+<body data-page="{{page_id}}" data-lang="{{lang}}">
+<a class="skip-link" href="#main" data-i18n="common.skip">Skip to content</a>
+<!-- @include icons -->
+<!-- @include header -->
+<main id="main">
+{{content}}
+</main>
+<!-- @include footer -->
+</body>
+</html>
