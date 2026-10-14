@@ -19,20 +19,16 @@
   "common.start_free": "Začni brezplačno",
   "common.start_plus": "Start in višji",
   "common.vat_note": "Cene ne vključujejo DDV.",
-
   "crumb.croatia": "Hrvaška",
   "crumb.home": "Domov",
   "crumb.slovenia": "Slovenija",
-
   "cta.desc": "Nastavite podjetje in pripravite prvi račun v nekaj minutah. Za brezplačni paket ne potrebujete kartice.",
   "cta.title": "Naj bo izdajanje računov najlažji del dneva.",
-
   "nav.faq": "Vprašanja",
   "nav.features": "Funkcije",
   "nav.guide": "Vodnik po e-računih",
   "nav.mobile": "Mobilna aplikacija",
   "nav.pricing": "Cenik",
-
   "footer.company": "Podjetje",
   "footer.contact": "Kontakt",
   "footer.credit": "Razvija in vzdržuje ENZOR d.o.o. v Sloveniji.",
@@ -46,7 +42,6 @@
   "footer.slovenia": "E-računi v Sloveniji",
   "footer.tagline": "Manj papirja. Manj zapletov.",
   "footer.terms": "Pogoji uporabe",
-
   "home.meta.title": "Paply | E-računi in fiskalizacija za Slovenijo in Hrvaško",
   "home.meta.description": "Ustvarjajte, pošiljajte, prejemajte, fiskalizirajte in arhivirajte račune na enem mestu. Brezplačni paket, brez kreditne kartice.",
   "home.badge": "Kmalu v Sloveniji, na Hrvaškem in v Srbiji",
@@ -57,7 +52,6 @@
   "home.point1": "Brezplačni paket za vedno",
   "home.point2": "Brez kreditne kartice",
   "home.point3": "Fiskalizacija FURS in Porezna",
-  "home.logos_title": "Deluje z vašimi orodji in govori vse standarde",
   "home.show_kicker": "Celotna pot računa",
   "home.show_title": "En prostor za vse račune, izdane in prejete",
   "home.show_sub": "Od prvega osnutka do plačanega, fiskaliziranega in arhiviranega računa. Brez preglednic in ločenih orodij.",
@@ -174,7 +168,6 @@
   "home.p_compare": "Primerjajte pakete in izračunajte strošek",
   "home.faq_title": "Vprašanja in odgovori",
   "home.faq_more": "Več vprašanj in odgovorov",
-
   "mock.archive": "Arhiv",
   "mock.dashboard": "Nadzorna plošča",
   "mock.inbox": "Prejeti",
@@ -193,7 +186,6 @@
   "mock.t_paid": "Plačilo prejeto",
   "mock.t_paid_sub": "Povezano iz bančnega izpiska",
   "mock.t_sent": "Poslano stranki po e-pošti",
-
   "faq.q_available": "Ali Paply že lahko uporabljam?",
   "faq.a_available": "Da. Paply je v fazi testiranja in se odpira postopoma, nekatera podjetja pa ga že uporabljajo vsak dan. Račun lahko ustvarite danes in začnete z brezplačnim paketom. Pošiljanje in prejemanje prek omrežja za izmenjavo e-računov prihaja kmalu, do takrat računi odhajajo po e-pošti s PDF-jem.",
   "faq.q_countries": "Katere države Paply podpira?",
@@ -240,7 +232,6 @@
   "faq.a_delete": "Da, kadar koli v nastavitvah računa. Računi, ki jih je treba po zakonu hraniti, ostanejo v arhivu do konca obdobja hrambe.",
   "faq.q_mobile_buy": "Ali lahko paket kupim v mobilni aplikaciji?",
   "faq.a_mobile_buy": "Ne. Pakete upravljate na spletu na paply.app, vaša naročnina pa v aplikaciji deluje samodejno.",
-
   "faqp.h1": "Pogosta vprašanja",
   "faqp.lead": "Ne najdete odgovora? Pišite nam na <a href=\"mailto:info@enzor.si\" style=\"color:var(--accent-deep)\">info@enzor.si</a> in odgovoril vam bo pravi človek.",
   "faqp.jump_label": "Teme vprašanj",
@@ -252,7 +243,6 @@
   "faqp.guide_link": "Preberite naš vodnik po e-računih",
   "faq.meta.title": "Pogosta vprašanja | Paply",
   "faq.meta.description": "Odgovori o Paplyju: razpoložljivost, države, paketi in cene, e-računi in fiskalizacija, varnost podatkov in prihajajoča mobilna aplikacija.",
-
   "features.meta.title": "Funkcije: e-računi, fiskalizacija in AI branje | Paply",
   "features.meta.description": "Vse funkcije Paplyja: oblikovalnik računov, fiskalizacija FURS in na Hrvaškem, AI branje računov, likvidacija, bančno usklajevanje, opomini in REST API.",
   "features.h1": "Vse, kar potrebujete za račune, plačila in skladnost",
@@ -369,7 +359,6 @@
   "features.f_mailconn_d": "Predal povežete enkrat in vsak račun odide z vašega naslova.",
   "features.f_bankfiles": "Bančni formati datotek",
   "features.f_bankfiles_d": "Izpiski CAMT.053 in MT940 noter, plačilne datoteke SEPA pain.001 ven. Deluje z vsako banko, ki jih podpira.",
-
   "pricing.meta.title": "Cenik: Free, Start 12 €, Core 27 €, Pro 59 € | Paply",
   "pricing.meta.description": "Cenik Paply: brezplačni paket za vedno, nato Start 12 €, Core 27 € in Pro 59 € na mesec. Neomejeno računov v vsakem paketu. Primerjajte pakete.",
   "pricing.h1": "Preprost cenik, ki raste z vašim podjetjem",
@@ -476,7 +465,6 @@
   "pricing.cmp_tickets": "Zahtevki za podporo v aplikaciji",
   "pricing.cmp_priority": "Prednostna podpora",
   "pricing.faq_title": "Vprašanja o cenah",
-
   "mobile.meta.title": "Mobilna aplikacija Paply za Android in iOS (kmalu) | Paply",
   "mobile.meta.description": "Aplikacija Paply kmalu za Android in iOS: ustvarjajte in potrjujte račune, z AI skenirajte prejete račune, sprejemajte plačila s Tap to Pay.",
   "mobile.badge": "Kmalu za Android in iOS",
@@ -527,7 +515,6 @@
   "mobile.f9": "Štirje jeziki",
   "mobile.f9_d": "Angleščina, slovenščina, hrvaščina in srbščina, v svetlem ali temnem načinu.",
   "mobile.web_note": "Aplikacija deluje skupaj s spletno aplikacijo Paply na paply.app, kjer oblikujete predloge računov, uvažate bančne izpiske, povezujete integracije in upravljate paket.",
-
   "e-invoicing.meta.title": "Kaj so e-računi? Vodnik za Slovenijo in Hrvaško | Paply",
   "e-invoicing.meta.description": "Razumljiv vodnik po e-računih in fiskalizaciji v Sloveniji in na Hrvaškem: kaj je e-račun, eSLOG 2.0, UBL, EN 16931, roki in slovarček.",
   "guide.h1": "E-računi, razloženi",
@@ -583,7 +570,6 @@
   "guide.g_camt": "Formata datotek bančnih izpiskov. Uvozite enega v Paply in plačila se povežejo z računi.",
   "guide.g_pain": "Format datoteke plačilnih nalogov SEPA. Paply ga pripravi, da v spletni banki naenkrat plačate več prejetih računov.",
   "guide.disclaimer": "Ta vodnik je splošna informacija, ne pravni ali davčni nasvet. Pravila in roki se lahko spremenijo, zato svoje obveznosti preverite pri računovodji ali davčnem organu.",
-
   "croatia.meta.title": "E-računi in Fiskalizacija 2.0 na Hrvaškem | Paply",
   "croatia.meta.description": "Fiskalizacija 2.0 na Hrvaškem: e-računi B2B od 1. januarja 2026, fiskalizacija F1 vseh načinov plačila, spremembe v letu 2027 in kako pomaga Paply.",
   "hr.badge": "Fiskalizacija 2.0",
@@ -621,7 +607,6 @@
   "hr.a3": "V letu 2026 morate e-račune znati prejemati. Od 1. januarja 2027 jih za domače poslovne transakcije tudi izdajate.",
   "hr.q4": "Ali je Paply na voljo v hrvaščini?",
   "hr.a4": "Da. Aplikacija, računi in e-pošta vašim strankam so v celoti na voljo v hrvaščini.",
-
   "slovenia.meta.title": "E-računi in davčno potrjevanje v Sloveniji | Paply",
   "slovenia.meta.description": "E-računi v Sloveniji: davčno potrjevanje pri FURS danes, obvezni e-računi B2B (eSLOG 2.0) od 1. januarja 2028 in kako vas Paply pripravi.",
   "si.badge": "E-računi od 2028",
@@ -657,5 +642,8 @@
   "si.q3": "Ali lahko Paply registrira moje poslovne prostore pri FURS?",
   "si.a3": "Da. Prostore in naprave dodate v nastavitvah Paplyja, naložite davčno potrdilo FURS, Paply pa jih registrira in od takrat fiskalizira vaše račune.",
   "si.q4": "Ali je Paply na voljo v slovenščini?",
-  "si.a4": "Da. Paply nastaja v Sloveniji, aplikacija, računi in e-pošta strankam pa so v celoti na voljo v slovenščini."
+  "si.a4": "Da. Paply nastaja v Sloveniji, aplikacija, računi in e-pošta strankam pa so v celoti na voljo v slovenščini.",
+  "home.logos_label": "Integracije in standardi",
+  "home.logos_int": "Povezuje se z",
+  "home.logos_std": "Podpira"
 }

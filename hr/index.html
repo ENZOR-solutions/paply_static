@@ -18,7 +18,7 @@
 <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/css/site.css?v=0ca2598fc6">
+<link rel="stylesheet" href="/assets/css/site.css?v=2e99dbc085">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Paply">
 <meta property="og:title" content="Paply | E-računi i fiskalizacija za Hrvatsku i Sloveniju">
@@ -92,7 +92,7 @@
 <header class="site-header" id="site-header">
   <div class="wrap header-inner">
     <a href="/hr/" class="brand" aria-label="Paply, početna stranica">
-      <img src="/assets/img/paply-logo.webp" width="59" height="32" alt="Logotip Paply">
+      <img src="/assets/img/paply-wordmark.webp" width="59" height="32" alt="Logotip Paply">
     </a>
     <nav class="nav-desktop" aria-label="Main">
       <a href="/hr/features/" data-nav="features">Značajke</a>
@@ -146,7 +146,7 @@
   <div class="hero-bg" aria-hidden="true"><div class="hero-grid"></div><div class="orb orb-1"></div><div class="orb orb-2"></div></div>
   <div class="wrap hero-inner">
     <div class="hero-copy">
-      <p class="eyebrow reveal"><span class="pulse-dot" aria-hidden="true"></span><span>Uskoro u Hrvatskoj, Sloveniji i Srbiji</span></p>
+      <p class="eyebrow reveal"><span class="eyebrow-flags" aria-hidden="true"><span class="flag flag-si"></span><span class="flag flag-hr"></span><span class="flag flag-rs"></span></span><span>Uskoro u Hrvatskoj, Sloveniji i Srbiji</span></p>
       <h1 class="display reveal" style="--d:1"><span>E-računi,</span> <span class="accent-text">bez komplikacija.</span></h1>
       <p class="lead reveal" style="--d:2">Izrađujte, šaljite, primajte, fiskalizirajte i arhivirajte račune na jednom mjestu. Paply brine o formatima, poreznim tijelima i papirologiji, a vi se posvetite svom poslu.</p>
       <div class="hero-ctas reveal" style="--d:3">
@@ -205,38 +205,17 @@
   </div>
 </section>
 
-<section class="logos" aria-labelledby="logos-title">
+<section class="logos" aria-label="Integracije i standardi">
   <div class="wrap">
-    <p class="logos-title" id="logos-title">Radi s vašim alatima i govori sve standarde</p>
-  </div>
-  <div class="marquee">
-    <div class="marquee-track">
-      <span class="logo-chip"><svg class="i" width="16" height="16"><use href="#i-card"/></svg>Stripe</span>
-      <span class="logo-chip"><svg class="i" width="16" height="16"><use href="#i-store"/></svg>Shopify</span>
-      <span class="logo-chip"><svg class="i" width="16" height="16"><use href="#i-layers"/></svg>Odoo</span>
-      <span class="logo-chip"><svg class="i" width="16" height="16"><use href="#i-mail"/></svg>Gmail</span>
-      <span class="logo-chip"><svg class="i" width="16" height="16"><use href="#i-mail"/></svg>Microsoft 365</span>
-      <span class="logo-chip"><svg class="i" width="16" height="16"><use href="#i-code"/></svg>REST API</span>
-      <span class="logo-chip"><svg class="i" width="16" height="16"><use href="#i-doc"/></svg>EN 16931</span>
-      <span class="logo-chip"><svg class="i" width="16" height="16"><use href="#i-doc"/></svg>eSLOG 2.0</span>
-      <span class="logo-chip"><svg class="i" width="16" height="16"><use href="#i-doc"/></svg>UBL 2.1</span>
-      <span class="logo-chip"><svg class="i" width="16" height="16"><use href="#i-bank"/></svg>CAMT.053</span>
-      <span class="logo-chip"><svg class="i" width="16" height="16"><use href="#i-bank"/></svg>MT940</span>
-      <span class="logo-chip"><svg class="i" width="16" height="16"><use href="#i-euro"/></svg>SEPA pain.001</span>
-      <span class="logo-chip"><svg class="i" width="16" height="16"><use href="#i-qr"/></svg>UPN QR</span>
-      <span class="logo-chip" aria-hidden="true"><svg class="i" width="16" height="16"><use href="#i-card"/></svg>Stripe</span>
-      <span class="logo-chip" aria-hidden="true"><svg class="i" width="16" height="16"><use href="#i-store"/></svg>Shopify</span>
-      <span class="logo-chip" aria-hidden="true"><svg class="i" width="16" height="16"><use href="#i-layers"/></svg>Odoo</span>
-      <span class="logo-chip" aria-hidden="true"><svg class="i" width="16" height="16"><use href="#i-mail"/></svg>Gmail</span>
-      <span class="logo-chip" aria-hidden="true"><svg class="i" width="16" height="16"><use href="#i-mail"/></svg>Microsoft 365</span>
-      <span class="logo-chip" aria-hidden="true"><svg class="i" width="16" height="16"><use href="#i-code"/></svg>REST API</span>
-      <span class="logo-chip" aria-hidden="true"><svg class="i" width="16" height="16"><use href="#i-doc"/></svg>EN 16931</span>
-      <span class="logo-chip" aria-hidden="true"><svg class="i" width="16" height="16"><use href="#i-doc"/></svg>eSLOG 2.0</span>
-      <span class="logo-chip" aria-hidden="true"><svg class="i" width="16" height="16"><use href="#i-doc"/></svg>UBL 2.1</span>
-      <span class="logo-chip" aria-hidden="true"><svg class="i" width="16" height="16"><use href="#i-bank"/></svg>CAMT.053</span>
-      <span class="logo-chip" aria-hidden="true"><svg class="i" width="16" height="16"><use href="#i-bank"/></svg>MT940</span>
-      <span class="logo-chip" aria-hidden="true"><svg class="i" width="16" height="16"><use href="#i-euro"/></svg>SEPA pain.001</span>
-      <span class="logo-chip" aria-hidden="true"><svg class="i" width="16" height="16"><use href="#i-qr"/></svg>UPN QR</span>
+    <div class="logos-panel reveal">
+      <div class="logos-row">
+        <p class="logos-label"><svg class="i" width="16" height="16" aria-hidden="true"><use href="#i-plug"/></svg><span>Povezuje se s</span></p>
+        <div class="ticker"><ul class="ticker-track"><li>Stripe</li><li>Shopify</li><li>Odoo</li><li>Gmail</li><li>Microsoft 365</li><li>REST API</li><li aria-hidden="true">Stripe</li><li aria-hidden="true">Shopify</li><li aria-hidden="true">Odoo</li><li aria-hidden="true">Gmail</li><li aria-hidden="true">Microsoft 365</li><li aria-hidden="true">REST API</li><li aria-hidden="true">Stripe</li><li aria-hidden="true">Shopify</li><li aria-hidden="true">Odoo</li><li aria-hidden="true">Gmail</li><li aria-hidden="true">Microsoft 365</li><li aria-hidden="true">REST API</li><li aria-hidden="true">Stripe</li><li aria-hidden="true">Shopify</li><li aria-hidden="true">Odoo</li><li aria-hidden="true">Gmail</li><li aria-hidden="true">Microsoft 365</li><li aria-hidden="true">REST API</li></ul></div>
+      </div>
+      <div class="logos-row">
+        <p class="logos-label"><svg class="i" width="16" height="16" aria-hidden="true"><use href="#i-doc"/></svg><span>Podržava</span></p>
+        <div class="ticker ticker-reverse ticker-mono"><ul class="ticker-track"><li>eSLOG 2.0</li><li>UBL 2.1</li><li>EN 16931</li><li>UPN QR</li><li>CAMT.053</li><li>MT940</li><li>SEPA pain.001</li><li aria-hidden="true">eSLOG 2.0</li><li aria-hidden="true">UBL 2.1</li><li aria-hidden="true">EN 16931</li><li aria-hidden="true">UPN QR</li><li aria-hidden="true">CAMT.053</li><li aria-hidden="true">MT940</li><li aria-hidden="true">SEPA pain.001</li><li aria-hidden="true">eSLOG 2.0</li><li aria-hidden="true">UBL 2.1</li><li aria-hidden="true">EN 16931</li><li aria-hidden="true">UPN QR</li><li aria-hidden="true">CAMT.053</li><li aria-hidden="true">MT940</li><li aria-hidden="true">SEPA pain.001</li><li aria-hidden="true">eSLOG 2.0</li><li aria-hidden="true">UBL 2.1</li><li aria-hidden="true">EN 16931</li><li aria-hidden="true">UPN QR</li><li aria-hidden="true">CAMT.053</li><li aria-hidden="true">MT940</li><li aria-hidden="true">SEPA pain.001</li></ul></div>
+      </div>
     </div>
   </div>
 </section>
@@ -586,7 +565,7 @@
   <div class="wrap footer-grid">
     <div class="footer-brand">
       <a href="/hr/" class="brand" aria-label="Paply, početna stranica">
-        <img src="/assets/img/paply-logo.webp" width="59" height="32" alt="Logotip Paply" loading="lazy">
+        <img src="/assets/img/paply-wordmark.webp" width="59" height="32" alt="Logotip Paply" loading="lazy">
       </a>
       <p class="footer-tagline">Manje papira. Manje muke.</p>
       <p class="footer-desc">Softver za e-račune i fiskalizaciju za tvrtke u Hrvatskoj i Sloveniji. Srbija dolazi kasnije.</p>

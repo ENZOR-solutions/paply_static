@@ -26,7 +26,7 @@ COPY = {
 BG, INK, MUTED, ACCENT = (248, 247, 245), (24, 24, 26), (107, 104, 105), (239, 159, 39)
 
 phone = Image.open(ROOT / "assets/img/app-home.webp").convert("RGBA")
-logo = Image.open(ROOT / "assets/img/paply-logo.png").convert("RGBA")
+logo = Image.open(ROOT / "assets/img/paply-wordmark.png").convert("RGBA")
 
 for lang, (l1, l2, sub, url) in COPY.items():
     im = Image.new("RGB", (1200, 630), BG)
