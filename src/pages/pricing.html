@@ -44,9 +44,9 @@
 
       <div class="plan reveal" style="--d:1">
         <p class="plan-name">Start</p>
-        <p class="plan-tag" data-i18n="pricing.start_tag">For small businesses that need compliant invoicing</p>
+        <p class="plan-tag" data-i18n="pricing.start_tag">For small businesses that invoice regularly</p>
         <p class="plan-price"><b>€12</b><span data-i18n="common.per_month">/mo</span></p>
-        <p class="plan-allow"><span data-i18n="pricing.start_allow">50 e-invoices exchanged a month</span><small data-i18n="pricing.extra">then €0.12 per e-invoice</small></p>
+        <p class="plan-allow"><span data-i18n="pricing.start_allow">50 e-invoices exchanged a month</span><small data-i18n="pricing.extra">then €0.15 per e-invoice</small></p>
         <a href="{{app}}/register" class="btn btn-ghost btn-block" data-i18n="pricing.choose_start">Choose Start</a>
         <ul class="plan-feats">
           <li class="yes" data-i18n="pricing.start_f1">2 team members</li>
@@ -67,7 +67,7 @@
         <p class="plan-name">Core</p>
         <p class="plan-tag" data-i18n="pricing.core_tag">For growing businesses that want automation and integrations</p>
         <p class="plan-price"><b>€27</b><span data-i18n="common.per_month">/mo</span></p>
-        <p class="plan-allow"><span data-i18n="pricing.core_allow">200 e-invoices exchanged a month</span><small data-i18n="pricing.extra">then €0.12 per e-invoice</small></p>
+        <p class="plan-allow"><span data-i18n="pricing.core_allow">150 e-invoices exchanged a month</span><small data-i18n="pricing.extra">then €0.15 per e-invoice</small></p>
         <a href="{{app}}/register" class="btn btn-primary btn-block" data-i18n="pricing.choose_core">Choose Core</a>
         <ul class="plan-feats">
           <li class="yes" data-i18n="pricing.core_f1">5 team members</li>
@@ -79,6 +79,7 @@
           <li class="yes" data-i18n="pricing.core_f6">Send from your own mailbox</li>
           <li class="yes" data-i18n="pricing.core_f7">REST API access</li>
           <li class="yes" data-i18n="pricing.core_f8">Priority support</li>
+          <li class="yes" data-i18n="pricing.core_f9">AI assistants (coming soon)</li>
         </ul>
       </div>
 
@@ -86,7 +87,7 @@
         <p class="plan-name">Pro</p>
         <p class="plan-tag" data-i18n="pricing.pro_tag">For larger teams with higher invoice volumes</p>
         <p class="plan-price"><b>€59</b><span data-i18n="common.per_month">/mo</span></p>
-        <p class="plan-allow"><span data-i18n="pricing.pro_allow">500 e-invoices exchanged a month</span><small data-i18n="pricing.extra">then €0.12 per e-invoice</small></p>
+        <p class="plan-allow"><span data-i18n="pricing.pro_allow">400 e-invoices exchanged a month</span><small data-i18n="pricing.extra">then €0.15 per e-invoice</small></p>
         <a href="{{app}}/register" class="btn btn-ghost btn-block" data-i18n="pricing.choose_pro">Choose Pro</a>
         <ul class="plan-feats">
           <li class="yes" data-i18n="pricing.pro_f1">15 team members</li>
@@ -182,8 +183,8 @@
         <thead><tr><th scope="col"><span class="sr-only" data-i18n="pricing.cmp_feature">Feature</span></th><th scope="col">Free</th><th scope="col">Start</th><th scope="col" class="is-popular">Core</th><th scope="col">Pro</th></tr></thead>
         <tbody>
           <tr><th scope="row" data-i18n="pricing.cmp_price">Price per month</th><td class="t">€0</td><td class="t">€12</td><td class="t">€27</td><td class="t">€59</td></tr>
-          <tr><th scope="row" data-i18n="pricing.cmp_allow">E-invoices exchanged per month</th><td class="n"></td><td class="t">50</td><td class="t">200</td><td class="t">500</td></tr>
-          <tr><th scope="row" data-i18n="pricing.cmp_extra">Each extra e-invoice</th><td class="n"></td><td class="t">€0.12</td><td class="t">€0.12</td><td class="t">€0.12</td></tr>
+          <tr><th scope="row" data-i18n="pricing.cmp_allow">E-invoices exchanged per month</th><td class="n"></td><td class="t">50</td><td class="t">150</td><td class="t">400</td></tr>
+          <tr><th scope="row" data-i18n="pricing.cmp_extra">Each extra e-invoice</th><td class="n"></td><td class="t">€0.15</td><td class="t">€0.15</td><td class="t">€0.15</td></tr>
           <tr><th scope="row" data-i18n="pricing.cmp_seats">Team members</th><td class="t">1</td><td class="t">2</td><td class="t">5</td><td class="t">15</td></tr>
           <tr><th scope="row" data-i18n="pricing.cmp_viewers">Read-only users</th><td class="n"></td><td class="t">5</td><td class="t">20</td><td class="t">50</td></tr>
           <tr class="grp"><td colspan="5" data-i18n="features.c1">Invoicing</td></tr>
@@ -201,6 +202,7 @@
           <tr><th scope="row" data-i18n="pricing.cmp_connectors">Stripe, Shopify and Odoo connectors</th><td class="n"></td><td class="n"></td><td class="y"></td><td class="y"></td></tr>
           <tr><th scope="row" data-i18n="pricing.cmp_mailbox">Send from your own mailbox</th><td class="n"></td><td class="n"></td><td class="y"></td><td class="y"></td></tr>
           <tr><th scope="row" data-i18n="pricing.cmp_api">REST API</th><td class="n"></td><td class="n"></td><td class="y"></td><td class="y"></td></tr>
+          <tr><th scope="row" data-i18n="pricing.cmp_mcp">AI assistants (coming soon)</th><td class="n"></td><td class="n"></td><td class="y"></td><td class="y"></td></tr>
           <tr class="grp"><td colspan="5" data-i18n="pricing.cmp_support">Support</td></tr>
           <tr><th scope="row" data-i18n="pricing.cmp_tickets">Support tickets in the app</th><td class="n"></td><td class="y"></td><td class="y"></td><td class="y"></td></tr>
           <tr><th scope="row" data-i18n="pricing.cmp_priority">Priority support</th><td class="n"></td><td class="n"></td><td class="y"></td><td class="y"></td></tr>
@@ -216,7 +218,7 @@
     <div class="faq-list reveal">
       <details class="faq">
         <summary data-i18n="faq.q_over">What happens if I go over my monthly allowance?</summary>
-        <div class="faq-a"><p data-i18n="faq.a_over">Nothing stops working. Each e-invoice above your plan's allowance costs €0.12 and is added to your next bill. If you regularly go over, a bigger plan is usually cheaper.</p></div>
+        <div class="faq-a"><p data-i18n="faq.a_over">Nothing stops working. Each e-invoice above your plan's allowance costs €0.15 and is added to your next bill. If you regularly go over, a bigger plan is usually cheaper.</p></div>
       </details>
       <details class="faq">
         <summary data-i18n="faq.q_email_count">Do invoices sent by email count towards the allowance?</summary>

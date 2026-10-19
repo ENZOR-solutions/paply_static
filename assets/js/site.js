@@ -293,12 +293,12 @@
     var seatsOut = $('#est-seats-out', root), coreBox = $('#est-core', root);
     var planEl = $('#est-plan', root), costEl = $('#est-cost', root), breakEl = $('#est-break', root), noteEl = $('#est-note', root);
     var seats = 1, lastCost = 0;
-    var EXTRA = 0.12;
+    var EXTRA = 0.15;
     var PLANS = [
       { id: 'Free', price: 0, allow: 0, seats: 1, core: false },
       { id: 'Start', price: 12, allow: 50, seats: 2, core: false },
-      { id: 'Core', price: 27, allow: 200, seats: 5, core: true },
-      { id: 'Pro', price: 59, allow: 500, seats: 15, core: true }
+      { id: 'Core', price: 27, allow: 150, seats: 5, core: true },
+      { id: 'Pro', price: 59, allow: 400, seats: 15, core: true }
     ];
     function fill(t, vars) { return t.replace(/\{(\w+)\}/g, function (_, k) { return vars[k] !== undefined ? vars[k] : ''; }); }
     function update() {

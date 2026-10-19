@@ -434,6 +434,11 @@ a.country:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); bor
 .fcard .icon-box { width: 36px; height: 36px; margin: 0; }
 .fcard h3 { font-size: 16px; font-weight: 500; line-height: 1.4; }
 .fcard p { font-size: 14px; color: var(--text-secondary); margin-top: 6px; }
+.fcard-wide { grid-column: 1 / -1; }
+.fcard-cols { display: grid; gap: 10px; margin: 14px 0 4px; grid-template-columns: 1fr; }
+.fcard-cols > div { background: var(--bg-primary); border: 1px solid var(--border-default); border-radius: var(--r-button); padding: 12px 14px; }
+.fcard-cols h4 { font-size: 14px; font-weight: 500; }
+.fcard-cols p { margin-top: 4px; }
 .feature-split { display: grid; gap: 32px; align-items: center; margin-top: 28px; padding: 28px; background: var(--bg-tertiary); border-radius: var(--r-modal); }
 
 /* ---------- pricing page ---------- */
@@ -658,6 +663,7 @@ a.country:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); bor
   .plans { grid-template-columns: repeat(2, 1fr); }
   .compare-two, .guide-cards { grid-template-columns: repeat(2, 1fr); }
   .fgrid { grid-template-columns: repeat(2, 1fr); }
+  .fcard-cols { grid-template-columns: repeat(2, 1fr); }
   .footer-grid { grid-template-columns: repeat(3, 1fr); }
   .footer-bottom { flex-direction: row; justify-content: space-between; align-items: center; }
   .enterprise ul { grid-template-columns: repeat(2, 1fr); }
