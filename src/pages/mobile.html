@@ -1,0 +1,96 @@
+<!--page {
+  "path": "/mobile/",
+  "nav": "mobile",
+  "title": "Paply mobile app for Android and iOS (coming soon) | Paply",
+  "description": "The Paply app is coming soon to Android and iOS: create and confirm invoices, scan supplier bills with AI, get paid with Tap to Pay and fiscalize on the go.",
+  "crumbs": [{"key": "nav.mobile", "en": "Mobile app", "path": "/mobile/"}],
+  "priority": 0.8
+} -->
+<section class="page-hero">
+  <div class="hero-bg" aria-hidden="true"><div class="hero-grid"></div><div class="orb orb-1"></div><div class="orb orb-2"></div></div>
+  <div class="wrap mobile-hero" style="position:relative;z-index:1">
+    <div class="hero-copy">
+      {{crumbs}}
+      <p class="eyebrow reveal"><svg class="i" width="18" height="18" aria-hidden="true"><use href="#i-phone"/></svg><span data-i18n="mobile.badge">Coming soon to Android &amp; iOS</span></p>
+      <h1 class="h1 reveal" style="--d:1" data-i18n="mobile.h1">Your invoices, in your pocket</h1>
+      <p class="lead reveal" style="--d:2" data-i18n="mobile.lead">Everything you need on the move: issue an invoice at the customer's door, snap a supplier bill, get paid by card and see the moment money comes in.</p>
+      <div class="store-row reveal" style="--d:3">
+        <span class="store-btn store-btn-light" aria-disabled="true"><svg class="i" width="20" height="20"><use href="#i-phone"/></svg><span><small data-i18n="common.coming_soon">Coming soon</small>Google Play</span></span>
+        <span class="store-btn store-btn-light" aria-disabled="true"><svg class="i" width="20" height="20"><use href="#i-phone"/></svg><span><small data-i18n="common.coming_soon">Coming soon</small>App Store</span></span>
+      </div>
+      <p class="hero-note reveal" style="--d:4" data-i18n="mobile.note">Start on the web today. The app uses the same Paply account, so everything carries over.</p>
+      <div class="hero-ctas reveal" style="--d:4"><a href="{{app}}/register" class="btn btn-primary btn-lg" data-i18n="mobile.cta">Create your account</a></div>
+    </div>
+    <div class="phone-trio reveal" style="--d:2">
+      <img class="pt-1" src="/assets/img/app-outbox-300.webp" srcset="/assets/img/app-outbox-300.webp 300w, /assets/img/app-outbox.webp 600w" sizes="230px" width="300" height="595" alt="Outbox in the Paply app with paid and ready-to-send invoices" data-i18n-attr="alt:mobile.alt_outbox">
+      <img class="pt-2" src="/assets/img/app-home-300.webp" srcset="/assets/img/app-home-300.webp 300w, /assets/img/app-home.webp 600w" sizes="230px" width="300" height="595" alt="Paply app home screen with the amount awaiting payment and recent activity" data-i18n-attr="alt:mobile.alt_home" fetchpriority="high">
+      <img class="pt-3" src="/assets/img/app-inbox-300.webp" srcset="/assets/img/app-inbox-300.webp 300w, /assets/img/app-inbox.webp 600w" sizes="230px" width="300" height="595" alt="Inbox of received supplier bills in the Paply app" data-i18n-attr="alt:mobile.alt_inbox">
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="kicker" data-i18n="mobile.tour_kicker">A quick tour</p>
+      <h2 class="h2" data-i18n="mobile.tour_title">Designed for one hand and five spare minutes</h2>
+    </div>
+    <div class="gallery-wrap reveal" data-gallery>
+      <div class="gallery-ctrl">
+        <button type="button" class="prev" aria-label="Previous" data-i18n-attr="aria-label:common.prev"><svg class="i" width="18" height="18"><use href="#i-arrow"/></svg></button>
+        <button type="button" class="next" aria-label="Next" data-i18n-attr="aria-label:common.next"><svg class="i" width="18" height="18"><use href="#i-arrow"/></svg></button>
+      </div>
+      <div class="gallery">
+        <figure class="shot">
+          <div class="shot-frame"><img src="/assets/img/app-home-300.webp" srcset="/assets/img/app-home-300.webp 300w, /assets/img/app-home.webp 600w" sizes="206px" width="300" height="595" loading="lazy" alt="Home screen with the total awaiting payment and recent invoices" data-i18n-attr="alt:mobile.s1_alt"></div>
+          <figcaption><h3 data-i18n="mobile.s1_title">All your invoices in one place</h3><p data-i18n="mobile.s1_desc">Issued, received and unpaid invoices at a glance.</p></figcaption>
+        </figure>
+        <figure class="shot">
+          <div class="shot-frame"><img src="/assets/img/app-outbox-300.webp" srcset="/assets/img/app-outbox-300.webp 300w, /assets/img/app-outbox.webp 600w" sizes="206px" width="300" height="595" loading="lazy" alt="Outbox filtered by draft, ready to send, sent and overdue" data-i18n-attr="alt:mobile.s2_alt"></div>
+          <figcaption><h3 data-i18n="mobile.s2_title">Stay on top of issued invoices</h3><p data-i18n="mobile.s2_desc">See instantly what's paid and what's still pending.</p></figcaption>
+        </figure>
+        <figure class="shot">
+          <div class="shot-frame"><img src="/assets/img/app-new-invoice-300.webp" srcset="/assets/img/app-new-invoice-300.webp 300w, /assets/img/app-new-invoice.webp 600w" sizes="206px" width="300" height="595" loading="lazy" alt="New invoice form with customer, dates, items and VAT totals" data-i18n-attr="alt:mobile.s3_alt"></div>
+          <figcaption><h3 data-i18n="mobile.s3_title">Create an invoice in a minute</h3><p data-i18n="mobile.s3_desc">Pick a customer, add items, and the VAT is done for you.</p></figcaption>
+        </figure>
+        <figure class="shot">
+          <div class="shot-frame"><img src="/assets/img/app-confirm-300.webp" srcset="/assets/img/app-confirm-300.webp 300w, /assets/img/app-confirm.webp 600w" sizes="206px" width="300" height="595" loading="lazy" alt="Draft invoice with Confirm, Edit and View PDF actions" data-i18n-attr="alt:mobile.s4_alt"></div>
+          <figcaption><h3 data-i18n="mobile.s4_title">Review and confirm in one tap</h3><p data-i18n="mobile.s4_desc">Numbered on confirmation, with the PDF ready instantly.</p></figcaption>
+        </figure>
+        <figure class="shot">
+          <div class="shot-frame is-doc"><img src="/assets/img/invoice-upn-qr-435.webp" srcset="/assets/img/invoice-upn-qr-435.webp 435w, /assets/img/invoice-upn-qr.webp 870w" sizes="220px" width="435" height="550" loading="lazy" alt="Invoice PDF with a UPN QR payment code" data-i18n-attr="alt:mobile.s5_alt"></div>
+          <figcaption><h3 data-i18n="mobile.s5_title">Professional invoices with a UPN QR code</h3><p data-i18n="mobile.s5_desc">Customers pay by scanning the code in their bank app.</p></figcaption>
+        </figure>
+        <figure class="shot">
+          <div class="shot-frame"><img src="/assets/img/app-inbox-300.webp" srcset="/assets/img/app-inbox-300.webp 300w, /assets/img/app-inbox.webp 600w" sizes="206px" width="300" height="595" loading="lazy" alt="Inbox of received bills with review, approved, overdue and paid filters" data-i18n-attr="alt:mobile.s6_alt"></div>
+          <figcaption><h3 data-i18n="mobile.s6_title">Received bills, no paper</h3><p data-i18n="mobile.s6_desc">Scan a bill or receive it as an e-invoice.</p></figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <h2 class="h2" data-i18n="mobile.f_title">What you can do in the app</h2>
+    </div>
+    <div class="fgrid">
+      <article class="fcard reveal"><div class="fcard-top"><span class="icon-box"><svg class="i" width="18" height="18"><use href="#i-pen"/></svg></span></div><h3 data-i18n="mobile.f1">Invoices on the go</h3><p data-i18n="mobile.f1_d">Create, confirm, email and share invoices, issue credit notes and duplicate past invoices.</p></article>
+      <article class="fcard reveal" style="--d:1"><div class="fcard-top"><span class="icon-box"><svg class="i" width="18" height="18"><use href="#i-scan"/></svg></span><span class="badge" data-i18n="common.core_plus">Core and up</span></div><h3 data-i18n="mobile.f2">Scan bills with the camera</h3><p data-i18n="mobile.f2_d">The phone's document scanner straightens the page and AI reads the supplier, amounts and line items.</p></article>
+      <article class="fcard reveal" style="--d:2"><div class="fcard-top"><span class="icon-box"><svg class="i" width="18" height="18"><use href="#i-signal"/></svg></span><span class="badge" data-i18n="common.core_plus">Core and up</span></div><h3 data-i18n="mobile.f3">Tap to Pay and payment links</h3><p data-i18n="mobile.f3_d">Accept contactless cards on your phone or show a QR code, through your own Stripe account, where available.</p></article>
+      <article class="fcard reveal"><div class="fcard-top"><span class="icon-box"><svg class="i" width="18" height="18"><use href="#i-shield"/></svg></span></div><h3 data-i18n="mobile.f4">Fiscalize from the app</h3><p data-i18n="mobile.f4_d">Fiscalize invoices with FURS right from your phone. Card-paid invoices are fiscalized automatically.</p></article>
+      <article class="fcard reveal" style="--d:1"><div class="fcard-top"><span class="icon-box"><svg class="i" width="18" height="18"><use href="#i-bell"/></svg></span></div><h3 data-i18n="mobile.f5">Push notifications</h3><p data-i18n="mobile.f5_d">Know straight away when an invoice arrives, is paid or needs your approval.</p></article>
+      <article class="fcard reveal" style="--d:2"><div class="fcard-top"><span class="icon-box"><svg class="i" width="18" height="18"><use href="#i-flow"/></svg></span></div><h3 data-i18n="mobile.f6">Approve and comment</h3><p data-i18n="mobile.f6_d">Approve supplier bills, record payments and talk to your team with @mentions.</p></article>
+      <article class="fcard reveal"><div class="fcard-top"><span class="icon-box"><svg class="i" width="18" height="18"><use href="#i-building"/></svg></span></div><h3 data-i18n="mobile.f7">Switch between companies</h3><p data-i18n="mobile.f7_d">Running more than one company? Switch with a tap.</p></article>
+      <article class="fcard reveal" style="--d:1"><div class="fcard-top"><span class="icon-box"><svg class="i" width="18" height="18"><use href="#i-fingerprint"/></svg></span></div><h3 data-i18n="mobile.f8">Face and fingerprint unlock</h3><p data-i18n="mobile.f8_d">Lock the app with biometrics and two-factor authentication. You decide how quickly it locks again.</p></article>
+      <article class="fcard reveal" style="--d:2"><div class="fcard-top"><span class="icon-box"><svg class="i" width="18" height="18"><use href="#i-globe"/></svg></span></div><h3 data-i18n="mobile.f9">Four languages</h3><p data-i18n="mobile.f9_d">English, Slovenian, Croatian and Serbian, in light or dark mode.</p></article>
+    </div>
+    <div class="callout callout-muted mt-40 reveal">
+      <svg class="i" width="20" height="20"><use href="#i-globe"/></svg>
+      <p data-i18n="mobile.web_note">The app works together with the Paply web app at paply.app, where you design invoice templates, import bank statements, connect integrations and manage your plan.</p>
+    </div>
+  </div>
+</section>
+
+<!-- @include cta -->

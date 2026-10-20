@@ -2,107 +2,119 @@
 
 ## What This Project Is
 
-**paply_static** is the public marketing site for **Paply**, ENZOR Solutions' SaaS for electronic invoice exchange (e-invoice / e-Račun) in Slovenia, Croatia, and Serbia. This repo is **not** the app — it's a single static landing page whose only jobs are:
+**paply_static** is the public marketing site for **Paply** (www.paply.si), ENZOR's SaaS for e-invoicing (e-račun) and fiscalization in Slovenia and Croatia, with Serbia on the roadmap. This repo is **not** the app. Its jobs:
 
-1. **Get found.** Good SEO, indexable content, fast load, clear positioning — this is the top-of-funnel surface that ranks and gets shared.
-2. **Point to `paply.app`.** Every CTA should lead a visitor toward the real product.
-3. **Set expectations correctly while Paply is in testing.** Paply is **not yet publicly live** — it's in its testing stage. The site must say so clearly. See **Coming Soon** below before editing any CTA or pricing copy.
+1. **Get found.** SEO, indexable content in three languages, fast load, clear positioning.
+2. **Point to `paply.app`.** Every CTA leads toward the real product.
+3. **Set expectations correctly while Paply is in testing.** See **Coming Soon** below before editing any CTA, feature or pricing copy.
 
-The actual product (React/FastAPI, full feature set, Stripe billing, REDOK e-invoice integration, etc.) lives in a separate repo — that project's own `CLAUDE.md` is the source of truth for how Paply itself works, its pricing plans, compliance rules, and architecture. Treat facts from here (pricing tiers, feature names, country coverage) as *marketing content to keep in sync with*, not as something this repo implements or enforces.
+The product itself (React/FastAPI, Stripe billing, the e-invoice network integration, mobile app) lives in `C:\ENZOR\Paply`; its `CLAUDE.md` is the source of truth for features, plans and compliance. Copy here must stay in sync with it, never ahead of it.
 
-## Current State — IMPORTANT
+## Architecture — IMPORTANT
 
-- `index.html` is a **single self-contained HTML file** styled with the **Tailwind CDN script** (`cdn.tailwindcss.com`) plus a small inline `<style>` block for brand tokens. No build step, no bundler, no `node_modules`, no package.json.
-- `assets/` holds the logo, icon-logo, and favicon (`.ico`).
-- No CI/build pipeline exists in this repo yet. `git log` shows a prior "test auto deploy" commit but no workflow files are checked in — confirm actual hosting/deploy mechanism (S3+CloudFront, GitHub Pages, Netlify, etc.) before assuming one when asked to wire up deploys.
-- Remote: `github.com/ENZOR-solutions/paply_static`.
+A multi-page static site produced by a **stdlib-only Python generator** (`build.py`, Python 3.9+, no pip installs). The generated HTML **is committed**; Vercel serves the repo root as plain static files with no build step on deploy.
 
-## Coming Soon — Messaging Rule
+```
+src/layout.html          document skeleton (head, SEO tags, JSON-LD slot)
+src/partials/*.html      header, footer, cta, icons (SVG sprite); <!-- @include name -->
+src/pages/*.html         one file per page, starting with a <!--page {json} --> header
+src/i18n/sl.json, hr.json  translations (flat "key": "text")
+src/i18n/en.json         GENERATED from the English markup; don't edit, but do commit
+assets/css/site.css      all styling (hand-written, no Tailwind)
+assets/js/site.js        all behaviour (no dependencies)
+assets/img, assets/fonts optimised WebP/PNG, self-hosted Inter (400/500 variable woff2)
+tools/make_og.py         regenerates assets/img/og-<lang>.png (needs Pillow)
+build.py                 generator
+--- generated, committed ---
+index.html, features/, pricing/, mobile/, e-invoicing/{,croatia/,slovenia/}, faq/, 404.html
+sl/..., hr/...           same pages per language
+sitemap.xml, robots.txt
+```
 
-**Paply is in testing.** The hero badge reads "Coming soon to Slovenia, Croatia & Serbia" (translated per-language, `hero_badge` key) instead of claiming live availability. Concretely:
+**Workflow:** edit `src/` (or `assets/`), run `python build.py`, check the output in a browser, commit `src/` *and* the generated files together. `python build.py --check` exits 1 on any warning (use it before committing). Never hand-edit generated HTML; it is overwritten.
 
-- It's fine to describe *what Paply will do* (features, countries, pricing plans) in full detail — that's good SEO content and sets expectations. What's not fine is language that implies the product is broadly, publicly available *right now*.
-- **Every CTA on the page** (`get_started_free`, `start_free`, `select_plan` — header button, hero buttons, all four pricing-card buttons, bottom CTA button) is a real link to **`https://paply.app/login`**, i.e. the actual app's login page. This is a deliberate choice: Paply already has real early customers using the live product (see the main app's `CLAUDE.md`, "Current Clients"), so sending visitors to the real login page is accurate even while the site's own framing stays "coming soon" for the general public. Don't revert these to in-page `#pricing` anchors — that was the old placeholder behavior before real links were added.
-- `Contact sales →` stays a `mailto:sales@paply.si` link — unrelated to this rule.
-- If Paply's login/signup route ever moves off `https://paply.app/login`, update every occurrence of that URL in `index.html` (currently 7: header, hero, 4 pricing cards, bottom CTA) — there's no shared constant for it in this plain-HTML setup, so each `href` is literal.
-- If/when Paply exits testing entirely, flip the hero badge and hero copy back to "live" language — a content edit, not a rebuild.
+**Page header** (`src/pages/x.html`): `path` (URL, trailing slash), `title` and `description` (English; ≤ 65 / ≤ 160 chars, the build warns), optional `nav` (highlights a header link), `schema` (`software`, `faq`), `crumbs` (breadcrumb trail + BreadcrumbList), `priority`/`changefreq` (sitemap), `langs` (defaults to all three), `noindex`, `sitemap: false`.
 
-## SEO Priorities
+**What the build does per page × language:** includes partials, swaps `data-i18n` text and `data-i18n-attr` attributes, prefixes internal links with `/sl/` or `/hr/`, writes canonical + `hreflang` alternates (en/sl/hr/x-default), Open Graph/Twitter tags (per-language `og-<lang>.png`), JSON-LD (Organization, WebSite, WebPage, plus SoftwareApplication with the four plan Offers, FAQPage built from the page's `<details class="faq">`, BreadcrumbList), cache-busting `?v=<hash>` on CSS/JS, then `sitemap.xml` with alternates.
 
-Since discoverability is the main point of this site, keep these in mind on every edit:
-
-- Keep `<title>` and `<meta name="description">` accurate, keyword-relevant (e-invoicing, e-Račun, fiscalization, Slovenia/Croatia/Serbia), and under ~160 chars for the description.
-- Add structured data (`Organization`/`SoftwareApplication` JSON-LD) and Open Graph / Twitter card tags if not already present — currently missing from `index.html`.
-- Use one `<h1>` per page, semantic heading hierarchy, and descriptive `alt` text on images (currently `assets/logo.png` has `alt="Paply"` — keep alt text descriptive, not just the brand name, where it helps).
-- Keep the page fast: no heavy JS beyond the Tailwind CDN script, no render-blocking resources, compress/optimize anything added to `assets/`.
-- Canonical URL, `robots.txt`, and `sitemap.xml` should point at the production domain (`paply.app` or wherever this static site is actually hosted — confirm which before adding, since the marketing site and the app may live on different hosts/subdomains).
-- Every internal link that should lead to the product goes to `paply.app`, not a relative path within this static site.
-
-## Brand — Paply Color System (Amber)
-
-Match the main app's design tokens exactly — this site is the first impression of the brand.
-
-Primary accent: `#EF9F27`. Use only for primary CTAs, active/focus states, the logo, and key highlighted numbers/badges.
-
-**Design tokens already defined in `index.html`'s inline Tailwind config and `:root` CSS vars:**
-
-| Token | Light value |
-|---|---|
-| `bg-primary` | `#F8F7F5` |
-| `bg-secondary` | `#FFFFFF` |
-| `bg-tertiary` | `#F1F0EC` |
-| `text-primary` | `#18181A` |
-| `text-secondary` | `#6B6869` |
-| `text-tertiary` | `#9A9896` |
-| `border-default` | `#E3E2DE` |
-| `border-emphasis` | `#CCCAC5` |
-| `accent` | `#EF9F27` |
-| `accent-surface` | `rgba(239,159,39,0.12)` |
-
-Border radius scale: `rounded-input` (6px) · `rounded-button` (8px) · `rounded-card` (12px) · `rounded-modal` (16px).
-
-**Typography:** weights 400 and 500 only — never 600 or 700, matching the app. Keep font sizes within the app's scale (11/12/13/14/16/18/22px) plus the larger display sizes already used for the hero (`40px`/`52px`) and section headers (`30px`).
-
-Never use `#000000` or generic grays on branded surfaces — always the tokens above. If a dark mode is added later, mirror the semantic state colors from the main app's `CLAUDE.md` (Approved/Error/Warning/Info) rather than inventing new ones.
-
-## Content Facts to Stay Consistent With
-
-Pull these from the main Paply app when writing copy, and don't drift from them without confirming against the app's `CLAUDE.md` (plans/limits change there first):
-
-- **Countries:** Slovenia, Croatia, Serbia. Croatia's B2B e-invoicing mandate goes live Jan 2026; Slovenia's mandate follows Jan 2028. Don't claim a country is "live" if the app itself isn't serving real customers there yet.
-- **Plans:** FREE (€0, drafts only, no network sends) · START (€12/mo, 50) · CORE (€27/mo, 150, REST API, AI invoice scanning) · PRO (€59/mo, 400) · ENTERPRISE (custom, 1000+), counted as e-invoices exchanged through the network (sent + received), then €0.15 each (2026-10-19; was 200/500 and €0.12). Invoices by email or PDF are always unlimited; the quota is only for network e-invoices. The pricing cards use a **"seat" + inheritance** pattern (each tier's list starts with its seat/observer count, then "Everything in [previous tier], plus:" followed by only that tier's *new* items) rather than repeating every feature on every card — when a plan's included features change, update the specific tier's `*_feat*` keys, not a duplicated list on the tier above it. FREE additionally lists what it explicitly *excludes* (`free_limit`: no network delivery, no fiscalization) styled without a checkmark (`.pricing-feat` CSS class adds the ✓ — omit that class for exclusion/inheritance lines).
-- **Headline features:** structured e-invoice send/receive over the exchange network or PDF-by-email, automatic FURS-style fiscalization (QR / PDF417 / Code 128 barcodes), AI invoice scanning (CORE+), 11-year statutory archive, team roles/observers, REST API (CORE+).
-- **Contact:** `info@enzor.si` is used in the footer and the "Contact sales" mailto — confirm this is still the right address before changing it again, since the product itself runs on the `paply.app` domain for SES/auth.
-- Do **not** mention any underlying e-invoice network/vendor by name anywhere on this public site — Paply's exchange-network provider operates under a white-label contract and must never be named or otherwise identifiable in public-facing content. This is public-facing marketing copy, the highest-exposure surface for that rule.
+**Placeholders:** `{{app}}` (https://paply.app), `{{site}}`, `{{year}}`, `{{crumbs}}`, `{{alt:sl}}` (this page in another language), `{{v:css/site.css}}`.
 
 ## Internationalisation
 
-The site supports **English, Slovenian, and Croatian** via **client-side, browser-language auto-detection** — no manual language switcher, no separate URLs per language.
+Real per-language URLs: English at `/`, Slovenian at `/sl/`, Croatian at `/hr/`, each with its own `<html lang>`, canonical and `hreflang` alternates, so all three are crawlable and can rank in google.si / google.hr. (This replaced the old client-side text swapping, which only ever got English indexed.)
 
-- All translatable strings live in one `translations` object inside the `<script>` block at the bottom of `index.html`, keyed by `en`/`sl`/`hr`. Markup elements carry `data-i18n="key"` (for text content) or `data-i18n-attr="attr:key"` (for attributes — currently used only for the `<meta name="description">` tag).
-- On load, an IIFE reads `navigator.languages`/`navigator.language`, picks the first supported code (`en`/`sl`/`hr`, matched on the first two characters, e.g. `sl-SI` → `sl`), defaults to `en` if nothing matches, sets `<html lang>` accordingly, and swaps every `[data-i18n]`/`[data-i18n-attr]` element's text/attribute.
-- The static HTML served before JS runs is always **English** — that's the fallback for JS-disabled visitors and, in practice, what most search-engine crawlers will index.
-- **Known SEO trade-off (accepted deliberately):** because language switching is client-side only with no distinct per-language URL, search engines will primarily index and rank the English content — the Slovenian and Croatian text is very unlikely to surface in local (`google.si`/`google.hr`) search results. This was a conscious choice for simplicity over the alternative (separate crawlable pages per language with `hreflang` tags), made despite this site's SEO priority above. If organic search traffic from Slovenia/Croatia becomes a real growth channel later, revisit this — it would mean splitting into per-language static pages (e.g. `/`, `/sl/`, `/hr/`) with `hreflang` alternates and a one-time redirect based on browser language, not deepening the current single-page approach.
-- **Adding a new string:** add the `data-i18n` key to the markup, then add the key to all three language blocks (`en`, `sl`, `hr`) in the `translations` object — don't add a key to just one language.
-- **Reused strings:** several keys are intentionally shared across multiple elements with identical copy (e.g. `select_plan`, `vat_excl`, `feat_ai_unlimited`, `get_started_free`, `start_free`, `per_month`) — reuse an existing key instead of creating a near-duplicate when the English text is genuinely the same string in two places.
-- **Plan tier names** (`Free`, `Start`, `Core`, `Pro`, `Enterprise`) are deliberately **not translated** — kept as English brand/tier names in all three languages, consistent with how the product itself names its plans.
-- **Adding a 4th language:** add a new key (e.g. `sr` for Serbian, matching the app's country coverage) to both `SUPPORTED` and `translations` in the script, and to every `data-i18n` key already in use.
+- **English source text lives inline in the markup** with `data-i18n="page.key"`. Attributes use `data-i18n-attr="alt:key;aria-label:key2"`. A `data-i18n` element's content may contain inline HTML (`<strong>`, links); translations are inserted as HTML, so escape `&` as `&amp;`.
+- **Adding/changing a string:** edit the English in `src/`, add/update the key in **both** `sl.json` and `hr.json`, run the build. It warns about missing keys, unused keys, and keys whose English changed since the last build ("re-check translation"), and about one key used with two different English texts.
+- **Reuse keys** for identical strings (`common.*`, `faq.*` answers shared between pages, `nav.*`).
+- **Plan names** (Free, Start, Core, Pro, Enterprise) are never translated, matching the app.
+- **Terminology** follows the app's own sl/hr locale files (e.g. sl: Izdani/Prejeti, Osnutek, Likvidacija, Zastopana podjetja, Opomini; hr: Odlazni/Pristigli, Nacrt, Tijek odobravanja, Zastupane tvrtke, Opomene). Check `C:\ENZOR\Paply\frontend\src\i18n\locales\` before inventing a term.
+- **Language choice:** `site.js` remembers an explicit pick (`localStorage['paply-lang']`) and, only on a first visit to an English page, follows `navigator.languages` once to `/sl/` or `/hr/`. Crawlers report English and stay put. Don't make this a server redirect.
+- **Adding Serbian later:** add `"sr"` to `LANGS`/`OG_LOCALE` in `build.py`, create `src/i18n/sr.json`, add `sr` to the `localize_links` exclusion regex and the language menus in `header.html`/`footer.html`, extend `make_og.py`, rebuild.
 
-## Working Conventions
+## Coming Soon — Messaging Rule
 
-- This is plain HTML/CSS via Tailwind's CDN build — there is no `npm install`/build/test step. Edit `index.html` directly and open it in a browser (or a local static server) to preview.
-- Keep it a single-file site unless a real reason emerges to split it up (e.g. adding a second page like `/privacy` or `/terms`) — don't introduce a framework, bundler, or component system for a one-page brochure site.
-- Optimize images added to `assets/` before committing (the existing PNGs/ico are small — keep new additions similarly lightweight).
-- No secrets belong in this repo — it's a fully public static site with no backend.
+**Paply is in testing** and opening up step by step; early customers already use it daily. The **e-invoice exchange network is not launched** (the app's `EINVOICE_NETWORK_ENABLED` switch is off) and the **mobile app is not in the stores yet**.
+
+- Describe features, countries and pricing in full, but anything not live carries a "Coming soon" badge or wording: network exchange (eSLOG 2.0 / UBL 2.1), the mobile app, and Tap to Pay / card payment links (mobile-only). Pricing shows the network allowances with the note that they apply from launch (mirrors the app's `billing:network_coming_soon_note`).
+- Hero badge: `home.badge` ("Coming soon to Slovenia, Croatia & Serbia"). When Paply exits testing, flip it and the network/mobile "coming soon" copy (search `coming_soon`, `Coming soon`, `network_note`, `mobile.badge`).
+- **CTAs:** "Get started free" / "Start for free" / "Choose <plan>" → `https://paply.app/register`; "Sign in" → `https://paply.app/login`. Written as `{{app}}/register` / `{{app}}/login`, so a domain change is one constant in `build.py`.
+- "Contact sales" is `mailto:info@enzor.si?subject=Paply%20Enterprise`. Note: the app itself uses `sales@paply.si` for the same purpose; confirm which address is correct before changing either.
+- Mobile store buttons are deliberately non-links (`aria-disabled`) until the apps are published; then link them to the real store pages (official store badge artwork has its own usage rules).
+
+## Content Facts to Stay Consistent With
+
+Verify against the main app's `CLAUDE.md` / `backend/src/config/plans.py` / `frontend/src/i18n/locales/en/billing.json` before changing:
+
+- **Plans:** FREE €0 (1 member, drafts/templates/PDF/approvals; no network exchange, no fiscalization) · START €12 (2 members + 5 read-only, 50 exchanged e-invoices, fiscalization, email delivery, payment reminders, archive, documents, represented companies) · CORE €27 (5 + 20, 150, AI scanning with a daily limit, email inbox connector, Stripe/Shopify/Odoo connectors, own-mailbox sending, REST API, priority support) · PRO €59 (15 + 50, 400) · ENTERPRISE custom (1,000+). €0.15 per extra exchanged e-invoice on every paid plan (2026-10-19; was 200/500 and €0.12). AI assistants (MCP) on Core+ are coming soon. Represented companies €4.90/month each (not on Free). Prices exclude VAT. Invoice creation is unlimited everywhere; only network exchanges count.
+- Pricing cards use the **seat + inheritance** pattern ("Everything in Start, plus:" then only new items). Keep the cards, the comparison table, the estimator's `PLANS` array in `site.js`, and the JSON-LD offers in `build.py` in sync.
+- **AI scanning is capped per day in the app** (CORE 25, PRO 60). Never advertise it as "unlimited".
+- **Fiscal codes:** invoices carry a QR code (SI: FURS ZOI/EOR verification + UPN QR payment; HR: Porezna ZKI/JIR verification). PDF417/Code 128 fiscal barcodes do **not** exist; HUB3 (a PDF417 code) is only the scan-to-pay code for paying received bills.
+- **Retention:** 10 years in Slovenia, 11 in Croatia (not a flat "11-year archive").
+- **Croatia:** F1 fiscalization is live in Paply; F2 / B2B e-invoice exchange is not. **Slovenia:** FURS fiscalization live; eSLOG exchange coming soon; B2B e-invoices mandatory from 1 Jan 2028. **Serbia:** roadmap only (apps are translated to Serbian). Country pages state only well-established deadlines and end with a "not legal advice" disclaimer. Don't add legal claims that aren't in the app's approved rule cards (`docs/compliance/`).
+- Data is hosted in AWS eu-central-1 (Frankfurt).
+- **White-label rule:** never name or hint at the underlying e-invoice network provider anywhere in this repo. Not in copy, comments or docs: `CLAUDE.md` used to be publicly served and named it. Before committing, grep the repo for the provider names listed in the main app's `docs/compliance/shared/white-label.md`.
+
+## AI Search (ChatGPT, Perplexity, Claude, Google AI Overviews)
+
+- All content is static HTML, readable without JavaScript; keep it that way (AI crawlers often don't run JS). Never put important copy only in JS strings.
+- `llms.txt` (repo root, hand-written, served at `/llms.txt`) is a plain-text fact sheet for AI tools. **Keep its plans/prices/features in sync** whenever pricing or features change.
+- `robots.txt` (generated by `build.py`) explicitly allows the AI search crawlers; don't block them.
+- Write answers AI can quote: direct, factual sentences with concrete numbers and dates (FAQs, glossary, guides). The WebPage JSON-LD carries `dateModified` from the build date.
+
+## SEO Checklist (every new page)
+
+Unique `title`/`description` in all three languages · exactly one `<h1>` · descriptive `alt` (translated via `data-i18n-attr`) · internal links as root-relative paths (`/pricing/`, auto-localized) · product links via `{{app}}` · add the page to the header/footer nav if it's a primary page · `python build.py --check` passes · `sitemap.xml` regenerated.
+
+## Brand — Paply Color System (Amber)
+
+Tokens are CSS variables in `assets/css/site.css` (`:root`), matching the app:
+
+| Token | Value |
+|---|---|
+| `--bg-primary` / `--bg-secondary` / `--bg-tertiary` | `#F8F7F5` / `#FFFFFF` / `#F1F0EC` |
+| `--text-primary` / `--text-secondary` / `--text-tertiary` | `#18181A` / `#6B6869` / `#9A9896` |
+| `--border-default` / `--border-emphasis` | `#E3E2DE` / `#CCCAC5` |
+| `--accent` / `--accent-surface` | `#EF9F27` / `rgba(239,159,39,0.12)` |
+| state colours (`--ok-*`, `--err-*`, `--warn-*`, `--info-*`) | the app's semantic Approved/Error/Warning/Info pairs |
+
+`--accent-deep` (`#B86E0B`) is a site-only shade for amber text on light backgrounds, where `#EF9F27` fails contrast. Radii 6/8/12/16px. **Weights 400 and 500 only** (Inter, self-hosted; `<th>`/`<b>` are reset to 400/500). Font sizes: the app scale (11–22px) plus 30px section headers and 40/52px display. Never `#000`; the dark bands use `--text-primary`.
 
 ## Mobile Support — MANDATORY
 
-**Every change to this site must work on mobile, not just desktop.** This is a marketing/SEO landing page — most of its traffic will be on phones. Concretely:
+Check every change at **320px**, 375px and desktop with a real render (local static server + Playwright/Chromium): no horizontal overflow (`scrollWidth <= clientWidth`), no clipped text, tap targets ≥ 40px.
 
-- Before considering any visual or structural change done, check it at a **narrow viewport, down to 320px** (not just 375px/desktop) — 320 is where cramped layouts actually break first (the header CTA wrapped to two lines and collided with the hamburger button at 320px before this was fixed). Don't eyeball the Tailwind responsive classes and assume — actually render it (a local static server + headless Chromium via Playwright, or a mobile-width browser window, is enough; there's no test suite to lean on here).
-- Check for: horizontal overflow (`document.documentElement.scrollWidth` shouldn't exceed `clientWidth`), content that's `hidden md:flex`/`md:block` with no mobile equivalent, cramped/wrapping elements at 320px specifically, and touch-target sizing on buttons/links.
-- **Header, mobile-first:** below `md`, the header shows only the logo and the hamburger button (`#mobile-menu-btn`) — the primary CTA (`hidden md:inline-flex`) is deliberately *not* shown inline on mobile (it used to be, and wrapped/crowded the hamburger at 320px); instead it's repeated as a full-width button inside the mobile menu panel itself. If a new header-level CTA or icon is added, default it to `md:`-only visibility too, rather than assuming there's room for it next to the logo + hamburger on a 320px screen.
-- The header nav pattern to follow when adding new nav items: add the link to *both* the desktop `<nav class="hidden md:flex">` and the mobile `<nav id="mobile-menu" class="mobile-menu md:hidden ...">` — they're two separate lists in the markup, not one that reflows, so a link added to only one is invisible on the other breakpoint.
-- **Mobile menu animation:** the panel's open/close is driven by the `.mobile-menu` CSS class (`max-height`/`opacity` transition, defined in the `<style>` block) plus inline `style.maxHeight` set from `menu.scrollHeight` in the toggle script — not a plain `hidden` class swap, since that can't be transitioned. If menu content changes height (e.g. a link added/removed), no code change is needed — `scrollHeight` is read fresh on every open, and also recomputed on window resize while open. The hamburger icon morphs to an X via two swapped inline SVGs (`#menu-icon-open`/`#menu-icon-close`) — keep both in sync if the icon changes.
-- The toggle script (bottom of `index.html`, the `mobile-menu-btn`/`mobile-menu` IIFE) auto-closes the menu on link click and on resize past the `md` breakpoint (768px) — keep that behavior if the menu markup changes.
-- The in-page smooth-scroll script already computes its offset from the *live* `header.offsetHeight`, so it correctly accounts for the taller header when the mobile menu is open — don't hardcode a scroll offset that would break that.
+- **Header breakpoint is 960px** (`DESKTOP` in `site.js`, `@media (min-width: 960px)` in `site.css`; keep both in sync). Below it, only logo + language globe + hamburger show; nav, Sign in and the CTA move into `#mobile-menu`. Add new nav links to **both** `.nav-desktop` and `#mobile-menu` in `src/partials/header.html`.
+- The mobile menu animates via `max-height` read from `scrollHeight` on open (no JS change needed when links change), closes on link click, Escape, and resize past 960px.
+- In-page anchor scrolling offsets by the live header (+ sticky jump-nav) height; don't hardcode offsets.
+- Wide content (comparison table) scrolls inside `.table-wrap`, never the page.
+
+## Animations
+
+All motion is CSS keyframes/transitions plus small JS (reveal-on-scroll via IntersectionObserver, hero outbox mock that cycles Draft → Fiscalized → Sent → Paid, auto-advancing feature tabs, FAQ height animation, estimator number tween). Everything respects `prefers-reduced-motion` (static final state) and pauses off-screen. Content is visible without JS (`.reveal` only hides when `<html class="js">`).
+
+## Build & Deploy
+
+- Hosted on **Vercel** (www.paply.si; paply.si redirects there), auto-deployed from `main`. `vercel.json` sets `trailingSlash: true`, security headers, long caching for fonts and versioned CSS/JS, and redirects away from repo-internal paths. `.vercelignore` keeps `src/`, `tools/`, `build.py`, `CLAUDE.md`, `README.md` out of the deployment.
+- Vercel serves `404.html` for unknown paths automatically.
+- Old `assets/logo.png`, `assets/icon-logo.png`, `assets/paply-icon.ico` are unused by the site (kept in case something external links to them); optimised replacements live in `assets/img/` and `/favicon.ico`.
+- No secrets belong here; it is a fully public static site.

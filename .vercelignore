@@ -1,0 +1,6 @@
+# Source and tooling: never served (see CLAUDE.md, "Build & deploy").
+src/
+tools/
+build.py
+CLAUDE.md
+README.md

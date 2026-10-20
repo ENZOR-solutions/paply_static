@@ -1,0 +1,85 @@
+<!--page {
+  "path": "/faq/",
+  "nav": "faq",
+  "title": "Frequently asked questions | Paply",
+  "description": "Answers about Paply: availability, countries, plans and pricing, e-invoicing and fiscalization, security and data, and the upcoming mobile app.",
+  "schema": ["faq"],
+  "crumbs": [{"key": "nav.faq", "en": "FAQ", "path": "/faq/"}],
+  "priority": 0.7
+} -->
+<section class="page-hero">
+  <div class="hero-bg" aria-hidden="true"><div class="hero-grid"></div><div class="orb orb-1"></div></div>
+  <div class="wrap page-hero-inner">
+    {{crumbs}}
+    <h1 class="h1 reveal" data-i18n="faqp.h1">Frequently asked questions</h1>
+    <p class="lead reveal" style="--d:1" data-i18n="faqp.lead">Can't find what you're looking for? Write to us at <a href="mailto:info@enzor.si" style="color:var(--accent-deep)">info@enzor.si</a> and a real person will answer.</p>
+  </div>
+</section>
+
+<nav class="jump-nav" data-spy aria-label="FAQ topics" data-i18n-attr="aria-label:faqp.jump_label">
+  <div class="wrap">
+    <a href="#general" data-i18n="faqp.g1">General</a>
+    <a href="#plans" data-i18n="faqp.g2">Plans and billing</a>
+    <a href="#compliance" data-i18n="faqp.g3">E-invoicing and fiscalization</a>
+    <a href="#security" data-i18n="faqp.g4">Security and data</a>
+    <a href="#mobile" data-i18n="faqp.g5">Mobile app</a>
+  </div>
+</nav>
+
+<section class="section" style="padding-top: 56px">
+  <div class="wrap narrow faq-groups">
+    <div class="faq-group reveal" id="general">
+      <h2 class="h3"><span class="icon-box"><svg class="i" width="20" height="20"><use href="#i-sparkle"/></svg></span><span data-i18n="faqp.g1">General</span></h2>
+      <div class="faq-list">
+        <details class="faq"><summary data-i18n="faq.q_what">What is Paply?</summary><div class="faq-a"><p data-i18n="faq.a_what">Paply is invoicing software for businesses in Slovenia and Croatia. You create, send, receive, fiscalize and archive invoices in one place, on the web and soon on your phone. It's developed in Slovenia by ENZOR d.o.o.</p></div></details>
+        <details class="faq"><summary data-i18n="faq.q_available">Can I use Paply already?</summary><div class="faq-a"><p data-i18n="faq.a_available">Yes. Paply is in its testing phase and opening up step by step, and some businesses already use it every day. You can create an account and start on the Free plan today. Sending and receiving over the e-invoice exchange network is coming soon; until then invoices go out by email with a PDF.</p></div></details>
+        <details class="faq"><summary data-i18n="faq.q_countries">Which countries does Paply support?</summary><div class="faq-a"><p data-i18n="faq.a_countries">Slovenia and Croatia, including fiscalization with each country's tax authority. Serbia is on our roadmap, and the apps are already available in Serbian.</p></div></details>
+        <details class="faq"><summary data-i18n="faq.q_switch">I already use another invoicing program. Can I switch?</summary><div class="faq-a"><p data-i18n="faq.a_switch">Yes. Import your partners, continue your invoice numbering from where you left off, and import invoices you already issued so your history and open balances are complete.</p></div></details>
+        <details class="faq"><summary data-i18n="faq.q_accountant">Can my accountant work in Paply too?</summary><div class="faq-a"><p data-i18n="faq.a_accountant">Yes. Invite your accountant as a team member or a read-only user, depending on what they need to do. Accountants with several clients can use represented companies to manage them from one login.</p></div></details>
+      </div>
+    </div>
+
+    <div class="faq-group reveal" id="plans">
+      <h2 class="h3"><span class="icon-box"><svg class="i" width="20" height="20"><use href="#i-euro"/></svg></span><span data-i18n="faqp.g2">Plans and billing</span></h2>
+      <div class="faq-list">
+        <details class="faq"><summary data-i18n="faq.q_card">Do I need a credit card for the Free plan?</summary><div class="faq-a"><p data-i18n="faq.a_card">No. The Free plan is free forever and lets you draft unlimited invoices, design templates and download PDFs. You only add payment details when you choose a paid plan.</p></div></details>
+        <details class="faq"><summary data-i18n="faq.q_over">What happens if I go over my monthly allowance?</summary><div class="faq-a"><p data-i18n="faq.a_over">Nothing stops working. Each e-invoice above your plan's allowance costs €0.15 and is added to your next bill. If you regularly go over, a bigger plan is usually cheaper.</p></div></details>
+        <details class="faq"><summary data-i18n="faq.q_email_count">Do invoices sent by email count towards the allowance?</summary><div class="faq-a"><p data-i18n="faq.a_email_count">No. Only e-invoices sent or received through the exchange network count. Email delivery, drafts and PDF downloads are unlimited on every paid plan.</p></div></details>
+        <details class="faq"><summary data-i18n="faq.q_cancel">Can I cancel or change plans at any time?</summary><div class="faq-a"><p data-i18n="faq.a_cancel">Yes. All paid plans are month to month with no lock-in. You can upgrade, downgrade or cancel from Billing in the app.</p></div></details>
+        <details class="faq"><summary data-i18n="faq.q_ai_plan">Which plan includes AI invoice scanning?</summary><div class="faq-a"><p data-i18n="faq.a_ai_plan">Core, Pro and Enterprise. AI reads supplier bills you upload, photograph or forward by email.</p></div></details>
+        <details class="faq"><summary data-i18n="faq.q_mcp">Can I connect my AI assistant to Paply?</summary><div class="faq-a"><p data-i18n="faq.a_mcp">Not yet. AI assistants are coming soon on the Core, Pro and Enterprise plans. You will be able to connect Claude, ChatGPT, Cursor or another assistant that supports Model Context Protocol (MCP) to one Paply company, either read only or with permission to prepare drafts that a person confirms in Paply. It can never send, issue or fiscalize invoices or make payments, and company admins can disconnect it at any time.</p></div></details>
+      </div>
+    </div>
+
+    <div class="faq-group reveal" id="compliance">
+      <h2 class="h3"><span class="icon-box"><svg class="i" width="20" height="20"><use href="#i-shield"/></svg></span><span data-i18n="faqp.g3">E-invoicing and fiscalization</span></h2>
+      <div class="faq-list">
+        <details class="faq"><summary data-i18n="faq.q_diff">What is the difference between e-invoicing and fiscalization?</summary><div class="faq-a"><p data-i18n="faq.a_diff">Fiscalization reports an invoice to the tax authority, which confirms it with a unique code printed on the invoice. E-invoicing sends the invoice itself to your customer as structured data instead of a PDF. They are separate obligations, and Paply is built to handle both.</p></div></details>
+        <details class="faq"><summary data-i18n="faq.q_fiscal_how">How does fiscalization work in Paply?</summary><div class="faq-a"><p data-i18n="faq.a_fiscal_how">Upload your fiscal certificate once in the settings. From then on, Paply fiscalizes invoices when you confirm them and prints the codes and QR code on the invoice. If the tax service is down, Paply resubmits automatically.</p></div></details>
+        <details class="faq"><summary data-i18n="faq.q_network">When will e-invoice exchange be available?</summary><div class="faq-a"><p data-i18n="faq.a_network">Exchange over the e-invoice network is in its final stage of development and is coming soon. Your plan's network allowance applies from launch, and nothing changes in how you create invoices.</p></div></details>
+        <details class="faq"><summary data-i18n="faq.q_archive">How long are my invoices kept?</summary><div class="faq-a"><p data-i18n="faq.a_archive">For the statutory retention period: 10 years in Slovenia and 11 years in Croatia. You can export your data at any time.</p></div></details>
+      </div>
+      <p class="mt-24"><a class="link-arrow" href="/e-invoicing/"><span data-i18n="faqp.guide_link">Read our e-invoicing guide</span><svg class="i" width="16" height="16"><use href="#i-arrow"/></svg></a></p>
+    </div>
+
+    <div class="faq-group reveal" id="security">
+      <h2 class="h3"><span class="icon-box"><svg class="i" width="20" height="20"><use href="#i-lock"/></svg></span><span data-i18n="faqp.g4">Security and data</span></h2>
+      <div class="faq-list">
+        <details class="faq"><summary data-i18n="faq.q_where">Where is my data stored?</summary><div class="faq-a"><p data-i18n="faq.a_where">In the European Union, in Amazon Web Services' Frankfurt region. Passwords and certificates you connect are encrypted, and sign-in is protected by two-factor authentication.</p></div></details>
+        <details class="faq"><summary data-i18n="faq.q_gdpr">Is Paply GDPR compliant?</summary><div class="faq-a"><p data-i18n="faq.a_gdpr">Yes. Our <a href="{{app}}/privacy">privacy policy</a> explains how we handle personal data, and our <a href="{{app}}/dpa">data processing agreement</a> covers the data you process in Paply.</p></div></details>
+        <details class="faq"><summary data-i18n="faq.q_delete">Can I delete my account?</summary><div class="faq-a"><p data-i18n="faq.a_delete">Yes, at any time from your account settings. Invoices that must be kept by law stay in the archive until the retention period ends.</p></div></details>
+      </div>
+    </div>
+
+    <div class="faq-group reveal" id="mobile">
+      <h2 class="h3"><span class="icon-box"><svg class="i" width="20" height="20"><use href="#i-phone"/></svg></span><span data-i18n="faqp.g5">Mobile app</span></h2>
+      <div class="faq-list">
+        <details class="faq"><summary data-i18n="faq.q_mobile">Is there a mobile app?</summary><div class="faq-a"><p data-i18n="faq.a_mobile">Paply for Android and iOS is coming soon. It works with the same account as the web app, so anything you set up today carries over.</p></div></details>
+        <details class="faq"><summary data-i18n="faq.q_mobile_buy">Can I buy a plan in the mobile app?</summary><div class="faq-a"><p data-i18n="faq.a_mobile_buy">No. Plans are managed on the web at paply.app, and your subscription works in the app automatically.</p></div></details>
+      </div>
+      <p class="mt-24"><a class="link-arrow" href="/mobile/"><span data-i18n="home.m_more">Take a look at the app</span><svg class="i" width="16" height="16"><use href="#i-arrow"/></svg></a></p>
+    </div>
+  </div>
+</section>
+
+<!-- @include cta -->

@@ -1,0 +1,412 @@
+<!--page {
+  "path": "/",
+  "title": "Paply | E-invoicing and fiscalization for Slovenia & Croatia",
+  "description": "Create, send, receive, fiscalize and archive invoices in one place. E-invoicing software for businesses in Slovenia and Croatia. Free plan, no card needed.",
+  "schema": ["software", "faq"],
+  "priority": 1.0,
+  "changefreq": "weekly"
+} -->
+<section class="hero">
+  <div class="hero-bg" aria-hidden="true"><div class="hero-grid"></div><div class="orb orb-1"></div><div class="orb orb-2"></div></div>
+  <div class="wrap hero-inner">
+    <div class="hero-copy">
+      <p class="eyebrow reveal"><span class="eyebrow-flags" aria-hidden="true"><span class="flag flag-si"></span><span class="flag flag-hr"></span><span class="flag flag-rs"></span></span><span data-i18n="home.badge">Coming soon to Slovenia, Croatia &amp; Serbia</span></p>
+      <h1 class="display reveal" style="--d:1"><span data-i18n="home.h1_pre">E-invoicing,</span> <span class="accent-text" data-i18n="home.h1_accent">without the complexity.</span></h1>
+      <p class="lead reveal" style="--d:2" data-i18n="home.lead">Create, send, receive, fiscalize and archive invoices in one place. Paply takes care of the formats, the tax authorities and the paperwork, so you can get back to running your business.</p>
+      <div class="hero-ctas reveal" style="--d:3">
+        <a href="{{app}}/register" class="btn btn-primary btn-lg"><span data-i18n="common.start_free">Start for free</span><svg class="i" width="18" height="18"><use href="#i-arrow"/></svg></a>
+        <a href="#how" class="btn btn-ghost btn-lg" data-i18n="home.see_how">See how it works</a>
+      </div>
+      <ul class="hero-points reveal" style="--d:4">
+        <li><svg class="i" width="16" height="16"><use href="#i-check"/></svg><span data-i18n="home.point1">Free plan, forever</span></li>
+        <li><svg class="i" width="16" height="16"><use href="#i-check"/></svg><span data-i18n="home.point2">No credit card</span></li>
+        <li><svg class="i" width="16" height="16"><use href="#i-check"/></svg><span data-i18n="home.point3">FURS &amp; Porezna fiscalization</span></li>
+      </ul>
+    </div>
+
+    <div class="hero-visual reveal" style="--d:2" aria-hidden="true">
+      <div class="mock-window" id="hero-mock">
+        <div class="mw-bar"><i></i><i></i><i></i><span class="mw-url">paply.app/invoices/outbox</span></div>
+        <div class="mw-body">
+          <div class="mw-side">
+            <img src="/assets/img/paply-mark.svg" width="16" height="24" alt="">
+            <span class="mw-nav"><svg class="i" width="14" height="14"><use href="#i-chart"/></svg><span data-i18n="mock.dashboard">Dashboard</span></span>
+            <span class="mw-nav is-active"><svg class="i" width="14" height="14"><use href="#i-send"/></svg><span data-i18n="mock.outbox">Outbox</span></span>
+            <span class="mw-nav"><svg class="i" width="14" height="14"><use href="#i-inbox"/></svg><span data-i18n="mock.inbox">Inbox</span></span>
+            <span class="mw-nav"><svg class="i" width="14" height="14"><use href="#i-team"/></svg><span data-i18n="mock.partners">Partners</span></span>
+            <span class="mw-nav"><svg class="i" width="14" height="14"><use href="#i-archive"/></svg><span data-i18n="mock.archive">Archive</span></span>
+          </div>
+          <div class="mw-main">
+            <div class="mw-head"><span class="mw-title" data-i18n="mock.outbox">Outbox</span><span class="mw-new"><svg class="i" width="12" height="12"><use href="#i-plus"/></svg><span data-i18n="mock.new_invoice">New invoice</span></span></div>
+            <div class="mw-kpis">
+              <div class="kpi"><span class="kpi-l" data-i18n="mock.kpi_issued">Issued this month</span><span class="kpi-v" data-kpi="issued">€12,480.00</span></div>
+              <div class="kpi"><span class="kpi-l" data-i18n="mock.kpi_awaiting">Awaiting payment</span><span class="kpi-v" data-kpi="awaiting">€3,215.40</span></div>
+              <div class="kpi kpi-3"><span class="kpi-l" data-i18n="mock.kpi_paid">Paid this month</span><span class="kpi-v" data-kpi="paid">€9,264.60</span></div>
+            </div>
+            <div class="mw-list" id="hero-rows">
+              <div class="mw-row"><span class="av av-amber">PZ</span><span class="r-name">Pekarna Zrno d.o.o.<small>2026-020</small></span><span class="r-amt">€59.78</span><span class="pill st-sent" data-i18n="mock.st_sent">Sent</span></div>
+              <div class="mw-row"><span class="av av-green">AT</span><span class="r-name">Alpin Tech d.o.o.<small>2026-019</small></span><span class="r-amt">€1,220.00</span><span class="pill st-paid" data-i18n="mock.st_paid">Paid</span></div>
+              <div class="mw-row"><span class="av av-teal">MH</span><span class="r-name">Mizarstvo Hrast s.p.<small>2026-018</small></span><span class="r-amt">€29.28</span><span class="pill st-paid" data-i18n="mock.st_paid">Paid</span></div>
+              <div class="mw-row"><span class="av av-red">VK</span><span class="r-name">Vita Klima d.o.o.<small>2026-017</small></span><span class="r-amt">€122.00</span><span class="pill st-paid" data-i18n="mock.st_paid">Paid</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mock-phone"><img src="/assets/img/app-home-300.webp" width="300" height="595" alt="" fetchpriority="high"></div>
+      <div class="mock-toast" id="hero-toast"><span class="toast-ic"><svg class="i" width="14" height="14"><use href="#i-check"/></svg></span><span class="toast-txt"><b data-toast-title>Fiscalized with FURS</b><small data-toast-sub>EOR 7c1e9a42-…</small></span></div>
+      <div hidden id="hero-strings">
+        <span data-k="draft" data-i18n="mock.st_draft">Draft</span>
+        <span data-k="fiscal" data-i18n="mock.st_fiscal">Fiscalized</span>
+        <span data-k="sent" data-i18n="mock.st_sent">Sent</span>
+        <span data-k="paid" data-i18n="mock.st_paid">Paid</span>
+        <span data-k="t_fiscal" data-i18n="mock.t_fiscal">Fiscalized with FURS</span>
+        <span data-k="t_sent" data-i18n="mock.t_sent">Sent to customer by email</span>
+        <span data-k="t_fiscal_code" data-i18n="mock.t_fiscal_code">EOR</span>
+        <span data-k="t_paid" data-i18n="mock.t_paid">Payment received</span>
+        <span data-k="t_paid_sub" data-i18n="mock.t_paid_sub">Matched from bank statement</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="logos" aria-label="Integrations and standards" data-i18n-attr="aria-label:home.logos_label">
+  <div class="wrap">
+    <div class="logos-panel reveal">
+      <div class="logos-row">
+        <p class="logos-label"><svg class="i" width="16" height="16" aria-hidden="true"><use href="#i-plug"/></svg><span data-i18n="home.logos_int">Connects with</span></p>
+        <div class="ticker"><ul class="ticker-track"><li>Stripe</li><li>Shopify</li><li>Odoo</li><li>Gmail</li><li>Microsoft 365</li><li>REST API</li><li aria-hidden="true">Stripe</li><li aria-hidden="true">Shopify</li><li aria-hidden="true">Odoo</li><li aria-hidden="true">Gmail</li><li aria-hidden="true">Microsoft 365</li><li aria-hidden="true">REST API</li><li aria-hidden="true">Stripe</li><li aria-hidden="true">Shopify</li><li aria-hidden="true">Odoo</li><li aria-hidden="true">Gmail</li><li aria-hidden="true">Microsoft 365</li><li aria-hidden="true">REST API</li><li aria-hidden="true">Stripe</li><li aria-hidden="true">Shopify</li><li aria-hidden="true">Odoo</li><li aria-hidden="true">Gmail</li><li aria-hidden="true">Microsoft 365</li><li aria-hidden="true">REST API</li></ul></div>
+      </div>
+      <div class="logos-row">
+        <p class="logos-label"><svg class="i" width="16" height="16" aria-hidden="true"><use href="#i-doc"/></svg><span data-i18n="home.logos_std">Supports</span></p>
+        <div class="ticker ticker-reverse ticker-mono"><ul class="ticker-track"><li>eSLOG 2.0</li><li>UBL 2.1</li><li>EN 16931</li><li>UPN QR</li><li>CAMT.053</li><li>MT940</li><li>SEPA pain.001</li><li aria-hidden="true">eSLOG 2.0</li><li aria-hidden="true">UBL 2.1</li><li aria-hidden="true">EN 16931</li><li aria-hidden="true">UPN QR</li><li aria-hidden="true">CAMT.053</li><li aria-hidden="true">MT940</li><li aria-hidden="true">SEPA pain.001</li><li aria-hidden="true">eSLOG 2.0</li><li aria-hidden="true">UBL 2.1</li><li aria-hidden="true">EN 16931</li><li aria-hidden="true">UPN QR</li><li aria-hidden="true">CAMT.053</li><li aria-hidden="true">MT940</li><li aria-hidden="true">SEPA pain.001</li><li aria-hidden="true">eSLOG 2.0</li><li aria-hidden="true">UBL 2.1</li><li aria-hidden="true">EN 16931</li><li aria-hidden="true">UPN QR</li><li aria-hidden="true">CAMT.053</li><li aria-hidden="true">MT940</li><li aria-hidden="true">SEPA pain.001</li></ul></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="features">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="kicker" data-i18n="home.show_kicker">The whole invoice journey</p>
+      <h2 class="h2" data-i18n="home.show_title">One place for every invoice, in and out</h2>
+      <p class="lead" data-i18n="home.show_sub">From the first draft to the archived, paid and fiscalized invoice. No spreadsheets, no separate tools.</p>
+    </div>
+
+    <div class="showcase reveal" data-showcase>
+      <div class="tabs" role="tablist" aria-label="Invoice journey" data-i18n-attr="aria-label:home.show_tabs_label">
+        <button class="tab" role="tab" id="tab-create" aria-controls="panel-create" aria-selected="true"><svg class="i" width="18" height="18"><use href="#i-pen"/></svg><span data-i18n="home.tab_create">Create</span><i class="tab-progress"></i></button>
+        <button class="tab" role="tab" id="tab-send" aria-controls="panel-send" aria-selected="false" tabindex="-1"><svg class="i" width="18" height="18"><use href="#i-send"/></svg><span data-i18n="home.tab_send">Send</span><i class="tab-progress"></i></button>
+        <button class="tab" role="tab" id="tab-receive" aria-controls="panel-receive" aria-selected="false" tabindex="-1"><svg class="i" width="18" height="18"><use href="#i-inbox"/></svg><span data-i18n="home.tab_receive">Receive</span><i class="tab-progress"></i></button>
+        <button class="tab" role="tab" id="tab-paid" aria-controls="panel-paid" aria-selected="false" tabindex="-1"><svg class="i" width="18" height="18"><use href="#i-euro"/></svg><span data-i18n="home.tab_paid">Get paid</span><i class="tab-progress"></i></button>
+        <button class="tab" role="tab" id="tab-comply" aria-controls="panel-comply" aria-selected="false" tabindex="-1"><svg class="i" width="18" height="18"><use href="#i-shield"/></svg><span data-i18n="home.tab_comply">Stay compliant</span><i class="tab-progress"></i></button>
+      </div>
+
+      <div class="panels">
+        <div class="panel is-active" role="tabpanel" id="panel-create" aria-labelledby="tab-create">
+          <div class="panel-copy">
+            <h3 class="h3" data-i18n="home.p1_title">Draft a correct invoice in a minute</h3>
+            <p data-i18n="home.p1_desc">Pick a customer, add items from your catalogue, and Paply works out the VAT, the invoice number and the due date from the customer's payment terms.</p>
+            <ul class="ticks">
+              <li data-i18n="home.p1_b1">Drag-and-drop designer for your own invoice template</li>
+              <li data-i18n="home.p1_b2">Numbering series, credit notes and advance invoices</li>
+              <li data-i18n="home.p1_b3">Price lists, item tags and multiple currencies</li>
+            </ul>
+          </div>
+          <div class="panel-visual">
+            <img class="phone-shot" src="/assets/img/app-new-invoice-300.webp" srcset="/assets/img/app-new-invoice-300.webp 300w, /assets/img/app-new-invoice.webp 600w" sizes="260px" width="300" height="595" loading="lazy" alt="New invoice screen in the Paply app with customer, dates, items and VAT totals" data-i18n-attr="alt:home.p1_alt">
+            <div class="float-chip fc-1"><svg class="i" width="14" height="14"><use href="#i-check"/></svg><span data-i18n="home.p1_chip">VAT 22% calculated</span></div>
+          </div>
+        </div>
+
+        <div class="panel" role="tabpanel" id="panel-send" aria-labelledby="tab-send" hidden>
+          <div class="panel-copy">
+            <h3 class="h3" data-i18n="home.p2_title">Deliver it the way each customer wants</h3>
+            <p data-i18n="home.p2_desc">Email the invoice with a PDF attached, from Paply or from your own Gmail, Microsoft 365 or SMTP mailbox. Structured e-invoices over the exchange network are coming soon.</p>
+            <ul class="ticks">
+              <li data-i18n="home.p2_b1">A preferred delivery method for every customer</li>
+              <li data-i18n="home.p2_b2">Bulk sending and branded email templates</li>
+              <li data-i18n="home.p2_b3">Automatic payment reminders when invoices go overdue</li>
+            </ul>
+          </div>
+          <div class="panel-visual">
+            <div class="mock-card send-card">
+              <p class="mc-title" data-i18n="home.p2_m_title">Send invoice 2026-021</p>
+              <div class="send-opt is-selected"><span class="radio" aria-hidden="true"></span><span><b data-i18n="home.p2_m_email">Email with PDF</b><small>racuni@studio-lipa.si</small></span><svg class="i" width="18" height="18"><use href="#i-mail"/></svg></div>
+              <div class="send-opt is-disabled"><span class="radio" aria-hidden="true"></span><span><b data-i18n="home.p2_m_network">E-invoice network</b><small data-i18n="home.p2_m_network_sub">eSLOG 2.0 · UBL 2.1</small></span><span class="badge badge-soon" data-i18n="common.coming_soon">Coming soon</span></div>
+              <div class="send-to"><span data-i18n="home.p2_m_to">To</span><b>Bistra Logistika d.o.o.</b></div>
+              <span class="btn btn-primary btn-block btn-fake"><svg class="i" width="16" height="16"><use href="#i-send"/></svg><span data-i18n="home.p2_m_btn">Send invoice</span></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel" role="tabpanel" id="panel-receive" aria-labelledby="tab-receive" hidden>
+          <div class="panel-copy">
+            <h3 class="h3" data-i18n="home.p3_title">Supplier bills in, manual typing out</h3>
+            <p data-i18n="home.p3_desc">Upload a PDF or photo, or forward bills to your own Paply inbox address. AI reads the supplier, dates, totals and line items, then the bill goes through approval before anyone pays it.</p>
+            <ul class="ticks">
+              <li data-i18n="home.p3_b1">AI invoice scanning on Core and above</li>
+              <li data-i18n="home.p3_b2">Approval by anyone, everyone or in a set order, with backups</li>
+              <li data-i18n="home.p3_b3">Comments and @mentions on every invoice</li>
+            </ul>
+          </div>
+          <div class="panel-visual">
+            <img class="phone-shot" src="/assets/img/app-inbox-300.webp" srcset="/assets/img/app-inbox-300.webp 300w, /assets/img/app-inbox.webp 600w" sizes="260px" width="300" height="595" loading="lazy" alt="Inbox of received invoices in the Paply app, filtered by review, approved, overdue and paid" data-i18n-attr="alt:home.p3_alt">
+            <div class="float-chip fc-2"><svg class="i" width="14" height="14"><use href="#i-sparkle"/></svg><span data-i18n="home.p3_chip">AI read 6 line items</span></div>
+          </div>
+        </div>
+
+        <div class="panel" role="tabpanel" id="panel-paid" aria-labelledby="tab-paid" hidden>
+          <div class="panel-copy">
+            <h3 class="h3" data-i18n="home.p4_title">Get paid sooner, match payments automatically</h3>
+            <p data-i18n="home.p4_desc">Slovenian invoices carry a UPN QR code your customers scan in their banking app. Import a CAMT.053 or MT940 bank statement and Paply matches the payments to your invoices.</p>
+            <ul class="ticks">
+              <li data-i18n="home.p4_b1">Partial payments and overdue tracking</li>
+              <li data-i18n="home.p4_b2">SEPA payment files and scan-to-pay codes for your own bills</li>
+              <li data-i18n="home.p4_b3">Card payment links and Tap to Pay in the mobile app (coming soon)</li>
+            </ul>
+          </div>
+          <div class="panel-visual">
+            <img class="doc-shot" src="/assets/img/invoice-upn-qr-435.webp" srcset="/assets/img/invoice-upn-qr-435.webp 435w, /assets/img/invoice-upn-qr.webp 870w" sizes="(max-width: 600px) 90vw, 400px" width="435" height="550" loading="lazy" alt="Slovenian invoice made in Paply with a UPN QR payment code and payment details" data-i18n-attr="alt:home.p4_alt">
+          </div>
+        </div>
+
+        <div class="panel" role="tabpanel" id="panel-comply" aria-labelledby="tab-comply" hidden>
+          <div class="panel-copy">
+            <h3 class="h3" data-i18n="home.p5_title">Fiscalization built in, not bolted on</h3>
+            <p data-i18n="home.p5_desc">Paply fiscalizes invoices with FURS in Slovenia and the Tax Administration in Croatia, prints the verification QR code on the invoice and retries on its own if the tax service is unreachable.</p>
+            <ul class="ticks">
+              <li data-i18n="home.p5_b1">ZOI and EOR in Slovenia, ZKI and JIR in Croatia</li>
+              <li data-i18n="home.p5_b2">A complete history of every invoice</li>
+              <li data-i18n="home.p5_b3">Archived for the statutory period: 10 years in Slovenia, 11 in Croatia</li>
+            </ul>
+          </div>
+          <div class="panel-visual">
+            <div class="mock-card fiscal-card">
+              <p class="mc-title" data-i18n="home.p5_m_title">Fiscal verification</p>
+              <div class="fiscal-row"><span class="flag flag-si" aria-hidden="true"></span><span><b>FURS</b><small>ZOI 4f1c…a09e · EOR 7c1e…d2b4</small></span><span class="pill st-paid"><svg class="i" width="12" height="12"><use href="#i-check"/></svg><span data-i18n="home.p5_m_ok">Confirmed</span></span></div>
+              <div class="fiscal-row"><span class="flag flag-hr" aria-hidden="true"></span><span><b>Porezna uprava</b><small>ZKI 9b2d…e710 · JIR 3a8f…c561</small></span><span class="pill st-paid"><svg class="i" width="12" height="12"><use href="#i-check"/></svg><span data-i18n="home.p5_m_ok">Confirmed</span></span></div>
+              <div class="fiscal-qr"><svg class="i" width="40" height="40"><use href="#i-qr"/></svg><span data-i18n="home.p5_m_qr">Verification QR code printed on the invoice</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="how">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="kicker" data-i18n="home.how_kicker">How it works</p>
+      <h2 class="h2" data-i18n="home.how_title">Up and running in three steps</h2>
+    </div>
+    <ol class="steps">
+      <li class="step reveal" style="--d:0">
+        <span class="step-n">1</span>
+        <h3 class="h4" data-i18n="home.s1_title">Set up your company</h3>
+        <p data-i18n="home.s1_desc">Sign up, add your VAT number, bank account and logo, and invite your team or your accountant.</p>
+      </li>
+      <li class="step reveal" style="--d:1">
+        <span class="step-n">2</span>
+        <h3 class="h4" data-i18n="home.s2_title">Issue and fiscalize</h3>
+        <p data-i18n="home.s2_desc">Create an invoice and confirm it. Paply numbers it, fiscalizes it where required and adds the payment QR code.</p>
+      </li>
+      <li class="step reveal" style="--d:2">
+        <span class="step-n">3</span>
+        <h3 class="h4" data-i18n="home.s3_title">Deliver, get paid, archive</h3>
+        <p data-i18n="home.s3_desc">Send it by email today, or over the e-invoice network soon. Payments are matched from your bank statement and everything is archived.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="kicker" data-i18n="home.bento_kicker">Less busywork</p>
+      <h2 class="h2" data-i18n="home.bento_title">The details that save you hours every month</h2>
+    </div>
+    <div class="bento">
+      <article class="tile tile-wide tile-ai reveal">
+        <div class="tile-top"><span class="icon-box"><svg class="i" width="20" height="20"><use href="#i-sparkle"/></svg></span><span class="badge" data-i18n="common.core_plus">Core and up</span></div>
+        <h3 class="h4" data-i18n="home.t_ai_title">AI reads your supplier bills</h3>
+        <p data-i18n="home.t_ai_desc">Drop in a PDF or a photo, or forward the email. Paply extracts the supplier, dates, totals, VAT and every line item, ready for you to check and approve.</p>
+        <div class="scan-demo" aria-hidden="true">
+          <div class="scan-doc"><i></i><i></i><i></i><i></i><i></i><span class="scan-line"></span></div>
+          <div class="scan-fields">
+            <span><small data-i18n="home.t_ai_f1">Supplier</small><b>Mreža Plus d.o.o.</b></span>
+            <span><small data-i18n="home.t_ai_f2">Total</small><b>€1,000.00</b></span>
+            <span><small data-i18n="home.t_ai_f3">VAT</small><b>€180.33</b></span>
+          </div>
+        </div>
+      </article>
+      <article class="tile reveal" style="--d:1">
+        <span class="icon-box"><svg class="i" width="20" height="20"><use href="#i-flow"/></svg></span>
+        <h3 class="h4" data-i18n="home.t_appr_title">Approvals that fit your team</h3>
+        <p data-i18n="home.t_appr_desc">Any one person, everyone, or a set order, with a backup approver for when someone is away.</p>
+      </article>
+      <article class="tile reveal" style="--d:2">
+        <span class="icon-box"><svg class="i" width="20" height="20"><use href="#i-repeat"/></svg></span>
+        <h3 class="h4" data-i18n="home.t_rec_title">Recurring invoices</h3>
+        <p data-i18n="home.t_rec_desc">Set the schedule once. Paply creates and sends the invoices on time, every time.</p>
+      </article>
+      <article class="tile reveal">
+        <span class="icon-box"><svg class="i" width="20" height="20"><use href="#i-bank"/></svg></span>
+        <h3 class="h4" data-i18n="home.t_bank_title">Bank reconciliation</h3>
+        <p data-i18n="home.t_bank_desc">Import a CAMT.053 or MT940 statement and payments are matched to invoices automatically.</p>
+      </article>
+      <article class="tile reveal" style="--d:1">
+        <div class="tile-top"><span class="icon-box"><svg class="i" width="20" height="20"><use href="#i-bell"/></svg></span><span class="badge" data-i18n="common.start_plus">Start and up</span></div>
+        <h3 class="h4" data-i18n="home.t_rem_title">Payment reminders</h3>
+        <p data-i18n="home.t_rem_desc">Polite reminders 3, 14 and 30 days after the due date, in your customer's language and only after you approve them.</p>
+      </article>
+      <article class="tile reveal" style="--d:2">
+        <span class="icon-box"><svg class="i" width="20" height="20"><use href="#i-lock"/></svg></span>
+        <h3 class="h4" data-i18n="home.t_sec_title">Secure by default</h3>
+        <p data-i18n="home.t_sec_desc">Two-factor login, sign-in with Google or Apple, roles and permissions, and data hosted in the EU.</p>
+      </article>
+      <article class="tile tile-wide reveal">
+        <div class="tile-top"><span class="icon-box"><svg class="i" width="20" height="20"><use href="#i-plug"/></svg></span><span class="badge" data-i18n="common.core_plus">Core and up</span></div>
+        <h3 class="h4" data-i18n="home.t_int_title">Connect the tools you already use</h3>
+        <p data-i18n="home.t_int_desc">Invoices from Stripe, Shopify and Odoo flow into Paply on their own, and card-paid ones are fiscalized automatically. For everything else there is the REST API.</p>
+        <div class="int-row" aria-hidden="true"><span>Stripe</span><span>Shopify</span><span>Odoo</span><span>Gmail</span><span>Microsoft 365</span><span>API</span></div>
+      </article>
+      <article class="tile reveal">
+        <span class="icon-box"><svg class="i" width="20" height="20"><use href="#i-chat"/></svg></span>
+        <h3 class="h4" data-i18n="home.t_chat_title">Comments and @mentions</h3>
+        <p data-i18n="home.t_chat_desc">Discuss an invoice right where it lives. Mention a colleague and they get a notification.</p>
+      </article>
+      <article class="tile reveal" style="--d:1">
+        <div class="tile-top"><span class="icon-box"><svg class="i" width="20" height="20"><use href="#i-archive"/></svg></span><span class="badge" data-i18n="common.start_plus">Start and up</span></div>
+        <h3 class="h4" data-i18n="home.t_docs_title">Documents in one place</h3>
+        <p data-i18n="home.t_docs_desc">Keep contracts and certificates next to your invoices, with a reminder before anything expires.</p>
+      </article>
+      <article class="tile reveal" style="--d:2">
+        <span class="icon-box"><svg class="i" width="20" height="20"><use href="#i-building"/></svg></span>
+        <h3 class="h4" data-i18n="home.t_multi_title">Several companies, one login</h3>
+        <p data-i18n="home.t_multi_desc">Add represented companies, each fully separate, on your subscription for €4.90 a month.</p>
+      </article>
+    </div>
+    <p class="center reveal"><a class="link-arrow" href="/features/"><span data-i18n="home.all_features">See all features</span><svg class="i" width="16" height="16"><use href="#i-arrow"/></svg></a></p>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="kicker" data-i18n="home.c_kicker">Ready for the mandates</p>
+      <h2 class="h2" data-i18n="home.c_title">Built for e-invoicing in Croatia and Slovenia</h2>
+      <p class="lead" data-i18n="home.c_sub">Croatia moved business invoicing to e-invoices in 2026 and Slovenia follows in 2028. Paply is built for both.</p>
+    </div>
+    <div class="countries">
+      <a class="country reveal" href="/e-invoicing/croatia/">
+        <div class="country-head"><span class="flag flag-hr flag-lg" aria-hidden="true"></span><h3 class="h4" data-i18n="home.c_hr">Croatia</h3><span class="badge" data-i18n="home.c_hr_badge">Fiscalization 2.0</span></div>
+        <ol class="mini-timeline">
+          <li><b data-i18n="home.c_hr_t1">1 Jan 2026</b><span data-i18n="home.c_hr_t1d">Domestic B2B e-invoices for VAT payers, and fiscalization of every payment method</span></li>
+          <li><b data-i18n="home.c_hr_t2">1 Jan 2027</b><span data-i18n="home.c_hr_t2d">Businesses outside the VAT system start issuing e-invoices too</span></li>
+        </ol>
+        <p class="country-paply"><span data-i18n="home.c_hr_paply">In Paply: F1 fiscalization with ZKI and JIR, Croatian interface. E-invoice exchange coming soon.</span></p>
+        <span class="link-arrow"><span data-i18n="home.c_more">Read the guide</span><svg class="i" width="16" height="16"><use href="#i-arrow"/></svg></span>
+      </a>
+      <a class="country reveal" style="--d:1" href="/e-invoicing/slovenia/">
+        <div class="country-head"><span class="flag flag-si flag-lg" aria-hidden="true"></span><h3 class="h4" data-i18n="home.c_si">Slovenia</h3><span class="badge" data-i18n="home.c_si_badge">E-invoices from 2028</span></div>
+        <ol class="mini-timeline">
+          <li><b data-i18n="home.c_si_t1">Today</b><span data-i18n="home.c_si_t1d">Invoices paid in cash or by card are verified with FURS</span></li>
+          <li><b data-i18n="home.c_si_t2">1 Jan 2028</b><span data-i18n="home.c_si_t2d">Structured e-invoices become mandatory between businesses</span></li>
+        </ol>
+        <p class="country-paply"><span data-i18n="home.c_si_paply">In Paply: FURS fiscalization, UPN QR on every invoice. eSLOG 2.0 e-invoice exchange coming soon.</span></p>
+        <span class="link-arrow"><span data-i18n="home.c_more">Read the guide</span><svg class="i" width="16" height="16"><use href="#i-arrow"/></svg></span>
+      </a>
+      <div class="country country-muted reveal" style="--d:2">
+        <div class="country-head"><span class="flag flag-rs flag-lg" aria-hidden="true"></span><h3 class="h4" data-i18n="home.c_rs">Serbia</h3><span class="badge badge-muted" data-i18n="home.c_rs_badge">On the roadmap</span></div>
+        <p data-i18n="home.c_rs_desc">The Paply apps already speak Serbian. Support for Serbian e-invoicing is planned for a later phase.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="band-dark reveal">
+      <div class="band-copy">
+        <span class="badge badge-on-dark" data-i18n="home.m_badge">Coming soon to Android &amp; iOS</span>
+        <h2 class="h2" data-i18n="home.m_title">Your invoices, in your pocket</h2>
+        <p data-i18n="home.m_desc">Create and confirm invoices, scan supplier bills with your camera, get paid with a payment link or Tap to Pay, and get a notification the moment an invoice is paid.</p>
+        <div class="store-row">
+          <span class="store-btn" aria-disabled="true"><svg class="i" width="20" height="20"><use href="#i-phone"/></svg><span><small data-i18n="common.coming_soon">Coming soon</small>Google Play</span></span>
+          <span class="store-btn" aria-disabled="true"><svg class="i" width="20" height="20"><use href="#i-phone"/></svg><span><small data-i18n="common.coming_soon">Coming soon</small>App Store</span></span>
+        </div>
+        <a class="link-arrow link-on-dark" href="/mobile/"><span data-i18n="home.m_more">Take a look at the app</span><svg class="i" width="16" height="16"><use href="#i-arrow"/></svg></a>
+      </div>
+      <div class="band-phones" aria-hidden="true">
+        <img class="bp bp-1" src="/assets/img/app-outbox-300.webp" width="300" height="595" alt="" loading="lazy">
+        <img class="bp bp-2" src="/assets/img/app-home-300.webp" width="300" height="595" alt="" loading="lazy">
+        <img class="bp bp-3" src="/assets/img/app-inbox-300.webp" width="300" height="595" alt="" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="pricing">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="kicker" data-i18n="nav.pricing">Pricing</p>
+      <h2 class="h2" data-i18n="home.p_title">Simple pricing that grows with you</h2>
+      <p class="lead" data-i18n="home.p_sub">Create as many invoices as you like on every plan. Paid plans add fiscalization, delivery and a monthly e-invoice allowance.</p>
+    </div>
+    <div class="mini-plans">
+      <a class="mini-plan reveal" href="/pricing/">
+        <span class="mp-name">Free</span><span class="mp-price">€0</span>
+        <span class="mp-desc" data-i18n="home.mp_free">Unlimited drafts, templates and PDF downloads</span>
+      </a>
+      <a class="mini-plan reveal" style="--d:1" href="/pricing/">
+        <span class="mp-name">Start</span><span class="mp-price">€12<small data-i18n="common.per_month">/mo</small></span>
+        <span class="mp-desc" data-i18n="home.mp_start">Fiscalization, email delivery, 50 e‑invoices a month</span>
+      </a>
+      <a class="mini-plan is-popular reveal" style="--d:2" href="/pricing/">
+        <span class="mp-flag" data-i18n="common.most_popular">Most popular</span>
+        <span class="mp-name">Core</span><span class="mp-price">€27<small data-i18n="common.per_month">/mo</small></span>
+        <span class="mp-desc" data-i18n="home.mp_core">AI scanning, integrations, API, 150 e‑invoices a month</span>
+      </a>
+      <a class="mini-plan reveal" style="--d:3" href="/pricing/">
+        <span class="mp-name">Pro</span><span class="mp-price">€59<small data-i18n="common.per_month">/mo</small></span>
+        <span class="mp-desc" data-i18n="home.mp_pro">15 team members, 400 e‑invoices a month</span>
+      </a>
+    </div>
+    <p class="center small muted reveal" data-i18n="common.vat_note">Prices exclude VAT.</p>
+    <p class="center reveal"><a class="link-arrow" href="/pricing/"><span data-i18n="home.p_compare">Compare plans and estimate your cost</span><svg class="i" width="16" height="16"><use href="#i-arrow"/></svg></a></p>
+  </div>
+</section>
+
+<section class="section" id="faq">
+  <div class="wrap narrow">
+    <div class="section-head reveal">
+      <h2 class="h2" data-i18n="home.faq_title">Questions, answered</h2>
+    </div>
+    <div class="faq-list reveal">
+      <details class="faq">
+        <summary data-i18n="faq.q_available">Can I use Paply already?</summary>
+        <div class="faq-a"><p data-i18n="faq.a_available">Yes. Paply is in its testing phase and opening up step by step, and some businesses already use it every day. You can create an account and start on the Free plan today. Sending and receiving over the e-invoice exchange network is coming soon; until then invoices go out by email with a PDF.</p></div>
+      </details>
+      <details class="faq">
+        <summary data-i18n="faq.q_countries">Which countries does Paply support?</summary>
+        <div class="faq-a"><p data-i18n="faq.a_countries">Slovenia and Croatia, including fiscalization with each country's tax authority. Serbia is on our roadmap, and the apps are already available in Serbian.</p></div>
+      </details>
+      <details class="faq">
+        <summary data-i18n="faq.q_card">Do I need a credit card for the Free plan?</summary>
+        <div class="faq-a"><p data-i18n="faq.a_card">No. The Free plan is free forever and lets you draft unlimited invoices, design templates and download PDFs. You only add payment details when you choose a paid plan.</p></div>
+      </details>
+      <details class="faq">
+        <summary data-i18n="faq.q_diff">What is the difference between e-invoicing and fiscalization?</summary>
+        <div class="faq-a"><p data-i18n="faq.a_diff">Fiscalization reports an invoice to the tax authority, which confirms it with a unique code printed on the invoice. E-invoicing sends the invoice itself to your customer as structured data instead of a PDF. They are separate obligations, and Paply is built to handle both.</p></div>
+      </details>
+      <details class="faq">
+        <summary data-i18n="faq.q_mobile">Is there a mobile app?</summary>
+        <div class="faq-a"><p data-i18n="faq.a_mobile">Paply for Android and iOS is coming soon. It works with the same account as the web app, so anything you set up today carries over.</p></div>
+      </details>
+    </div>
+    <p class="center reveal"><a class="link-arrow" href="/faq/"><span data-i18n="home.faq_more">More questions and answers</span><svg class="i" width="16" height="16"><use href="#i-arrow"/></svg></a></p>
+  </div>
+</section>
+
+<!-- @include cta -->
