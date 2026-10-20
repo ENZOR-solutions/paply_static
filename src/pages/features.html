@@ -21,6 +21,7 @@
 
 <nav class="jump-nav" data-spy aria-label="Feature categories" data-i18n-attr="aria-label:features.jump_label">
   <div class="wrap">
+    <a href="#ai-assistants" data-i18n="features.f_mcp">AI assistants</a>
     <a href="#invoicing" data-i18n="features.c1">Invoicing</a>
     <a href="#delivery" data-i18n="features.c2">Sending</a>
     <a href="#receiving" data-i18n="features.c3">Supplier bills</a>
@@ -32,6 +33,34 @@
 </nav>
 
 <div class="wrap">
+  <section class="cat" id="ai-assistants">
+    <div class="ai-spot reveal">
+      <div class="ai-copy">
+        <span class="badge badge-on-dark"><svg class="i" width="16" height="16"><use href="#i-sparkle"/></svg><span data-i18n="features.ai_badge">AI assistants · Coming soon on Core, Pro and Enterprise</span></span>
+        <h2 class="h2" data-i18n="features.ai_title">Ask your AI assistant about your invoices</h2>
+        <p data-i18n="features.f_mcp_d">Connect Claude, ChatGPT, Cursor or another assistant that supports Model Context Protocol (MCP) to one Paply company. You sign in to Paply and pick the company, an access level and how long access lasts. The assistant can only do what your own role allows.</p>
+        <div class="ai-levels">
+          <div><h3 data-i18n="features.f_mcp_read">Read only</h3><p data-i18n="features.f_mcp_read_d">Look up invoices (issued and received), estimates, orders, purchase orders, customers and suppliers, items, totals and overdue amounts.</p></div>
+          <div><h3 data-i18n="features.f_mcp_drafts">Read and create drafts</h3><p data-i18n="features.f_mcp_drafts_d">Also prepare draft invoices, estimates and orders, and add customers, suppliers and items. A person checks and confirms every draft in Paply.</p></div>
+        </div>
+        <p class="ai-never"><svg class="i" width="18" height="18"><use href="#i-shield"/></svg><span data-i18n="features.f_mcp_never">It can never send, issue or fiscalize invoices, pay or record payments, change bank details, delete or cancel anything, or change settings or users. Company admins decide whether it's on, can require approval for new connections, see an activity log and disconnect it at any time. On Core, Pro and Enterprise.</span></p>
+      </div>
+      <div class="ai-chat" aria-hidden="true">
+        <p class="ai-msg ai-user" data-i18n="features.ai_q1">Who owes us money right now?</p>
+        <div class="ai-msg ai-bot">
+          <p data-i18n="features.ai_a1">3 invoices are overdue, €4,820 in total:</p>
+          <ul>
+            <li>Bistra Logistika d.o.o. <span data-i18n="features.ai_amt1">€2,400</span></li>
+            <li>Studio Lipa d.o.o. <span data-i18n="features.ai_amt2">€1,650</span></li>
+            <li>Kava Bar Center <span data-i18n="features.ai_amt3">€770</span></li>
+          </ul>
+        </div>
+        <p class="ai-msg ai-user" data-i18n="features.ai_q2">Prepare October's invoice for Studio Lipa, same as last month.</p>
+        <p class="ai-msg ai-bot ai-draft"><svg class="i" width="16" height="16"><use href="#i-doc"/></svg><span data-i18n="features.ai_a2">Draft ready. Check and confirm it in Paply.</span></p>
+      </div>
+    </div>
+  </section>
+
   <section class="cat" id="invoicing">
     <div class="cat-head reveal">
       <span class="icon-box"><svg class="i" width="22" height="22"><use href="#i-pen"/></svg></span>
@@ -150,12 +179,6 @@
       <article class="fcard reveal"><div class="fcard-top"><span class="icon-box"><svg class="i" width="18" height="18"><use href="#i-code"/></svg></span><span class="badge" data-i18n="common.core_plus">Core and up</span></div><h3 data-i18n="features.f_api">REST API</h3><p data-i18n="features.f_api_d">Create, send and track invoices from your own ERP or billing system with API keys.</p></article>
       <article class="fcard reveal" style="--d:1"><div class="fcard-top"><span class="icon-box"><svg class="i" width="18" height="18"><use href="#i-mail"/></svg></span><span class="badge" data-i18n="common.core_plus">Core and up</span></div><h3 data-i18n="features.f_mailconn">Gmail, Microsoft 365 and SMTP</h3><p data-i18n="features.f_mailconn_d">Connect your mailbox once and every invoice email goes out from your own address.</p></article>
       <article class="fcard reveal" style="--d:2"><div class="fcard-top"><span class="icon-box"><svg class="i" width="18" height="18"><use href="#i-bank"/></svg></span></div><h3 data-i18n="features.f_bankfiles">Bank file formats</h3><p data-i18n="features.f_bankfiles_d">CAMT.053 and MT940 statements in, SEPA pain.001 payment files out. Works with any bank that supports them.</p></article>
-      <article class="fcard fcard-wide reveal"><div class="fcard-top"><span class="icon-box"><svg class="i" width="18" height="18"><use href="#i-sparkle"/></svg></span><span class="badge badge-soon" data-i18n="common.coming_soon">Coming soon</span></div><h3 data-i18n="features.f_mcp">AI assistants</h3><p data-i18n="features.f_mcp_d">Connect Claude, ChatGPT, Cursor or another assistant that supports Model Context Protocol (MCP) to one Paply company. You sign in to Paply and pick the company, an access level and how long access lasts. The assistant can only do what your own role allows.</p>
-        <div class="fcard-cols">
-          <div><h4 data-i18n="features.f_mcp_read">Read only</h4><p data-i18n="features.f_mcp_read_d">Look up invoices (issued and received), estimates, orders, purchase orders, customers and suppliers, items, totals and overdue amounts.</p></div>
-          <div><h4 data-i18n="features.f_mcp_drafts">Read and create drafts</h4><p data-i18n="features.f_mcp_drafts_d">Also prepare draft invoices, estimates and orders, and add customers, suppliers and items. A person checks and confirms every draft in Paply.</p></div>
-        </div>
-        <p data-i18n="features.f_mcp_never">It can never send, issue or fiscalize invoices, pay or record payments, change bank details, delete or cancel anything, or change settings or users. Company admins decide whether it's on, can require approval for new connections, see an activity log and disconnect it at any time. On Core, Pro and Enterprise.</p></article>
     </div>
   </section>
 </div>

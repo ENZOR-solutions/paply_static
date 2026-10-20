@@ -18,7 +18,7 @@
 <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/css/site.css?v=f97c683591">
+<link rel="stylesheet" href="/assets/css/site.css?v=ebff494170">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Paply">
 <meta property="og:title" content="Funkcije: e-računi, fiskalizacija in AI branje | Paply">
@@ -157,6 +157,7 @@
 
 <nav class="jump-nav" data-spy aria-label="Kategorije funkcij">
   <div class="wrap">
+    <a href="#ai-assistants">AI pomočniki</a>
     <a href="#invoicing">Računi</a>
     <a href="#delivery">Pošiljanje</a>
     <a href="#receiving">Prejeti računi</a>
@@ -168,6 +169,34 @@
 </nav>
 
 <div class="wrap">
+  <section class="cat" id="ai-assistants">
+    <div class="ai-spot reveal">
+      <div class="ai-copy">
+        <span class="badge badge-on-dark"><svg class="i" width="16" height="16"><use href="#i-sparkle"/></svg><span>AI pomočniki · Kmalu v paketih Core, Pro in Enterprise</span></span>
+        <h2 class="h2">Vprašajte svojega AI pomočnika o svojih računih</h2>
+        <p>Claude, ChatGPT, Cursor ali drugega pomočnika, ki podpira Model Context Protocol (MCP), povežete z enim podjetjem v Paplyju. Prijavite se v Paply in izberete podjetje, raven dostopa in kako dolgo dostop velja. Pomočnik lahko naredi le to, kar dovoljuje vaša vloga.</p>
+        <div class="ai-levels">
+          <div><h3>Samo branje</h3><p>Poišče račune (izdane in prejete), ponudbe, naročila kupcev, naročilnice, kupce in dobavitelje, artikle, zneske in zapadle dolgove.</p></div>
+          <div><h3>Branje in priprava osnutkov</h3><p>Poleg tega pripravi osnutke računov, ponudb in naročil ter doda kupce, dobavitelje in artikle. Vsak osnutek v Paplyju pregleda in potrdi človek.</p></div>
+        </div>
+        <p class="ai-never"><svg class="i" width="18" height="18"><use href="#i-shield"/></svg><span>Nikoli ne more poslati, izdati ali fiskalizirati računov, plačati ali evidentirati plačil, spremeniti bančnih podatkov, česar koli izbrisati ali preklicati ali spremeniti nastavitev in uporabnikov. Skrbniki podjetja odločijo, ali je vklopljen, lahko zahtevajo odobritev novih povezav, vidijo dnevnik dejavnosti in ga kadar koli odklopijo. V paketih Core, Pro in Enterprise.</span></p>
+      </div>
+      <div class="ai-chat" aria-hidden="true">
+        <p class="ai-msg ai-user">Kdo nam trenutno dolguje denar?</p>
+        <div class="ai-msg ai-bot">
+          <p>Zapadli so 3 računi, skupaj 4.820 €:</p>
+          <ul>
+            <li>Bistra Logistika d.o.o. <span>2.400 €</span></li>
+            <li>Studio Lipa d.o.o. <span>1.650 €</span></li>
+            <li>Kava Bar Center <span>770 €</span></li>
+          </ul>
+        </div>
+        <p class="ai-msg ai-user">Pripravi oktobrski račun za Studio Lipa, enako kot prejšnji mesec.</p>
+        <p class="ai-msg ai-bot ai-draft"><svg class="i" width="16" height="16"><use href="#i-doc"/></svg><span>Osnutek je pripravljen. Preverite in potrdite ga v Paplyju.</span></p>
+      </div>
+    </div>
+  </section>
+
   <section class="cat" id="invoicing">
     <div class="cat-head reveal">
       <span class="icon-box"><svg class="i" width="22" height="22"><use href="#i-pen"/></svg></span>
@@ -286,12 +315,6 @@
       <article class="fcard reveal"><div class="fcard-top"><span class="icon-box"><svg class="i" width="18" height="18"><use href="#i-code"/></svg></span><span class="badge">Core in višji</span></div><h3>REST API</h3><p>Ustvarjajte, pošiljajte in spremljajte račune iz svojega ERP-ja ali sistema za obračun s ključi API.</p></article>
       <article class="fcard reveal" style="--d:1"><div class="fcard-top"><span class="icon-box"><svg class="i" width="18" height="18"><use href="#i-mail"/></svg></span><span class="badge">Core in višji</span></div><h3>Gmail, Microsoft 365 in SMTP</h3><p>Predal povežete enkrat in vsak račun odide z vašega naslova.</p></article>
       <article class="fcard reveal" style="--d:2"><div class="fcard-top"><span class="icon-box"><svg class="i" width="18" height="18"><use href="#i-bank"/></svg></span></div><h3>Bančni formati datotek</h3><p>Izpiski CAMT.053 in MT940 noter, plačilne datoteke SEPA pain.001 ven. Deluje z vsako banko, ki jih podpira.</p></article>
-      <article class="fcard fcard-wide reveal"><div class="fcard-top"><span class="icon-box"><svg class="i" width="18" height="18"><use href="#i-sparkle"/></svg></span><span class="badge badge-soon">Kmalu</span></div><h3>AI pomočniki</h3><p>Claude, ChatGPT, Cursor ali drugega pomočnika, ki podpira Model Context Protocol (MCP), povežete z enim podjetjem v Paplyju. Prijavite se v Paply in izberete podjetje, raven dostopa in kako dolgo dostop velja. Pomočnik lahko naredi le to, kar dovoljuje vaša vloga.</p>
-        <div class="fcard-cols">
-          <div><h4>Samo branje</h4><p>Poišče račune (izdane in prejete), ponudbe, naročila kupcev, naročilnice, kupce in dobavitelje, artikle, zneske in zapadle dolgove.</p></div>
-          <div><h4>Branje in priprava osnutkov</h4><p>Poleg tega pripravi osnutke računov, ponudb in naročil ter doda kupce, dobavitelje in artikle. Vsak osnutek v Paplyju pregleda in potrdi človek.</p></div>
-        </div>
-        <p>Nikoli ne more poslati, izdati ali fiskalizirati računov, plačati ali evidentirati plačil, spremeniti bančnih podatkov, česar koli izbrisati ali preklicati ali spremeniti nastavitev in uporabnikov. Skrbniki podjetja odločijo, ali je vklopljen, lahko zahtevajo odobritev novih povezav, vidijo dnevnik dejavnosti in ga kadar koli odklopijo. V paketih Core, Pro in Enterprise.</p></article>
     </div>
   </section>
 </div>
