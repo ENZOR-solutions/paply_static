@@ -312,6 +312,9 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .tile { background: var(--bg-secondary); border: 1px solid var(--border-default); border-radius: var(--r-card); padding: 24px; display: flex; flex-direction: column; gap: 10px; transition: transform .25s var(--ease), box-shadow .25s var(--ease), border-color .25s; }
 .tile:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: var(--border-emphasis); }
 .tile p { color: var(--text-secondary); font-size: 15px; }
+.tile-full { grid-column: 1 / -1; }
+.tile-full .link-arrow { align-self: flex-start; }
+.tile-full .link-arrow, .ai-copy .link-arrow { min-height: 40px; }
 .tile-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 .icon-box { width: 40px; height: 40px; border-radius: var(--r-button); background: var(--accent-surface); color: var(--accent-deep); display: inline-flex; align-items: center; justify-content: center; margin-bottom: 6px; flex-shrink: 0; }
 .scan-demo { display: grid; grid-template-columns: 96px 1fr; gap: 16px; align-items: center; margin-top: 10px; }
