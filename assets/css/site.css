@@ -598,6 +598,12 @@ a.country:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); bor
 .compare-two > div { background: var(--bg-secondary); border: 1px solid var(--border-default); border-radius: var(--r-card); padding: 20px; }
 .compare-two h3 { margin: 0 0 6px; display: flex; align-items: center; gap: 10px; font-size: 17px; }
 .compare-two p { font-size: 15px; }
+.prose code { font-family: ui-monospace, "SFMono-Regular", "Cascadia Mono", Menlo, Consolas, monospace; font-size: .88em; background: var(--bg-tertiary); border: 1px solid var(--border-default); border-radius: var(--r-input, 6px); padding: 1px 6px; color: var(--text-primary); overflow-wrap: anywhere; }
+.prose pre.code-block { background: var(--text-primary); color: var(--bg-primary); border-radius: var(--r-card); padding: 16px 18px; overflow-x: auto; max-width: 100%; }
+.prose pre.code-block code { background: none; border: 0; padding: 0; color: inherit; font-size: 14px; line-height: 1.6; white-space: pre; overflow-wrap: normal; }
+.prose ol.num-list { display: grid; gap: 8px; counter-reset: step; }
+.prose ol.num-list li { position: relative; padding-left: 34px; counter-increment: step; }
+.prose ol.num-list li::before { content: counter(step); position: absolute; left: 0; top: 3px; width: 22px; height: 22px; border-radius: 50%; background: var(--accent-surface); color: var(--accent-deep); font-size: 12px; font-weight: 500; display: flex; align-items: center; justify-content: center; }
 .timeline { position: relative; display: grid; gap: 0; padding-left: 28px; }
 .timeline::before { content: ""; position: absolute; left: 8px; top: 8px; bottom: 8px; width: 2px; background: var(--border-default); border-radius: 2px; }
 .timeline::after { content: ""; position: absolute; left: 8px; top: 8px; width: 2px; height: calc(100% - 16px); background: var(--accent); border-radius: 2px; transform-origin: top; transform: scaleY(var(--tl, 0)); transition: transform 1.2s var(--ease); }

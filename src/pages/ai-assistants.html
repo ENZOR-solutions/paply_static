@@ -1,0 +1,163 @@
+<!--page {
+  "path": "/ai-assistants/",
+  "title": "AI assistants: connect Claude or ChatGPT to Paply | Paply",
+  "description": "Connect Claude, ChatGPT, Claude Code or Cursor to one Paply company: requirements, setup steps, what an assistant can and can never do, privacy and support.",
+  "schema": ["faq"],
+  "crumbs": [{"key": "ai.crumb", "en": "AI assistants", "path": "/ai-assistants/"}],
+  "priority": 0.6
+} -->
+<section class="page-hero">
+  <div class="hero-bg" aria-hidden="true"><div class="hero-grid"></div><div class="orb orb-1"></div></div>
+  <div class="wrap page-hero-inner">
+    {{crumbs}}
+    <h1 class="h1 reveal" data-i18n="ai.h1">Connect an AI assistant to Paply</h1>
+    <p class="lead reveal" style="--d:1" data-i18n="ai.lead">Connect your own AI assistant, such as Claude or ChatGPT, to one Paply company. It can look up your invoices, customers, suppliers and items, answer questions about them and, if you allow it, prepare drafts for a person to check. It can never send, issue, fiscalize or pay anything.</p>
+  </div>
+</section>
+
+<section class="section" style="padding-top: 8px">
+  <div class="wrap guide">
+    <nav class="toc" data-spy aria-label="On this page" data-i18n-attr="aria-label:guide.toc">
+      <p data-i18n="guide.toc">On this page</p>
+      <a href="#overview" data-i18n="ai.t1">Overview</a>
+      <a href="#requirements" data-i18n="ai.t2">Before you start</a>
+      <a href="#connect" data-i18n="ai.t3">Connect your assistant</a>
+      <a href="#access" data-i18n="ai.t4">Access levels</a>
+      <a href="#limits" data-i18n="ai.t5">What it can and can't do</a>
+      <a href="#privacy" data-i18n="ai.t6">Safety and privacy</a>
+      <a href="#training" data-i18n="ai.t7">Model training</a>
+      <a href="#disconnect" data-i18n="ai.t8">Disconnect</a>
+      <a href="#faq" data-i18n="guide.t7">FAQ</a>
+      <a href="#support" data-i18n="ai.t9">Support</a>
+    </nav>
+
+    <article class="prose">
+      <h2 id="overview" data-i18n="ai.t1">Overview</h2>
+      <p data-i18n="ai.ov_p1">Paply lets a person connect an AI assistant they already use to their Paply account. Supported apps include <strong>Claude</strong> (web, desktop and mobile), <strong>ChatGPT</strong>, <strong>Claude Code</strong> and <strong>Cursor</strong>. Each connection is tied to one person and one company, and the assistant works only within that person's own permissions in that company.</p>
+      <p data-i18n="ai.ov_p2">Every assistant uses the same Paply server address:</p>
+      <pre class="code-block"><code>https://api.paply.app/mcp</code></pre>
+      <p data-i18n="ai.ov_p3">You sign in on paply.app, not inside the AI app. Paply never shares your password with the assistant.</p>
+
+      <h2 id="requirements" data-i18n="ai.t2">Before you start</h2>
+      <ul>
+        <li data-i18n="ai.req_l1">Your company is on the <strong>Core</strong>, <strong>Pro</strong> or <strong>Enterprise</strong> plan.</li>
+        <li data-i18n="ai.req_l2">A company administrator has turned on AI assistants in <strong>Settings → Integrations → AI assistants</strong>. It is off until they do.</li>
+        <li data-i18n="ai.req_l3">Your role includes the <strong>Connect AI assistants</strong> permission. The Admin and Accountant roles have it; an administrator can add it to other roles in Team &amp; Roles.</li>
+      </ul>
+      <p data-i18n="ai.req_p1">Paply is opening AI assistants step by step. If you don't see the setting yet, it isn't available for your company yet.</p>
+
+      <h2 id="connect" data-i18n="ai.t3">Connect your assistant</h2>
+      <p data-i18n="ai.con_p1">Menu names in AI apps change over time. Look for "Connectors", "Apps" or "Integrations" in your assistant's settings.</p>
+
+      <h3 data-i18n="ai.con_claude_t">Claude (claude.ai, desktop and mobile)</h3>
+      <ol class="num-list">
+        <li data-i18n="ai.con_claude_l1">Open <strong>Settings → Connectors</strong> and choose <strong>Add custom connector</strong>.</li>
+        <li data-i18n="ai.con_claude_l2">Name it Paply and paste the server address <code>https://api.paply.app/mcp</code>, then add it.</li>
+        <li data-i18n="ai.con_claude_l3">Choose <strong>Connect</strong>. Claude opens the Paply sign-in page.</li>
+      </ol>
+      <p data-i18n="ai.con_claude_p">Once Paply is listed in Claude's connector directory, you can add it from there instead. On Claude Team and Enterprise, an organization owner may need to add the connector first.</p>
+
+      <h3 data-i18n="ai.con_chatgpt_t">ChatGPT</h3>
+      <p data-i18n="ai.con_chatgpt_p">Add Paply as a connector (ChatGPT calls them apps) with the server address <code>https://api.paply.app/mcp</code>, then connect it and sign in to Paply. Whether you can add your own connectors depends on your ChatGPT plan and, in a workspace, on your administrator.</p>
+
+      <h3 data-i18n="ai.con_code_t">Claude Code</h3>
+      <pre class="code-block"><code>claude mcp add --transport http paply https://api.paply.app/mcp</code></pre>
+      <p data-i18n="ai.con_code_p">Run this in your terminal. Then start Claude Code, type <code>/mcp</code>, choose paply and sign in to Paply in the browser window that opens.</p>
+
+      <h3 data-i18n="ai.con_cursor_t">Cursor</h3>
+      <p data-i18n="ai.con_cursor_p">Add a server entry with the address to Cursor's server settings file (<code>mcp.json</code>), then enable it and sign in when Cursor asks:</p>
+      <pre class="code-block"><code>{
+  "mcpServers": {
+    "paply": { "url": "https://api.paply.app/mcp" }
+  }
+}</code></pre>
+
+      <h3 data-i18n="ai.con_paply_t">On the Paply page</h3>
+      <ol class="num-list">
+        <li data-i18n="ai.con_paply_l1">Sign in to Paply. For security you may be asked to sign in again, including your two-factor code.</li>
+        <li data-i18n="ai.con_paply_l2">Check the app's name. Paply shows whether it is a verified app and warns you if it isn't.</li>
+        <li data-i18n="ai.con_paply_l3">Pick the <strong>company</strong>, the <strong>access level</strong> and <strong>when access ends</strong> (30 days, 90 days, 1 year, or never if your company allows it).</li>
+        <li data-i18n="ai.con_paply_l4">Choose <strong>Allow access</strong>. If your company requires an administrator to approve new connections, the assistant can start once they approve it.</li>
+      </ol>
+      <p data-i18n="ai.con_paply_p">Your company's administrators are notified when someone connects an assistant.</p>
+
+      <h2 id="access" data-i18n="ai.t4">Access levels</h2>
+      <div class="compare-two">
+        <div><h3><svg class="i" width="20" height="20"><use href="#i-doc"/></svg><span data-i18n="ai.lvl_read_t">Read only</span></h3><p data-i18n="ai.lvl_read_d">The default. The assistant can look things up and answer questions, but changes nothing in Paply.</p></div>
+        <div><h3><svg class="i" width="20" height="20"><use href="#i-pen"/></svg><span data-i18n="ai.lvl_drafts_t">Read and create drafts</span></h3><p data-i18n="ai.lvl_drafts_d">Also prepares draft invoices, estimates and orders, and adds or updates customers, suppliers and items. A person checks every draft in Paply before it is issued.</p></div>
+      </div>
+      <p data-i18n="ai.lvl_p">A company administrator can limit everyone to Read only. The drafts level may not be available for every company at first.</p>
+
+      <h2 id="limits" data-i18n="ai.t5">What it can and can't do</h2>
+      <h3 data-i18n="ai.can_t">An assistant can look up</h3>
+      <ul>
+        <li data-i18n="ai.can_l1">invoices you issued and received, with their history, comments, payment status and fiscalization status;</li>
+        <li data-i18n="ai.can_l2">estimates, customer orders and purchase orders;</li>
+        <li data-i18n="ai.can_l3">customers and suppliers, items, tax rates and prices from your price lists;</li>
+        <li data-i18n="ai.can_l4">totals and analytics: what you invoiced, what is overdue, cash flow and what is waiting to be paid;</li>
+        <li data-i18n="ai.can_l5">bank transactions you imported, only if your role includes banking.</li>
+      </ul>
+      <h3 data-i18n="ai.never_t">An assistant can never</h3>
+      <ul>
+        <li data-i18n="ai.never_l1">send, issue or fiscalize invoices, or send anything by e-mail or as an e-invoice;</li>
+        <li data-i18n="ai.never_l2">cancel, approve, reject or delete anything;</li>
+        <li data-i18n="ai.never_l3">record payments, pay suppliers, create payment files or otherwise move money;</li>
+        <li data-i18n="ai.never_l4">see full bank account numbers (only the last four digits) or change bank details;</li>
+        <li data-i18n="ai.never_l5">change settings, users, roles or connected apps;</li>
+        <li data-i18n="ai.never_l6">see your password, sign-in codes, fiscal certificates or the keys of your integrations.</li>
+      </ul>
+      <div class="callout">
+        <svg class="i" width="20" height="20"><use href="#i-shield"/></svg>
+        <p data-i18n="ai.limits_callout">These limits are enforced by Paply on every request, whatever the assistant is asked to do. Drafts always wait for a person in Paply, and that person confirms, sends and fiscalizes them with their own account.</p>
+      </div>
+
+      <h2 id="privacy" data-i18n="ai.t6">Safety and privacy</h2>
+      <ul>
+        <li data-i18n="ai.priv_l1"><strong>Your permissions, one company.</strong> The assistant sees only the company you picked and only what your own role allows. If your role changes, the assistant's access changes with it.</li>
+        <li data-i18n="ai.priv_l2"><strong>Activity log.</strong> Every request the assistant makes is recorded: when, what it did, which records and the result. You and your company's administrators can see the log in Paply. It is kept for 12 months and never contains the text of your documents.</li>
+        <li data-i18n="ai.priv_l3"><strong>Access ends automatically</strong> when the period you chose runs out, when the person who connected it leaves the company or loses the permission, or when they delete their Paply account.</li>
+        <li data-i18n="ai.priv_l4"><strong>Shopify customers.</strong> Names, addresses, e-mails and phone numbers of customers imported from a connected Shopify shop are not shared with assistants.</li>
+        <li data-i18n="ai.priv_l5"><strong>Your AI provider.</strong> What the assistant reads is processed by the company that provides it (for example Anthropic for Claude, OpenAI for ChatGPT) under your own agreement with them, and may be processed outside the EU. Paply can't delete what an assistant has already received.</li>
+      </ul>
+      <p data-i18n="ai.priv_p1">Supplier invoices, e-mails and bank statement texts come from outside your company and can contain text written to mislead an AI. Paply marks such text for the assistant as untrusted, and the assistant can't send anything out of Paply, but check its answers and drafts before you act on them. Avoid using the Paply connection in the same chat as tools that browse the web or send e-mail.</p>
+
+      <h2 id="training" data-i18n="ai.t7">Model training</h2>
+      <p data-i18n="ai.train_p1">Paply itself doesn't use your data to train AI models. Whether your AI provider uses what the assistant reads from Paply for training depends on the provider and your plan. For company data, we recommend a business plan that comes with a data processing agreement.</p>
+      <ul>
+        <li data-i18n="ai.train_l1"><strong>Claude Free, Pro and Max:</strong> Anthropic may use your chats, including data Claude reads from Paply, to train its models unless you turn this off in Claude under Settings → Privacy. <strong>Claude Team and Enterprise</strong> don't train on your data.</li>
+        <li data-i18n="ai.train_l2"><strong>ChatGPT Free, Go, Plus and Pro:</strong> OpenAI may use data ChatGPT reads from Paply to train its models while "Improve the model for everyone" is on (Settings → Data controls). <strong>ChatGPT Business, Enterprise and Edu</strong> don't, by default.</li>
+        <li data-i18n="ai.train_l3"><strong>Claude Code, Cursor and other apps:</strong> follow the provider's settings for your account or plan.</li>
+      </ul>
+      <p data-i18n="ai.train_p2">Checked in October 2026. Providers' policies can change, so check your plan's current data settings.</p>
+
+      <h2 id="disconnect" data-i18n="ai.t8">Disconnect</h2>
+      <ul>
+        <li data-i18n="ai.disc_l1"><strong>Your own assistants:</strong> Settings → Your account → My AI assistants, choose the assistant and disconnect it. You can also lower its access to Read only or see what it did.</li>
+        <li data-i18n="ai.disc_l2"><strong>Administrators:</strong> Settings → Integrations → AI assistants lists every assistant connected to the company. Disconnect one or all of them, pause AI assistants for the whole company, require approval for new connections or allow only verified apps.</li>
+      </ul>
+      <p data-i18n="ai.disc_p">Disconnecting stops further access straight away. You can also remove Paply from your AI app's connector settings.</p>
+
+      <h2 id="faq" data-i18n="guide.t7">FAQ</h2>
+      <div class="faq-list">
+        <details class="faq">
+          <summary data-i18n="ai.q1">Can an AI assistant send or fiscalize an invoice?</summary>
+          <div class="faq-a"><p data-i18n="ai.a1">No. An assistant can at most prepare a draft. Sending, issuing and fiscalizing always happen in Paply, by a person with the right permissions.</p></div>
+        </details>
+        <details class="faq">
+          <summary data-i18n="ai.q2">Which plan do I need for AI assistants?</summary>
+          <div class="faq-a"><p data-i18n="ai.a2">Core, Pro or Enterprise. A company administrator also has to turn the feature on in Settings → Integrations → AI assistants.</p></div>
+        </details>
+        <details class="faq">
+          <summary data-i18n="ai.q3">Can the assistant see all of my companies?</summary>
+          <div class="faq-a"><p data-i18n="ai.a3">No. Each connection is limited to the one company you pick when you connect. To use another company, connect again and pick that company.</p></div>
+        </details>
+      </div>
+
+      <h2 id="support" data-i18n="ai.t9">Support</h2>
+      <p data-i18n="ai.sup_p1">Questions or problems: write to <a href="mailto:info@enzor.si">info@enzor.si</a>, or use Contact support in Paply on a paid plan. To report a security concern about an AI connection, write to the same address with "Security" in the subject, and disconnect the assistant first.</p>
+      <p data-i18n="ai.sup_p2">Related: <a href="https://paply.app/privacy">Privacy policy</a> · <a href="https://paply.app/terms">Terms of use</a> · <a href="https://paply.app/dpa">Data processing agreement</a></p>
+    </article>
+  </div>
+</section>
+
+<!-- @include cta -->
