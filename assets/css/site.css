@@ -354,6 +354,8 @@ a.country:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); bor
 .store-btn { display: inline-flex; align-items: center; gap: 10px; border: 1px solid rgba(255, 255, 255, .16); background: rgba(255, 255, 255, .04); border-radius: 10px; padding: 9px 16px 9px 12px; color: var(--bg-primary); cursor: default; }
 .store-btn > span { display: flex; flex-direction: column; font-size: 15px; font-weight: 500; line-height: 1.2; }
 .store-btn small { font-size: 10px; color: var(--accent); letter-spacing: .04em; text-transform: uppercase; font-weight: 500; }
+.store-badge { display: inline-flex; border-radius: 10px; }
+.store-badge img { display: block; height: 50px; width: auto; }
 .link-on-dark { color: #F5B95C; }
 .band-phones { position: relative; height: 330px; display: flex; justify-content: center; align-items: flex-end; }
 .bp { position: absolute; bottom: -90px; width: 190px; filter: drop-shadow(0 24px 40px rgba(0, 0, 0, .45)); transition: transform .6s var(--ease); }

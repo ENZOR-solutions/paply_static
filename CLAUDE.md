@@ -53,13 +53,13 @@ Real per-language URLs: English at `/`, Slovenian at `/sl/`, Croatian at `/hr/`,
 
 ## Coming Soon — Messaging Rule
 
-**Paply is in testing** and opening up step by step; early customers already use it daily. The **e-invoice exchange network is not launched** (the app's `EINVOICE_NETWORK_ENABLED` switch is off) and the **mobile app is not in the stores yet**.
+**Paply is in testing** and opening up step by step; early customers already use it daily. The **e-invoice exchange network is not launched** (the app's `EINVOICE_NETWORK_ENABLED` switch is off) The **Android app is live on Google Play** (Slovenia and Croatia, since 2026-10-25); **iOS is not in the App Store yet**.
 
-- Describe features, countries and pricing in full, but anything not live carries a "Coming soon" badge or wording: network exchange (eSLOG 2.0 / UBL 2.1), the mobile app, and Tap to Pay / card payment links (mobile-only). Pricing shows the network allowances with the note that they apply from launch (mirrors the app's `billing:network_coming_soon_note`).
-- Hero badge: `home.badge` ("Coming soon to Slovenia, Croatia & Serbia"). When Paply exits testing, flip it and the network/mobile "coming soon" copy (search `coming_soon`, `Coming soon`, `network_note`, `mobile.badge`).
+- Describe features, countries and pricing in full, but anything not live carries a "Coming soon" badge or wording: network exchange (eSLOG 2.0 / UBL 2.1), and the iOS app. Card payment links and Tap to Pay (Core+, in the mobile app) are live, no badge. Pricing shows the network allowances with the note that they apply from launch (mirrors the app's `billing:network_coming_soon_note`).
+- Hero badge: `home.badge` ("Coming soon to Slovenia, Croatia & Serbia"). When Paply exits testing, flip it and the network/mobile "coming soon" copy (search `coming_soon`, `Coming soon`, `network_note`, `mobile.badge`, `home.m_badge`).
 - **CTAs:** "Get started free" / "Start for free" / "Choose <plan>" → `https://paply.app/register`; "Sign in" → `https://paply.app/login`. Written as `{{app}}/register` / `{{app}}/login`, so a domain change is one constant in `build.py`.
 - "Contact sales" is `mailto:info@enzor.si?subject=Paply%20Enterprise`. Note: the app itself uses `sales@paply.si` for the same purpose; confirm which address is correct before changing either.
-- Mobile store buttons are deliberately non-links (`aria-disabled`) until the apps are published; then link them to the real store pages (official store badge artwork has its own usage rules).
+- Google Play uses Google's official badge (`assets/img/google-play-<lang>.png`, padding trimmed, artwork unmodified; swapped per language via `common.gplay_img`) linking to `https://play.google.com/store/apps/details?id=si.enzor.paply`. The App Store button stays a non-link (`aria-disabled`) until the iOS app is published; then use Apple's official badge the same way.
 
 ## Content Facts to Stay Consistent With
 

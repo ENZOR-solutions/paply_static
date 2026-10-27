@@ -1,6 +1,6 @@
 # Paply
 
-> Paply is e-invoicing and fiscalization software for businesses in Slovenia and Croatia, made by ENZOR d.o.o. (Slovenia). Businesses create, send, receive, fiscalize and archive invoices in one web app (paply.app), with a mobile app for Android and iOS coming soon. Paply is in its testing phase and opening up step by step; exchange of structured e-invoices over the e-invoice network is coming soon, and until then invoices are sent by email with a PDF.
+> Paply is e-invoicing and fiscalization software for businesses in Slovenia and Croatia, made by ENZOR d.o.o. (Slovenia). Businesses create, send, receive, fiscalize and archive invoices in one web app (paply.app), and a mobile app for Android on Google Play (https://play.google.com/store/apps/details?id=si.enzor.paply), with iOS coming soon. Paply is in its testing phase and opening up step by step; exchange of structured e-invoices over the e-invoice network is coming soon, and until then invoices are sent by email with a PDF.
 
 Key facts:
 
@@ -19,7 +19,7 @@ Key facts:
 - [Home](https://www.paply.si/): overview of Paply
 - [Features](https://www.paply.si/features/): full feature list by category, with plan availability
 - [Pricing](https://www.paply.si/pricing/): plans, comparison table, cost estimator, pricing FAQ
-- [Mobile app](https://www.paply.si/mobile/): the upcoming Android and iOS app
+- [Mobile app](https://www.paply.si/mobile/): the Android app (on Google Play) and the upcoming iOS app
 - [FAQ](https://www.paply.si/faq/): availability, plans, compliance, security, mobile
 - [AI assistants](https://www.paply.si/ai-assistants/): connect Claude, ChatGPT, Claude Code or Cursor to one Paply company (server URL https://api.paply.app/mcp); requirements, setup, what assistants can and can never do, privacy, model training
 
