@@ -413,6 +413,8 @@ a.country:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); bor
 .footer-h { font-size: 12px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: var(--text-tertiary); margin-bottom: 6px; }
 .footer-bottom { display: flex; flex-direction: column; gap: 14px; padding-top: 20px; padding-bottom: 28px; border-top: 1px solid var(--border-default); font-size: 13px; color: var(--text-tertiary); }
 .footer-bottom .dot { margin: 0 6px; }
+.footer-credit a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+.footer-credit a:hover { color: var(--text-primary); }
 .footer-langs { display: flex; gap: 16px; }
 .footer-langs a:hover { color: var(--text-primary); }
 

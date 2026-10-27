@@ -320,7 +320,7 @@
   "features.meta.title": "Features: e-invoicing, fiscalization and AI scanning | Paply",
   "footer.company": "Company",
   "footer.contact": "Contact us",
-  "footer.credit": "Developed and maintained in Slovenia by ENZOR d.o.o.",
+  "footer.credit": "Developed and maintained in Slovenia by <a href=\"https://enzor.si/\" target=\"_blank\" rel=\"noopener\">ENZOR d.o.o.</a>",
   "footer.croatia": "E-invoicing in Croatia",
   "footer.desc": "E-invoicing and fiscalization software for businesses in Slovenia and Croatia, with Serbia on the roadmap.",
   "footer.dpa": "Data processing agreement",

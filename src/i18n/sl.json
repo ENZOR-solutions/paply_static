@@ -30,7 +30,7 @@
   "nav.pricing": "Cenik",
   "footer.company": "Podjetje",
   "footer.contact": "Kontakt",
-  "footer.credit": "Razvija in vzdržuje ENZOR d.o.o. v Sloveniji.",
+  "footer.credit": "Razvija in vzdržuje <a href=\"https://enzor.si/\" target=\"_blank\" rel=\"noopener\">ENZOR d.o.o.</a> v Sloveniji.",
   "footer.croatia": "E-računi na Hrvaškem",
   "footer.desc": "Programska oprema za e-račune in fiskalizacijo za podjetja v Sloveniji in na Hrvaškem. Srbija prihaja kasneje.",
   "footer.dpa": "Pogodba o obdelavi podatkov",
