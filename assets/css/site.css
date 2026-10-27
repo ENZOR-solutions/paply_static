@@ -567,7 +567,7 @@ a.country:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); bor
 .gallery { display: flex; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding: 8px var(--gutter) 24px; margin: 0 calc(var(--gutter) * -1); scroll-padding: 0 var(--gutter); }
 .gallery::-webkit-scrollbar { display: none; }
 .shot { flex: 0 0 auto; width: 250px; scroll-snap-align: start; display: flex; flex-direction: column; gap: 16px; }
-.shot-frame { background: radial-gradient(circle at 50% 30%, rgba(239, 159, 39, .2), rgba(239, 159, 39, 0) 70%), var(--bg-tertiary); border-radius: var(--r-modal); padding: 24px 22px 0; height: 420px; overflow: hidden; display: flex; justify-content: center; }
+.shot-frame { background: radial-gradient(circle at 50% 30%, rgba(239, 159, 39, .2), rgba(239, 159, 39, 0) 70%), var(--bg-tertiary); border-radius: var(--r-modal); padding: 24px 22px; height: 458px; overflow: hidden; display: flex; justify-content: center; }
 .shot-frame img { width: 100%; max-width: 206px; filter: drop-shadow(0 16px 24px rgba(24, 24, 26, .18)); transition: transform .5s var(--ease); align-self: flex-start; }
 .shot:hover .shot-frame img { transform: translateY(-8px); }
 .shot-frame.is-doc { padding: 22px; align-items: center; }
