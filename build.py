@@ -181,7 +181,7 @@ def faq_entries(body: str) -> list[dict]:
 def jsonld(meta: dict, lang: str, title: str, desc: str, body: str, d: dict[str, str]) -> str:
     org = {
         "@type": "Organization", "@id": f"{SITE}/#org", "name": "Paply", "url": f"{SITE}/",
-        "logo": f"{SITE}/assets/img/paply-icon-512.png", "email": "info@enzor.si",
+        "logo": f"{SITE}/assets/img/paply-icon-512.png", "email": "info@paply.si",
         "parentOrganization": {"@type": "Organization", "name": "ENZOR d.o.o.", "url": "https://enzor.si/"},
         "areaServed": ["SI", "HR", "RS"],
     }

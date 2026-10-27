@@ -234,7 +234,7 @@
   "faq.q_mobile_buy": "Ali lahko paket kupim v mobilni aplikaciji?",
   "faq.a_mobile_buy": "Ne. Pakete upravljate na spletu na paply.app, vaša naročnina pa v aplikaciji deluje samodejno.",
   "faqp.h1": "Pogosta vprašanja",
-  "faqp.lead": "Ne najdete odgovora? Pišite nam na <a href=\"mailto:info@enzor.si\" style=\"color:var(--accent-deep)\">info@enzor.si</a> in odgovoril vam bo pravi človek.",
+  "faqp.lead": "Ne najdete odgovora? Pišite nam na <a href=\"mailto:info@paply.si\" style=\"color:var(--accent-deep)\">info@paply.si</a> in odgovoril vam bo pravi človek.",
   "faqp.jump_label": "Teme vprašanj",
   "faqp.g1": "Splošno",
   "faqp.g2": "Paketi in plačila",
@@ -770,9 +770,11 @@
   "ai.a2": "Core, Pro ali Enterprise. Skrbnik podjetja mora funkcijo vklopiti še v Nastavitve → Integracije → AI pomočniki.",
   "ai.q3": "Ali pomočnik vidi vsa moja podjetja?",
   "ai.a3": "Ne. Vsaka povezava je omejena na eno podjetje, ki ga izberete ob povezovanju. Za drugo podjetje se povežite znova in izberite tisto podjetje.",
-  "ai.sup_p1": "Vprašanja ali težave: pišite na <a href=\"mailto:info@enzor.si\">info@enzor.si</a> ali v plačljivem paketu uporabite možnost Kontaktirajte podporo v Paplyju. Varnostno težavo s povezavo AI sporočite na isti naslov z besedo \"Varnost\" v zadevi, pomočnika pa najprej odklopite.",
+  "ai.sup_p1": "Vprašanja ali težave: pišite na <a href=\"mailto:info@paply.si\">info@paply.si</a> ali v plačljivem paketu uporabite možnost Kontaktirajte podporo v Paplyju. Varnostno težavo s povezavo AI sporočite na isti naslov z besedo \"Varnost\" v zadevi, pomočnika pa najprej odklopite.",
   "ai.sup_p2": "Povezano: <a href=\"https://paply.app/privacy\">Politika zasebnosti</a> · <a href=\"https://paply.app/terms\">Pogoji uporabe</a> · <a href=\"https://paply.app/dpa\">Pogodba o obdelavi podatkov</a>",
   "common.gplay_img": "/assets/img/google-play-sl.png",
   "common.gplay_alt": "Prenesite v Googlu Play",
-  "common.in_mobile": "V mobilni aplikaciji"
+  "common.in_mobile": "V mobilni aplikaciji",
+  "common.email_us": "Pišite nam na info@paply.si",
+  "cta.contact": "Imate vprašanje? Pišite nam na"
 }

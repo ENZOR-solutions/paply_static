@@ -129,6 +129,9 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .header-cta { display: none; }
 .menu-btn { width: 44px; height: 44px; display: inline-flex; align-items: center; justify-content: center; border-radius: var(--r-button); border: 1px solid var(--border-default); background: var(--bg-secondary); color: var(--text-primary); cursor: pointer; }
 
+.header-mail { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-width: 40px; min-height: 40px; padding: 0 10px; border-radius: var(--r-button); font-size: 14px; font-weight: 500; color: var(--text-secondary); }
+.header-mail:hover { color: var(--text-primary); background: rgba(24, 24, 26, .04); }
+.header-mail-text { display: none; }
 .lang-menu { position: relative; }
 .lang-menu summary { list-style: none; display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 500; color: var(--text-secondary); padding: 8px 10px; min-height: 40px; border-radius: var(--r-button); cursor: pointer; user-select: none; }
 .lang-menu summary::-webkit-details-marker { display: none; }
@@ -393,6 +396,8 @@ a.country:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); bor
 .cta-glow { position: absolute; inset: auto -20% -60% -20%; height: 120%; background: radial-gradient(ellipse at 50% 100%, rgba(239, 159, 39, .28), rgba(239, 159, 39, 0) 60%); pointer-events: none; }
 .cta-band > * { position: relative; }
 .cta-band .lead { max-width: 560px; margin: 14px auto 0; }
+.cta-contact { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 4px 8px; margin-top: 22px; font-size: 14px; color: var(--text-secondary); }
+.cta-contact a { color: var(--accent-deep); font-weight: 500; }
 .cta-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 28px; }
 
 /* ---------- footer ---------- */
@@ -793,4 +798,7 @@ a.country:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); bor
   .compare { min-width: 480px; font-size: 13px; }
   .compare th, .compare td { padding: 10px 8px; }
   .compare th:first-child, .compare td:first-child { width: 130px; min-width: 130px; max-width: 130px; white-space: normal; font-size: 12.5px; line-height: 1.35; box-shadow: 1px 0 0 var(--border-default); }
+}
+@media (min-width: 1200px) {
+  .header-mail-text { display: inline; }
 }
