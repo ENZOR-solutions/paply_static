@@ -184,6 +184,7 @@ def jsonld(meta: dict, lang: str, title: str, desc: str, body: str, d: dict[str,
         "logo": f"{SITE}/assets/img/paply-icon-512.png", "email": "info@paply.si",
         "parentOrganization": {"@type": "Organization", "name": "ENZOR d.o.o.", "url": "https://enzor.si/"},
         "areaServed": ["SI", "HR", "RS"],
+        "sameAs": ["https://www.linkedin.com/showcase/paply-app/"],
     }
     graph: list[dict] = [org, {
         "@type": "WebSite", "@id": f"{SITE}/#website", "url": f"{SITE}/", "name": "Paply",
