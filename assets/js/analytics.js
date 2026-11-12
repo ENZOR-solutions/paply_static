@@ -40,6 +40,8 @@
       target: path,
       link_text: (a.textContent || '').trim().slice(0, 80),
       page_path: location.pathname
-    });
+    // Sent right away with sendBeacon: the click leaves the site, and the
+    // normal batched send (every ~3 s) would be lost with the page.
+    }, { send_instantly: true, transport: 'sendBeacon' });
   }, true);
 })();
