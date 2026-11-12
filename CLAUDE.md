@@ -114,7 +114,7 @@ All motion is CSS keyframes/transitions plus small JS (reveal-on-scroll via Inte
 
 ## Analytics (PostHog)
 
-`assets/js/analytics.js` loads PostHog (EU Cloud) into the **same project as paply.app**; filter by `$host` to separate site from app. It is **cookieless** (`cookieless_mode: 'always'`, needs "Cookieless server hash mode" on in the PostHog project), so there is no consent banner; don't add cookies, localStorage IDs, `identify()` or session replay without adding consent first. It only runs on `paply.si` hosts (not localhost or Vercel previews). Besides pageviews and autocapture it sends `app_link_clicked` (`target` = register/login/…) for every link to `{{app}}`. The project token in it is the public write-only key.
+`assets/js/analytics.js` loads PostHog (EU Cloud) into the **same project as paply.app**; filter by `$host` to separate site from app. It is **cookieless** (`cookieless_mode: 'always'`, needs "Cookieless server hash mode" on in the PostHog project), so there is no consent banner; don't add cookies, localStorage IDs, `identify()` or session replay without adding consent first. It only runs on `paply.si` hosts (not localhost or Vercel previews) and goes through `/ingest/` (rewrites in `vercel.json` to PostHog EU) so ad blockers don't drop it; keep those rewrites. Besides pageviews and autocapture it sends `app_link_clicked` (`target` = register/login/…) for every link to `{{app}}`. The project token in it is the public write-only key.
 
 ## Build & Deploy
 
