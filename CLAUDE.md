@@ -112,6 +112,10 @@ Check every change at **320px**, 375px and desktop with a real render (local sta
 
 All motion is CSS keyframes/transitions plus small JS (reveal-on-scroll via IntersectionObserver, hero outbox mock that cycles Draft → Fiscalized → Sent → Paid, auto-advancing feature tabs, FAQ height animation, estimator number tween). Everything respects `prefers-reduced-motion` (static final state) and pauses off-screen. Content is visible without JS (`.reveal` only hides when `<html class="js">`).
 
+## Analytics (PostHog)
+
+`assets/js/analytics.js` loads PostHog (EU Cloud) into the **same project as paply.app**; filter by `$host` to separate site from app. It is **cookieless** (`cookieless_mode: 'always'`, needs "Cookieless server hash mode" on in the PostHog project), so there is no consent banner; don't add cookies, localStorage IDs, `identify()` or session replay without adding consent first. It only runs on `paply.si` hosts (not localhost or Vercel previews). Besides pageviews and autocapture it sends `app_link_clicked` (`target` = register/login/…) for every link to `{{app}}`. The project token in it is the public write-only key.
+
 ## Build & Deploy
 
 - Hosted on **Vercel** (www.paply.si; paply.si redirects there), auto-deployed from `main`. `vercel.json` sets `trailingSlash: true`, security headers, long caching for fonts and versioned CSS/JS, and redirects away from repo-internal paths. `.vercelignore` keeps `src/`, `tools/`, `build.py`, `CLAUDE.md`, `README.md` out of the deployment.
