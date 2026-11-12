@@ -24,6 +24,7 @@
     respect_dnt: true,
     disable_session_recording: true,
     disable_surveys: true,
+    capture_dead_clicks: false,
     advanced_disable_feature_flags: true,
     advanced_disable_feature_flags_on_first_load: true
   });
