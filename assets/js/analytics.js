@@ -2,10 +2,11 @@
    Cookieless: nothing is stored in the browser, so no consent banner is
    needed. Needs "Cookieless server hash mode" switched on in the PostHog
    project settings, otherwise events are dropped.
-   Runs only on the production domain (not localhost or Vercel previews). */
+   Runs only on the production domains, paply.si and paply.hr (not localhost
+   or Vercel previews). */
 (function () {
   'use strict';
-  if (!/(^|\.)paply\.si$/.test(location.hostname)) return;
+  if (!/(^|\.)paply\.(si|hr)$/.test(location.hostname)) return;
 
   // Official PostHog loader stub (queues calls until array.js has loaded;
   // with api_host "/ingest" it loads /ingest/static/array.js).
